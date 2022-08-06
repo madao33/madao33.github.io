@@ -162,11 +162,11 @@
       
       <tag>leetcode</tag>
       
-      <tag>数组</tag>
+      <tag>贪心</tag>
       
       <tag>排序</tag>
       
-      <tag>贪心</tag>
+      <tag>数组</tag>
       
     </tags>
     
@@ -197,11 +197,11 @@
       
       <tag>数据结构与算法</tag>
       
-      <tag>数学</tag>
+      <tag>字符串</tag>
       
       <tag>排序</tag>
       
-      <tag>字符串</tag>
+      <tag>数学</tag>
       
     </tags>
     
@@ -298,9 +298,9 @@
       
       <tag>数据结构与算法</tag>
       
-      <tag>数组</tag>
-      
       <tag>设计</tag>
+      
+      <tag>数组</tag>
       
       <tag>队列</tag>
       
@@ -496,11 +496,11 @@
       
       <tag>数据结构与算法</tag>
       
+      <tag>排序</tag>
+      
       <tag>数组</tag>
       
       <tag>哈希表</tag>
-      
-      <tag>排序</tag>
       
     </tags>
     
@@ -533,9 +533,9 @@
       
       <tag>数学</tag>
       
-      <tag>辗转相除法</tag>
-      
       <tag>最大公约数</tag>
+      
+      <tag>辗转相除法</tag>
       
     </tags>
     
@@ -566,13 +566,13 @@
       
       <tag>数据结构与算法</tag>
       
-      <tag>数学</tag>
-      
-      <tag>最大公约数</tag>
+      <tag>字符串</tag>
       
       <tag>模拟</tag>
       
-      <tag>字符串</tag>
+      <tag>数学</tag>
+      
+      <tag>最大公约数</tag>
       
     </tags>
     
@@ -735,11 +735,11 @@
       
       <tag>数据结构与算法</tag>
       
-      <tag>数组</tag>
+      <tag>贪心</tag>
       
       <tag>排序</tag>
       
-      <tag>贪心</tag>
+      <tag>数组</tag>
       
     </tags>
     
