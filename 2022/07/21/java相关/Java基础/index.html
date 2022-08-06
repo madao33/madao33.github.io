@@ -1,0 +1,1216 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/avatar/avatar.jpg">
+  <link rel="icon" href="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/avatar/avatar.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="madao33">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Java基础关于一些Java基础的知识点，主要用于面试快速复习 Java基础语法Java语法规范编写 Java 程序时，应注意以下几点：  大小写敏感：Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。 类名：对于所有的类来说，类名的&#x3D;&#x3D;首字母应该大写&#x3D;&#x3D;。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 First">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识点">
+<meta property="og:url" content="http://example.com/2022/07/21/java%E7%9B%B8%E5%85%B3/Java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java基础关于一些Java基础的知识点，主要用于面试快速复习 Java基础语法Java语法规范编写 Java 程序时，应注意以下几点：  大小写敏感：Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。 类名：对于所有的类来说，类名的&#x3D;&#x3D;首字母应该大写&#x3D;&#x3D;。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 First">
+<meta property="og:locale">
+<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/java%E5%9F%BA%E7%A1%80.jpg">
+<meta property="article:published_time" content="2022-07-21T04:59:14.000Z">
+<meta property="article:modified_time" content="2022-08-06T14:06:30.122Z">
+<meta property="article:author" content="madao33">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="八股文">
+<meta property="article:tag" content="面向对象">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/java%E5%9F%BA%E7%A1%80.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Java基础知识点 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>madao33</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/java%E5%9F%BA%E7%A1%80.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java的入门基础知识点"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-21 12:59" pubdate>
+          July 21, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          20k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          165 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java的入门基础知识点</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><p>关于一些Java基础的知识点，主要用于面试快速复习</p>
+<h2 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h2><h3 id="Java语法规范"><a href="#Java语法规范" class="headerlink" title="Java语法规范"></a>Java语法规范</h3><p>编写 Java 程序时，应注意以下几点：</p>
+<ul>
+<li><strong>大小写敏感</strong>：Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。</li>
+<li><strong>类名</strong>：对于所有的类来说，类名的&#x3D;&#x3D;首字母应该大写&#x3D;&#x3D;。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 <strong>FirstDemo</strong> 。</li>
+<li><strong>方法名</strong>：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</li>
+<li><strong>源文件名</strong>：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Java 是大小写敏感的），文件名的后缀为 <strong>.java</strong>。（如果文件名和类名不相同则会导致编译错误）。</li>
+<li><strong>主方法入口</strong>：所有的 Java 程序由 <strong>public static void main(String[] args)</strong> 方法开始执行。</li>
+</ul>
+<h3 id="Java-标识符"><a href="#Java-标识符" class="headerlink" title="Java 标识符"></a>Java 标识符</h3><p>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<p>关于 Java 标识符，有以下几点需要注意：</p>
+<ul>
+<li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
+<li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
+<li>关键字不能用作标识符</li>
+<li>标识符是大小写敏感的</li>
+<li>合法标识符举例：age、$salary、_value、__1_value</li>
+<li>非法标识符举例：123abc、-salary</li>
+</ul>
+<h2 id="Java基本数据类型"><a href="#Java基本数据类型" class="headerlink" title="Java基本数据类型"></a>Java基本数据类型</h2><h3 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h3><p>Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</p>
+<p><strong>byte：</strong></p>
+<ul>
+<li>byte 数据类型是8位、有符号的，以二进制补码表示的整数；</li>
+<li>最小值是 <strong>-128（-2^7）</strong>；</li>
+<li>最大值是 <strong>127（2^7-1）</strong>；</li>
+<li>默认值是 <strong>0</strong>；</li>
+<li>byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；</li>
+<li>例子：byte a &#x3D; 100，byte b &#x3D; -50。</li>
+</ul>
+<p><strong>short：</strong></p>
+<ul>
+<li>short 数据类型是 16 位、有符号的以二进制补码表示的整数</li>
+<li>最小值是 <strong>-32768（-2^15）</strong>；</li>
+<li>最大值是 <strong>32767（2^15 - 1）</strong>；</li>
+<li>Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；</li>
+<li>默认值是 <strong>0</strong>；</li>
+<li>例子：short s &#x3D; 1000，short r &#x3D; -20000。</li>
+</ul>
+<p><strong>int：</strong></p>
+<ul>
+<li>int 数据类型是32位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 <strong>-2,147,483,648（-2^31）</strong>；</li>
+<li>最大值是 <strong>2,147,483,647（2^31 - 1）</strong>；</li>
+<li>一般地整型变量默认为 int 类型；</li>
+<li>默认值是 <strong>0</strong> ；</li>
+<li>例子：int a &#x3D; 100000, int b &#x3D; -200000。</li>
+</ul>
+<p><strong>long：</strong></p>
+<ul>
+<li>long 数据类型是 64 位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是 <strong>-9,223,372,036,854,775,808（-2^63）</strong>；</li>
+<li>最大值是 <strong>9,223,372,036,854,775,807（2^63 -1）</strong>；</li>
+<li>这种类型主要使用在需要比较大整数的系统上；</li>
+<li>默认值是 <strong>0L</strong>；</li>
+<li>例子： long a &#x3D; 100000L，Long b &#x3D; -200000L。<br>“L”理论上不分大小写，但是若写成”l”容易与数字”1”混淆，不容易分辩。所以最好大写。</li>
+</ul>
+<p><strong>float：</strong></p>
+<ul>
+<li>float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；</li>
+<li>float 在储存大型浮点数组的时候可节省内存空间；</li>
+<li>默认值是 <strong>0.0f</strong>；</li>
+<li>浮点数不能用来表示精确的值，如货币；</li>
+<li>例子：float f1 &#x3D; 234.5f。</li>
+</ul>
+<p><strong>double：</strong></p>
+<ul>
+<li>double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；</li>
+<li>浮点数的默认类型为double类型；</li>
+<li>double类型同样不能表示精确的值，如货币；</li>
+<li>默认值是 <strong>0.0d</strong>；</li>
+<li>例子：double d1 &#x3D; 123.4。</li>
+</ul>
+<p><strong>boolean：</strong></p>
+<ul>
+<li>boolean数据类型表示一位的信息；</li>
+<li>只有两个取值：true 和 false；</li>
+<li>这种类型只作为一种标志来记录 true&#x2F;false 情况；</li>
+<li>默认值是 <strong>false</strong>；</li>
+<li>例子：boolean one &#x3D; true。</li>
+</ul>
+<p><strong>char：</strong></p>
+<ul>
+<li>char类型是一个单一的 16 位 Unicode 字符；</li>
+<li>最小值是 <strong>\u0000</strong>（即为0）；</li>
+<li>最大值是 <strong>\uffff</strong>（即为65,535）；</li>
+<li>char 数据类型可以储存任何字符；</li>
+<li>例子：char letter &#x3D; ‘A’;。</li>
+</ul>
+<p>对于数值类型的基本类型的取值范围，可以查看封装在对应包装类的常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123; <br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;  <br>        <span class="hljs-comment">// byte  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：byte 二进制位数：&quot;</span> + Byte.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Byte&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Byte.MIN_VALUE=&quot;</span> + Byte.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Byte.MAX_VALUE=&quot;</span> + Byte.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// short  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：short 二进制位数：&quot;</span> + Short.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Short&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Short.MIN_VALUE=&quot;</span> + Short.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Short.MAX_VALUE=&quot;</span> + Short.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// int  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：int 二进制位数：&quot;</span> + Integer.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Integer&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Integer.MIN_VALUE=&quot;</span> + Integer.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Integer.MAX_VALUE=&quot;</span> + Integer.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// long  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：long 二进制位数：&quot;</span> + Long.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Long&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Long.MIN_VALUE=&quot;</span> + Long.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Long.MAX_VALUE=&quot;</span> + Long.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// float  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：float 二进制位数：&quot;</span> + Float.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Float&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Float.MIN_VALUE=&quot;</span> + Float.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Float.MAX_VALUE=&quot;</span> + Float.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// double  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：double 二进制位数：&quot;</span> + Double.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Double&quot;</span>);  <br>        System.out.println(<span class="hljs-string">&quot;最小值：Double.MIN_VALUE=&quot;</span> + Double.MIN_VALUE);  <br>        System.out.println(<span class="hljs-string">&quot;最大值：Double.MAX_VALUE=&quot;</span> + Double.MAX_VALUE);  <br>        System.out.println();  <br><br>        <span class="hljs-comment">// char  </span><br>        System.out.println(<span class="hljs-string">&quot;基本类型：char 二进制位数：&quot;</span> + Character.SIZE);  <br>        System.out.println(<span class="hljs-string">&quot;包装类：java.lang.Character&quot;</span>);  <br>        <span class="hljs-comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台  </span><br>        System.out.println(<span class="hljs-string">&quot;最小值：Character.MIN_VALUE=&quot;</span>  <br>                + (<span class="hljs-type">int</span>) Character.MIN_VALUE);  <br>        <span class="hljs-comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台  </span><br>        System.out.println(<span class="hljs-string">&quot;最大值：Character.MAX_VALUE=&quot;</span>  <br>                + (<span class="hljs-type">int</span>) Character.MAX_VALUE);  <br>    &#125;  <br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">基本类型：byte 二进制位数：8<br>包装类：java.lang.Byte<br>最小值：Byte.MIN_VALUE=-128<br>最大值：Byte.MAX_VALUE=127<br><br>基本类型：short 二进制位数：16<br>包装类：java.lang.Short<br>最小值：Short.MIN_VALUE=-32768<br>最大值：Short.MAX_VALUE=32767<br><br>基本类型：int 二进制位数：32<br>包装类：java.lang.Integer<br>最小值：Integer.MIN_VALUE=-2147483648<br>最大值：Integer.MAX_VALUE=2147483647<br><br>基本类型：long 二进制位数：64<br>包装类：java.lang.Long<br>最小值：Long.MIN_VALUE=-9223372036854775808<br>最大值：Long.MAX_VALUE=9223372036854775807<br><br>基本类型：<span class="hljs-built_in">float</span> 二进制位数：32<br>包装类：java.lang.Float<br>最小值：Float.MIN_VALUE=1.4E-45<br>最大值：Float.MAX_VALUE=3.4028235E38<br><br>基本类型：double 二进制位数：64<br>包装类：java.lang.Double<br>最小值：Double.MIN_VALUE=4.9E-324<br>最大值：Double.MAX_VALUE=1.7976931348623157E308<br><br>基本类型：char 二进制位数：16<br>包装类：java.lang.Character<br>最小值：Character.MIN_VALUE=0<br>最大值：Character.MAX_VALUE=65535<br></code></pre></td></tr></table></figure>
+
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ul>
+<li><code>Java</code>中，引用类型的变量类似于<code>C/C++</code>中的指针，引用类型指向一个对象</li>
+<li>&#x3D;&#x3D;对象、数组都是引用数据类型&#x3D;&#x3D;</li>
+<li>基本类型是值传递</li>
+</ul>
+<h3 id="Java常量"><a href="#Java常量" class="headerlink" title="Java常量"></a>Java常量</h3><ul>
+<li><p>&#x3D;&#x3D;常量在程序运行时是不能被修改&#x3D;&#x3D;的。在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">PI</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.1415927</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>通常使用大写字母表示常量</p>
+</li>
+<li><p>byte、int、long、和short都可以用十进制、16进制以及8进制的方式来表示。当使用常量的时候，前缀 <strong>0</strong> 表示 8 进制，而前缀 <strong>0x</strong> 代表 16 进制, 例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">decimal</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br><span class="hljs-type">int</span> <span class="hljs-variable">octal</span> <span class="hljs-operator">=</span> <span class="hljs-number">0144</span>;<br><span class="hljs-type">int</span> <span class="hljs-variable">hexa</span> <span class="hljs-operator">=</span>  <span class="hljs-number">0x64</span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>数字转换一般是从&#x3D;&#x3D;低级到高级&#x3D;&#x3D;</p>
+<p>数据类型转换必须满足如下规则：</p>
+<ol>
+<li>不能对boolean类型进行类型转换。</li>
+<li>不能把对象类型转换成不相关类的对象。</li>
+<li>在把容量大的类型转换为容量小的类型时必须使用强制类型转换。</li>
+<li>转换过程中可能导致溢出或损失精度，例如：</li>
+</ol>
+<p>&#x3D;&#x3D;自动类型转换&#x3D;&#x3D;：必须满足转换前的数据类型的位数要低于转换后的数据类型，例如: short数据类型的位数为16位，就可以自动转换位数为32的int类型，同样float数据类型的位数为32，可以自动转换为64位的double类型。</p>
+<p>&#x3D;&#x3D;强制类型转换&#x3D;&#x3D;：转换的类型必须是兼容的，一般是高转低，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">val</span> <span class="hljs-operator">=</span> <span class="hljs-number">123</span>;<br><span class="hljs-type">byte</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (<span class="hljs-type">byte</span>) val;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Java变量的类型"><a href="#Java变量的类型" class="headerlink" title="Java变量的类型"></a>Java变量的类型</h2><p>在Java语言中，所有的变量在使用前必须声明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> a, b, c;         <span class="hljs-comment">// 声明三个int型整数：a、 b、c</span><br><span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>, e = <span class="hljs-number">4</span>, f = <span class="hljs-number">5</span>; <span class="hljs-comment">// 声明三个整数并赋予初值</span><br><span class="hljs-type">byte</span> <span class="hljs-variable">z</span> <span class="hljs-operator">=</span> <span class="hljs-number">22</span>;         <span class="hljs-comment">// 声明并初始化 z</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;nowcoder&quot;</span>;  <span class="hljs-comment">// 声明并初始化字符串 s</span><br><span class="hljs-type">double</span> <span class="hljs-variable">pi</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>; <span class="hljs-comment">// 声明了双精度浮点型变量 pi</span><br><span class="hljs-type">char</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;x&#x27;</span>;        <span class="hljs-comment">// 声明变量 x 的值是字符 &#x27;x&#x27;。</span><br></code></pre></td></tr></table></figure>
+
+<p>Java语言支持的变量类型有：</p>
+<ul>
+<li>类变量：独立于方法之外的变量，用 static 修饰。</li>
+<li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
+<li>局部变量：类的方法中的变量。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> allClicks=<span class="hljs-number">0</span>;    <span class="hljs-comment">// 类变量</span><br><br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello world&quot;</span>;  <span class="hljs-comment">// 实例变量</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;  <span class="hljs-comment">// 局部变量</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Java局部变量"><a href="#Java局部变量" class="headerlink" title="Java局部变量"></a>Java局部变量</h3><ul>
+<li>局部变量声明在方法、构造方法或者语句块中；</li>
+<li>局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</li>
+<li>访问修饰符不能用于局部变量；</li>
+<li>局部变量只在声明它的方法、构造方法或者语句块中可见；</li>
+<li>局部变量是在栈上分配的。</li>
+<li>局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。</li>
+</ul>
+<h3 id="实例变量"><a href="#实例变量" class="headerlink" title="实例变量"></a>实例变量</h3><ul>
+<li>实例变量声明在一个类中，但在方法、构造方法和语句块之外；</li>
+<li>当一个对象被实例化之后，每个实例变量的值就跟着确定；</li>
+<li>&#x3D;&#x3D;实例变量在对象创建的时候创建，在对象被销毁的时候销毁&#x3D;&#x3D;；</li>
+<li>实例变量的值应该至少被一个方法、构造方法或者语句块引用，使得外部能够通过这些方式获取实例变量信息；</li>
+<li>实例变量可以声明在使用前或者使用后；</li>
+<li>访问修饰符可以修饰实例变量；</li>
+<li>实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见；</li>
+<li>实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；</li>
+<li>实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName。</li>
+</ul>
+<h3 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h3><ul>
+<li>类变量也称为静态变量，在类中以 static 关键字声明，但必须在方法之外。</li>
+<li>&#x3D;&#x3D;无论一个类创建了多少个对象，类只拥有类变量的一份拷贝&#x3D;&#x3D;。</li>
+<li>静态变量除了被声明为常量外很少使用。常量是指声明为public&#x2F;private，final和static类型的变量。常量初始化后不可改变。</li>
+<li>静态变量储存在静态存储区。经常被声明为常量，很少单独使用static声明变量。</li>
+<li>&#x3D;&#x3D;静态变量在第一次被访问时创建，在程序结束时销毁&#x3D;&#x3D;。</li>
+<li>与实例变量具有相似的可见性。但为了对类的使用者可见，大多数静态变量声明为public类型。</li>
+<li>默认值和实例变量相似。数值型变量默认值是0，布尔型默认值是false，引用类型默认值是null。变量的值可以在声明的时候指定，也可以在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。</li>
+<li>静态变量可以通过：<em>ClassName.VariableName</em>的方式访问。</li>
+<li>类变量被声明为public static final类型时，类变量名称一般建议使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。</li>
+</ul>
+<h2 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h2><p>Java语言主要分为两类修饰符：</p>
+<ul>
+<li>访问修饰符</li>
+<li>非访问修饰符</li>
+</ul>
+<h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><p>Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。</p>
+<ul>
+<li><strong>default</strong> (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。</li>
+<li><strong>private</strong> : 在同一类内可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong></li>
+<li><strong>public</strong> : 对所有类可见。使用对象：类、接口、变量、方法</li>
+<li><strong>protected</strong> : 对同一包内的类和所有子类可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong>。</li>
+</ul>
+<p>我们可以通过以下表来说明访问权限：</p>
+<table>
+<thead>
+<tr>
+<th align="center">修饰符</th>
+<th align="center">当前类</th>
+<th align="center">同一包内</th>
+<th align="center">子孙类(同一包)</th>
+<th align="center">子孙类(不同包)</th>
+<th align="center">其他包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>public</code></td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr>
+<td align="center"><code>protected</code></td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y&#x2F;N</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td align="center"><code>default</code></td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td align="center"><code>private</code></td>
+<td align="center">Y</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">N</td>
+<td align="center">N</td>
+</tr>
+</tbody></table>
+<h2 id="Java-Scanner类"><a href="#Java-Scanner类" class="headerlink" title="Java Scanner类"></a>Java Scanner类</h2><p><code>next()</code>与<code>nextLine()</code>区别</p>
+<p><code>next()</code></p>
+<ul>
+<li>一定要读取到有效字符后才可以结束输入。</li>
+<li>对输入有效字符之前遇到的空白，<code>next() </code>方法会自动将其去掉。</li>
+<li>只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。</li>
+<li><code>next() </code>不能得到带有空格的字符串。</li>
+</ul>
+<p><code>nextLine()</code></p>
+<ul>
+<li>以<code>Enter</code>为结束符,也就是说 <code>nextLine()</code>方法返回的是输入回车之前的所有字符。</li>
+<li>可以获得空白。</li>
+</ul>
+<p>如果要输入 <code>int </code>或 <code>float</code> 类型的数据，在 <code>Scanner </code>类中也有支持，但是在输入之前最好先使用 <code>hasNextXxx() </code>方法进行验证，再使用 <code>nextXxx() </code>来读取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ScannerDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scan</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-comment">// 从键盘接收数据</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">float</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.0f</span>;<br>        System.out.print(<span class="hljs-string">&quot;输入整数：&quot;</span>);<br>        <span class="hljs-keyword">if</span> (scan.hasNextInt()) &#123;<br>            <span class="hljs-comment">// 判断输入的是否是整数</span><br>            i = scan.nextInt();<br>            <span class="hljs-comment">// 接收整数</span><br>            System.out.println(<span class="hljs-string">&quot;整数数据：&quot;</span> + i);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 输入错误的信息</span><br>            System.out.println(<span class="hljs-string">&quot;输入的不是整数！&quot;</span>);<br>        &#125;<br>        System.out.print(<span class="hljs-string">&quot;输入小数：&quot;</span>);<br>        <span class="hljs-keyword">if</span> (scan.hasNextFloat()) &#123;<br>            <span class="hljs-comment">// 判断输入的是否是小数</span><br>            f = scan.nextFloat();<br>            <span class="hljs-comment">// 接收小数</span><br>            System.out.println(<span class="hljs-string">&quot;小数数据：&quot;</span> + f);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 输入错误的信息</span><br>            System.out.println(<span class="hljs-string">&quot;输入的不是小数！&quot;</span>);<br>        &#125;<br>        scan.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="Java面向对象"><a href="#Java面向对象" class="headerlink" title="Java面向对象"></a>Java面向对象</h1><h2 id="Java对象和类"><a href="#Java对象和类" class="headerlink" title="Java对象和类"></a>Java对象和类</h2><p>一个类可以包含以下类型变量：</p>
+<ul>
+<li><strong>局部变量</strong>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</li>
+<li><strong>成员变量</strong>：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。</li>
+<li><strong>类变量</strong>：类变量也声明在类中，方法体之外，但必须声明为<code>static</code>类型。</li>
+</ul>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。</p>
+<p>在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。</p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>对象是根据类创建的。在<code>Java</code>中，使用关键字<code>new</code>来创建一个新的对象。创建对象需要以下三步：</p>
+<ul>
+<li><strong>声明</strong>：声明一个对象，包括对象名称和对象类型。</li>
+<li><strong>实例化</strong>：使用关键字<code>new</code>来创建一个对象。</li>
+<li><strong>初始化</strong>：使用<code>new</code>创建对象时，会调用构造方法初始化对象。</li>
+</ul>
+<h3 id="源文件声明规则"><a href="#源文件声明规则" class="headerlink" title="源文件声明规则"></a>源文件声明规则</h3><ul>
+<li>一个源文件中只能有一个<code>public</code>类</li>
+<li>一个源文件可以有多个非<code>public</code>类</li>
+<li>源文件的名称应该和<code>public</code>类的类名保持一致。例如：源文件中<code>public</code>类的类名是<code>Employee</code>，那么源文件应该命名为<code>Employee.java</code>。</li>
+<li>如果一个类定义在某个包中，那么<code>package</code>语句应该在源文件的首行。</li>
+<li>如果源文件包含<code>import</code>语句，那么应该放在<code>package</code>语句和类定义之间。如果没有<code>package</code>语句，那么<code>import</code>语句应该在源文件中最前面。</li>
+<li><code>import</code>语句和<code>package</code>语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。</li>
+</ul>
+<h2 id="Java封装"><a href="#Java封装" class="headerlink" title="Java封装"></a>Java封装</h2><p>封装（英语：Encapsulation）是指一种将抽象性函式接口的实现细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制。封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。</p>
+<p>封装的优点：</p>
+<ul>
+<li>良好的封装能够减少耦合。</li>
+<li>类内部的结构可以自由修改。</li>
+<li>可以对成员变量进行更精确的控制。</li>
+<li>隐藏信息，实现细节。</li>
+</ul>
+<h2 id="Java继承"><a href="#Java继承" class="headerlink" title="Java继承"></a>Java继承</h2><p>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。</p>
+<h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
+<li>子类拥有父类非 private 的属性、方法。</li>
+<li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</li>
+<li>子类可以用自己的方式实现父类的方法。</li>
+<li>Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类，这是 Java 继承区别于 C++ 继承的一个特性。</li>
+<li>提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</li>
+</ul>
+<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><p>子类是不继承父类的构造器（构造方法或者构造函数）的，它只是调用（隐式或显式）。如果父类的构造器带有参数，则必须在子类的构造器中显式地通过 <code>super</code>关键字调用父类的构造器并配以适当的参数列表。</p>
+<p>如果父类构造器没有参数，则在子类的构造器中不需要使用 <code>super</code> 关键字调用父类构造器，系统会自动调用父类的无参构造器。</p>
+<h2 id="Java重写与重载"><a href="#Java重写与重载" class="headerlink" title="Java重写与重载"></a>Java重写与重载</h2><h3 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h3><ul>
+<li>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。<strong>即外壳不变，核心重写</strong></li>
+<li>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法</li>
+<li>重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 <code>Exception </code>异常，因为 <code>Exception </code>是 <code>IOException </code>的父类，只能抛出 <code>IOException </code>的子类异常</li>
+</ul>
+<h3 id="方法的重写规则"><a href="#方法的重写规则" class="headerlink" title="方法的重写规则"></a>方法的重写规则</h3><ul>
+<li>参数列表必须完全与被重写方法的相同。</li>
+<li>返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。</li>
+<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</li>
+<li>父类的成员方法只能被它的子类重写。</li>
+<li>声明为 final 的方法不能被重写。</li>
+<li>声明为 static 的方法不能被重写，但是能够被再次声明。</li>
+<li>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。</li>
+<li>子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。</li>
+<li>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</li>
+<li>构造方法不能被重写。</li>
+<li>如果不能继承一个方法，则不能重写这个方法。</li>
+</ul>
+<h3 id="重载-Overload"><a href="#重载-Overload" class="headerlink" title="重载(Overload)"></a>重载(Overload)</h3><p>重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
+<p>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</p>
+<p>最常用的地方就是构造器的重载。</p>
+<p><strong>重载规则:</strong></p>
+<ul>
+<li>被重载的方法必须改变参数列表(参数个数或类型不一样)；</li>
+<li>被重载的方法可以改变返回类型；</li>
+<li>被重载的方法可以改变访问修饰符；</li>
+<li>被重载的方法可以声明新的或更广的检查异常；</li>
+<li>方法能够在同一个类中或者在一个子类中被重载。</li>
+<li>无法以返回值类型作为重载函数的区分标准。</li>
+</ul>
+<blockquote>
+<p>方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。</p>
+<ol>
+<li>方法重载是一个类中定义了多个方法名相同,而他们的参数的数量不同或数量相同而类型和次序不同,则称为方法的重载(Overloading)。</li>
+<li>方法重写是在子类存在方法与父类的方法的名字相同,而且参数的个数与类型一样,返回值也一样的方法,就称为重写(Overriding)。</li>
+<li>方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。</li>
+</ol>
+</blockquote>
+<h2 id="Java多态"><a href="#Java多态" class="headerlink" title="Java多态"></a>Java多态</h2><p>多态是同一个行为具有多个不同表现形式或形态的能力</p>
+<p><strong>多态的优点</strong></p>
+<ul>
+<li>消除类型之间的耦合关系</li>
+<li>可替换性</li>
+<li>可扩充性</li>
+<li>接口性</li>
+<li>灵活性</li>
+<li>简化性</li>
+</ul>
+<p><strong>多态存在的三个必要条件</strong></p>
+<ul>
+<li>继承</li>
+<li>重写</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<h2 id="Java抽象类"><a href="#Java抽象类" class="headerlink" title="Java抽象类"></a>Java抽象类</h2><p>在<code>Java</code>语言中使用<code>abstract class</code>来定义抽象类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;<br>   <span class="hljs-keyword">private</span> String name;<br>   <span class="hljs-keyword">private</span> String address;<br>   <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> number;<br>   <span class="hljs-keyword">public</span> <span class="hljs-title function_">Employee</span><span class="hljs-params">(String name, String address, <span class="hljs-type">int</span> number)</span> &#123;<br>      System.out.println(<span class="hljs-string">&quot;Constructing an Employee&quot;</span>);<br>      <span class="hljs-built_in">this</span>.name = name;<br>      <span class="hljs-built_in">this</span>.address = address;<br>      <span class="hljs-built_in">this</span>.number = number;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">computePay</span><span class="hljs-params">()</span> &#123;<br>     System.out.println(<span class="hljs-string">&quot;Inside Employee computePay&quot;</span>);<br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mailCheck</span><span class="hljs-params">()</span> &#123;<br>      System.out.println(<span class="hljs-string">&quot;Mailing a check to &quot;</span> + <span class="hljs-built_in">this</span>.name<br>       + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">this</span>.address);<br>   &#125;<br>   <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>      <span class="hljs-keyword">return</span> name + <span class="hljs-string">&quot; &quot;</span> + address + <span class="hljs-string">&quot; &quot;</span> + number;<br>   &#125;<br>   <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;<br>      <span class="hljs-keyword">return</span> name;<br>   &#125;<br>   <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getAddress</span><span class="hljs-params">()</span> &#123;<br>      <span class="hljs-keyword">return</span> address;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setAddress</span><span class="hljs-params">(String newAddress)</span> &#123;<br>      address = newAddress;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNumber</span><span class="hljs-params">()</span> &#123;<br>     <span class="hljs-keyword">return</span> number;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们能通过一般的方法继承Employee类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Salary</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Employee</span> &#123;<br>   <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> salary; <span class="hljs-comment">//Annual salary</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-title function_">Salary</span><span class="hljs-params">(String name, String address, <span class="hljs-type">int</span> number, <span class="hljs-type">double</span> salary)</span> &#123;<br>       <span class="hljs-built_in">super</span>(name, address, number);<br>       setSalary(salary);<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mailCheck</span><span class="hljs-params">()</span> &#123;<br>       System.out.println(<span class="hljs-string">&quot;Within mailCheck of Salary class &quot;</span>);<br>       System.out.println(<span class="hljs-string">&quot;Mailing check to &quot;</span> + getName()<br>       + <span class="hljs-string">&quot; with salary &quot;</span> + salary);<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getSalary</span><span class="hljs-params">()</span> &#123;<br>       <span class="hljs-keyword">return</span> salary;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSalary</span><span class="hljs-params">(<span class="hljs-type">double</span> newSalary)</span> &#123;<br>       <span class="hljs-keyword">if</span>(newSalary &gt;= <span class="hljs-number">0.0</span>) &#123;<br>          salary = newSalary;<br>       &#125;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">computePay</span><span class="hljs-params">()</span> &#123;<br>      System.out.println(<span class="hljs-string">&quot;Computing salary pay for &quot;</span> + getName());<br>      <span class="hljs-keyword">return</span> salary/<span class="hljs-number">52</span>;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><p>如果你想设计这样一个类，该类包含一个特别的成员方法，该方法的具体实现由它的子类确定，那么你可以在父类中声明该方法为抽象方法。</p>
+<p><code>abstract </code>关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。</p>
+<p>抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;<br>   <span class="hljs-keyword">private</span> String name;<br>   <span class="hljs-keyword">private</span> String address;<br>   <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> number;<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-type">double</span> <span class="hljs-title function_">computePay</span><span class="hljs-params">()</span>;<br><br>   <span class="hljs-comment">//其余代码</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>声明抽象方法会造成以下两个结果：</p>
+<ul>
+<li>如果一个类包含抽象方法，那么该类必须是抽象类。</li>
+<li>任何子类必须重写父类的抽象方法，或者声明自身为抽象类。</li>
+</ul>
+<p>继承抽象方法的子类必须重写该方法。否则，该子类也必须声明为抽象类。最终，必须有子类实现该抽象方法，否则，从最初的父类到最终的子类都不能用来实例化对象。</p>
+<p>总结</p>
+<blockquote>
+<ul>
+<li>抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。</li>
+<li>抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</li>
+<li>抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。</li>
+<li>构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。</li>
+<li>抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</li>
+</ul>
+</blockquote>
+<h2 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h2><p>接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。</p>
+<p>接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。</p>
+<p>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。</p>
+<p>接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。</p>
+<h2 id="Java包"><a href="#Java包" class="headerlink" title="Java包"></a>Java包</h2><p>为了更好地组织类，<code>Java</code> 提供了包机制，用于区别类名的命名空间</p>
+<h3 id="package的目录结构"><a href="#package的目录结构" class="headerlink" title="package的目录结构"></a>package的目录结构</h3><p>类放在包中会有两种主要的结果：</p>
+<ul>
+<li>包名成为类名的一部分，正如我们前面讨论的一样。</li>
+<li>包名必须与相应的字节码所在的目录结构相吻合。</li>
+</ul>
+<p>通常，一个公司使用它互联网域名的颠倒形式来作为它的包名.例如：互联网域名是 <code>nowcoder.com</code>，所有的包名都以 <code>com.nowcoder </code>开头。包名中的每一个部分对应一个子目录。</p>
+<p>类目录的绝对路径叫做 <strong>class path</strong>。设置在系统变量 <strong>CLASSPATH</strong> 中。编译器和 java 虚拟机通过将 package 名字加到 class path 后来构造 .class 文件的路径。</p>
+<h3 id="设置-CLASSPATH-系统变量"><a href="#设置-CLASSPATH-系统变量" class="headerlink" title="设置 CLASSPATH 系统变量"></a>设置 CLASSPATH 系统变量</h3><p>用下面的命令显示当前的CLASSPATH变量：</p>
+<ul>
+<li>Windows 平台（DOS 命令行下）：<code>C:&gt; set CLASSPATH</code></li>
+<li>UNIX 平台（Bourne shell 下）：# <code>echo $CLASSPATH</code></li>
+</ul>
+<p>删除当前CLASSPATH变量内容：</p>
+<ul>
+<li>Windows 平台（DOS 命令行下）：<code>C:&gt; set CLASSPATH=</code></li>
+<li>UNIX 平台（Bourne shell 下）：# <code>unset CLASSPATH; export CLASSPATH</code></li>
+</ul>
+<p>设置CLASSPATH变量:</p>
+<ul>
+<li>Windows 平台（DOS 命令行下）： C:&gt; set CLASSPATH&#x3D;C:\users\jack\java\classes</li>
+<li>UNIX 平台（Bourne shell 下）：# CLASSPATH&#x3D;&#x2F;home&#x2F;jack&#x2F;java&#x2F;classes; export CLASSPATH</li>
+</ul>
+<h1 id="面试常问问题"><a href="#面试常问问题" class="headerlink" title="面试常问问题"></a>面试常问问题</h1><h3 id="为什么Java代码可以实现一次编写、到处运行"><a href="#为什么Java代码可以实现一次编写、到处运行" class="headerlink" title="为什么Java代码可以实现一次编写、到处运行"></a>为什么Java代码可以实现一次编写、到处运行</h3><p>JVM（Java虚拟机）是Java跨平台的关键。</p>
+<p>在程序运行前，Java源代码（.java）需要经过编译器编译成字节码（.class）。在程序运行时，JVM负责将字节码翻译成特定平台下的机器码并运行，也就是说，只要在不同的平台上安装对应的JVM，就可以运行字节码文件。</p>
+<p>同一份Java源代码在不同的平台上运行，它不需要做任何的改变，并且只需要编译一次。而编译好的字节码，是通过JVM这个中间的“桥梁”实现跨平台的，JVM是与平台相关的软件，它能将统一的字节码翻译成该平台的机器码。</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>编译的结果是生成字节码、不是机器码，字节码不能直接运行，必须通过JVM翻译成机器码才能运行；</li>
+<li>跨平台的是Java程序、而不是JVM，JVM是用C&#x2F;C++开发的软件，不同平台下需要安装不同版本的JVM。</li>
+</ol>
+<h3 id="一个Java文件里可以有多个类吗（不含内部类）"><a href="#一个Java文件里可以有多个类吗（不含内部类）" class="headerlink" title="一个Java文件里可以有多个类吗（不含内部类）"></a>一个Java文件里可以有多个类吗（不含内部类）</h3><ol>
+<li>一个java文件里可以有多个类，但最多只能有一个被public修饰的类；</li>
+<li>如果这个java文件中包含public修饰的类，则这个类的名称必须和java文件名一致。</li>
+</ol>
+<h3 id="说一说你对Java访问权限的了解"><a href="#说一说你对Java访问权限的了解" class="headerlink" title="说一说你对Java访问权限的了解"></a>说一说你对Java访问权限的了解</h3><p>Java语言为我们提供了三种访问修饰符，即private、protected、public，在使用这些修饰符修饰目标时，一共可以形成四种访问权限，即private、default、protected、public，注意在不加任何修饰符时为default访问权限。</p>
+<p>在修饰成员变量&#x2F;成员方法时，该成员的四种访问权限的含义如下：</p>
+<ul>
+<li>private：该成员可以被该类内部成员访问；</li>
+<li>default：该成员可以被该类内部成员访问，也可以被同一包下其他的类访问；</li>
+<li>protected：该成员可以被该类内部成员访问，也可以被同一包下其他的类访问，还可以被它的子类访问；</li>
+<li>public：该成员可以被任意包下，任意类的成员进行访问。</li>
+</ul>
+<p>在修饰类时，该类只有两种访问权限，对应的访问权限的含义如下：</p>
+<ul>
+<li>default：该类可以被同一包下其他的类访问；</li>
+<li>public：该类可以被任意包下，任意的类所访问。</li>
+</ul>
+<h3 id="介绍一下Java的数据类型"><a href="#介绍一下Java的数据类型" class="headerlink" title="介绍一下Java的数据类型"></a>介绍一下Java的数据类型</h3><p>分为两类：基本数据类型和引用数据类型</p>
+<p>基本数据类型有8个，可以分为4个小类，分别是整数类型（byte&#x2F;short&#x2F;int&#x2F;long）、浮点类型（float&#x2F;double）、字符类型（char）、布尔类型（boolean）。其中，4个整数类型中，int类型最为常用。2个浮点类型中，double最为常用。另外，在这8个基本类型当中，除了布尔类型之外的其他7个类型，都可以看做是数字类型，它们相互之间可以进行类型转换。</p>
+<p>引用类型就是对一个对象的引用，根据引用对象类型的不同，可以将引用类型分为3类，即数组、类、接口类型。引用类型本质上就是通过指针，指向堆中对象所持有的内存空间，只是Java语言不再沿用指针这个说法而已。</p>
+<p>对于基本数据类型，你需要了解每种类型所占据的内存空间，面试官可能会追问这类问题：</p>
+<ul>
+<li>byte：1字节（8位），数据范围是 -2^7 ~ 2^7-1。</li>
+<li>short：2字节（16位），数据范围是 -2^15 ~ 2^15-1。</li>
+<li>int：4字节（32位），数据范围是 -2^31 ~ 2^31-1。</li>
+<li>long：8字节（64位），数据范围是 -2^63 ~ 2^63-1。</li>
+<li>float：4字节（32位），数据范围大约是 -3.4<em>10^38 ~ 3.4</em>10^38。</li>
+<li>double：8字节（64位），数据范围大约是 -1.8<em>10^308 ~ 1.8</em>10^308。</li>
+<li>char：2字节（16位），数据范围是 \u0000 ~ \uffff。</li>
+<li>boolean：Java规范没有明确的规定，不同的JVM有不同的实现机制。</li>
+</ul>
+<blockquote>
+<p>对于引用数据类型，需要了解JVM的内存分布情况，知道引用以及引用对象存放的位置</p>
+</blockquote>
+<h3 id="请介绍全局变量和局部变量的区别"><a href="#请介绍全局变量和局部变量的区别" class="headerlink" title="请介绍全局变量和局部变量的区别"></a>请介绍全局变量和局部变量的区别</h3><p>Java中的变量分为成员变量和局部变量，它们的区别如下：</p>
+<p>成员变量：</p>
+<ol>
+<li>成员变量是在类的范围里定义的变量；</li>
+<li>成员变量有默认初始值；</li>
+<li>未被static修饰的成员变量也叫实例变量，它存储于对象所在的堆内存中，生命周期与对象相同；</li>
+<li>被static修饰的成员变量也叫类变量，它存储于方法区中，生命周期与当前类相同。</li>
+</ol>
+<p>局部变量：</p>
+<ol>
+<li>局部变量是在方法里定义的变量；</li>
+<li>局部变量没有默认初始值；</li>
+<li>局部变量存储于栈内存中，作用的范围结束，变量空间会自动的释放。</li>
+</ol>
+<blockquote>
+<p>Java中没有真正的全局变量，面试官应该是出于其他语言的习惯说全局变量的，他的本意应该是指成员变量</p>
+</blockquote>
+<h3 id="实例变量的默认值"><a href="#实例变量的默认值" class="headerlink" title="实例变量的默认值"></a>实例变量的默认值</h3><p>实例变量若为引用数据类型，其默认值一律为null。若为基本数据类型，其默认值如下：</p>
+<ul>
+<li>byte：0</li>
+<li>short：0</li>
+<li>int：0</li>
+<li>long：0L</li>
+<li>float：0.0F</li>
+<li>double：0.0</li>
+<li>char：’\u0000’</li>
+<li>boolean：false</li>
+</ul>
+<h3 id="为啥要有包装类？"><a href="#为啥要有包装类？" class="headerlink" title="为啥要有包装类？"></a>为啥要有包装类？</h3><p>Java语言是面向对象的语言，其设计理念是“一切皆对象”。但8种基本数据类型却出现了例外，它们不具备对象的特性。正是为了解决这个问题，Java为每个基本数据类型都定义了一个对应的引用类型，这就是包装类。</p>
+<blockquote>
+<p>Java之所以提供8种基本数据类型，主要是为了照顾程序员的传统习惯。这8种基本数据类型的确带来了一定的方便性，但在某些时候也会受到一些制约。比如，所有的引用类型的变量都继承于Object类，都可以当做Object类型的变量使用，但基本数据类型却不可以。如果某个方法需要Object类型的参数，但实际传入的值却是数字的话，就需要做特殊的处理了。有了包装类，这种问题就可以得以简化。</p>
+</blockquote>
+<h3 id="说一说自动装箱、自动拆箱的应用场景"><a href="#说一说自动装箱、自动拆箱的应用场景" class="headerlink" title="说一说自动装箱、自动拆箱的应用场景"></a>说一说自动装箱、自动拆箱的应用场景</h3><p>自动装箱、自动拆箱是JDK1.5提供的功能。</p>
+<p>&#x3D;&#x3D;自动装箱&#x3D;&#x3D;：可以把一个基本类型的数据直接赋值给对应的包装类型；</p>
+<p>&#x3D;&#x3D;自动拆箱&#x3D;&#x3D;：可以把一个包装类型的对象直接赋值给对应的基本类型；</p>
+<p>通过自动装箱、自动拆箱功能，可以大大简化基本类型变量和包装类对象之间的转换过程。比如，某个方法的参数类型为包装类型，调用时我们所持有的数据却是基本类型的值，则可以不做任何特殊的处理，直接将这个基本类型的值传入给方法即可。</p>
+<h3 id="如何对Integer和Double类型判断相等"><a href="#如何对Integer和Double类型判断相等" class="headerlink" title="如何对Integer和Double类型判断相等"></a>如何对Integer和Double类型判断相等</h3><p>Integer、Double不能直接进行比较，这包括：</p>
+<ul>
+<li>不能用&#x3D;&#x3D;进行直接比较，因为它们是不同的数据类型；</li>
+<li>不能转为字符串进行比较，因为转为字符串后，浮点值带小数点，整数值不带，这样它们永远都不相等；</li>
+<li>不能使用compareTo方法进行比较，虽然它们都有compareTo方法，但该方法只能对相同类型进行比较。</li>
+</ul>
+<p>整数、浮点类型的包装类，都继承于Number类型，而Number类型分别定义了将数字转换为byte、short、int、long、float、double的方法。所以，可以将Integer、Double先转为&#x3D;&#x3D;转换为相同的基本数据类型&#x3D;&#x3D;（如double），然后使用&#x3D;&#x3D;进行比较。</p>
+<h3 id="int和Integer有什么区别，二者在做-x3D-x3D-运算时会得到什么结果？"><a href="#int和Integer有什么区别，二者在做-x3D-x3D-运算时会得到什么结果？" class="headerlink" title="int和Integer有什么区别，二者在做&#x3D;&#x3D;运算时会得到什么结果？"></a>int和Integer有什么区别，二者在做&#x3D;&#x3D;运算时会得到什么结果？</h3><p>int是基本数据类型，Integer是int的包装类。二者在做&#x3D;&#x3D;运算时，Integer会自动拆箱为int类型，然后再进行比较。届时，如果两个int值相等则返回true，否则就返回false。</p>
+<h3 id="说一说你对面向对象的理解"><a href="#说一说你对面向对象的理解" class="headerlink" title="说一说你对面向对象的理解"></a>说一说你对面向对象的理解</h3><p>面向对象是一种更优秀的程序设计方法，它的基本思想是使用类、对象、继承、封装、消息等基本概念进行程序设计。它从现实世界中客观存在的事物出发来构造软件系统，并在系统构造中尽可能运用人类的自然思维方式，强调直接以现实世界中的事物为中心来思考，认识问题，并根据这些事物的本质特点，把它们抽象地表示为系统中的类，作为系统的基本构成单元，这使得软件系统的组件可以直接映像到客观世界，并保持客观世界中事物及其相互关系的本来面貌。</p>
+<blockquote>
+<p>结构化程序设计方法主张按功能来分析系统需求，其主要原则可概括为自顶向下、逐步求精、模块化等。结构化程序设计首先采用结构化分析方法对系统进行需求分析，然后使用结构化设计方法对系统进行概要设计、详细设计，最后采用结构化编程方法来实现系统。</p>
+<p>因为结构化程序设计方法主张按功能把软件系统逐步细分，因此这种方法也被称为面向功能的程序设计方法；结构化程序设计的每个功能都负责对数据进行一次处理，每个功能都接受一些数据，处理完后输出一些数据，这种处理方式也被称为面向数据流的处理方式。</p>
+<p>结构化程序设计里最小的程序单元是函数，每个函数都负责完成一个功能，用以接收一些输入数据，函数对这些输入数据进行处理，处理结束后输出一些数据。整个软件系统由一个个函数组成，其中作为程序入口的函数被称为主函数，主函数依次调用其他普通函数，普通函数之间依次调用，从而完成整个软件系统的功能。</p>
+<p>每个函数都是具有输入、输出的子系统，函数的输入数据包括函数形参、全局变量和常量等，函数的输出数据包括函数返回值以及传出参数等。结构化程序设计方式有如下两个局限性：</p>
+<ul>
+<li>设计不够直观，与人类习惯思维不一致。采用结构化程序分析、设计时，开发者需要将客观世界模型分解成一个个功能，每个功能用以完成一定的数据处理。</li>
+<li>适应性差，可扩展性不强。由于结构化设计采用自顶向下的设计方式，所以当用户的需求发生改变，或需要修改现有的实现方式时，都需要自顶向下地修改模块结构，这种方式的维护成本相当高。</li>
+</ul>
+</blockquote>
+<h3 id="面向对象的三大特征是什么？"><a href="#面向对象的三大特征是什么？" class="headerlink" title="面向对象的三大特征是什么？"></a>面向对象的三大特征是什么？</h3><p>面向对象的程序设计方法具有三个基本特征：&#x3D;&#x3D;封装、继承、多态&#x3D;&#x3D;。</p>
+<ul>
+<li>封装指的是将对象的实现细节隐藏起来，然后通过一些公用方法来暴露该对象的功能；</li>
+<li>继承是面向对象实现软件复用的重要手段，当子类继承父类后，子类作为一种特殊的父类，将直接获得父类的属性和方法；</li>
+<li>多态指的是子类对象可以直接赋给父类变量，但运行时依然表现出子类的行为特征，这意味着同一个类型的对象在执行同一个方法时，可能表现出多种行为特征。</li>
+</ul>
+<blockquote>
+<p>抽象也是面向对象的重要部分，&#x3D;&#x3D;抽象就是忽略一个主题中与当前目标无关的那些方面&#x3D;&#x3D;，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是考虑部分问题。例如，需要考察Person对象时，不可能在程序中把Person的所有细节都定义出来，通常只能定义Person的部分数据、部分行为特征，而这些数据、行为特征是软件系统所关心的部分。</p>
+</blockquote>
+<h3 id="封装的目的是什么，为什么要有封装？"><a href="#封装的目的是什么，为什么要有封装？" class="headerlink" title="封装的目的是什么，为什么要有封装？"></a>封装的目的是什么，为什么要有封装？</h3><p>封装是面向对象编程语言对客观世界的模拟，在客观世界里，&#x3D;&#x3D;对象的状态信息都被隐藏在对象内部&#x3D;&#x3D;，外界无法直接操作和修改。对一个类或对象实现良好的封装，可以实现以下目的：</p>
+<ul>
+<li>隐藏类的实现细节；</li>
+<li>让使用者只能通过事先预定的方法来访问数据，从而可以在该方法里加入控制逻辑，限制对成员变量的不合理访问；</li>
+<li>可进行数据检查，从而有利于保证对象信息的完整性；</li>
+<li>便于修改，提高代码的可维护性。</li>
+</ul>
+<blockquote>
+<p>为了实现良好的封装，需要从两个方面考虑：</p>
+<ul>
+<li>将对象的成员变量和实现细节隐藏起来，不允许外部直接访问；</li>
+<li>把方法暴露出来，让方法来控制对这些成员变量进行安全的访问和操作。</li>
+</ul>
+<p>封装实际上有两个方面的含义：&#x3D;&#x3D;把该隐藏的隐藏起来，把该暴露的暴露出来&#x3D;&#x3D;。这两个方面都需要通过使用Java提供的访问控制符来实现。例如：对于成员变量，尽量用<code>protected</code>修饰符，而对于允许外部访问的方法使用<code>public</code></p>
+</blockquote>
+<h3 id="说一说你对多态的理解"><a href="#说一说你对多态的理解" class="headerlink" title="说一说你对多态的理解"></a>说一说你对多态的理解</h3><p>因为子类其实是一种特殊的父类，因此Java允许&#x3D;&#x3D;把一个子类对象直接赋给一个父类引用变量&#x3D;&#x3D;，无须任何类型转换，或者被称为&#x3D;&#x3D;向上转型&#x3D;&#x3D;，向上转型由系统自动完成。</p>
+<p>当把一个子类对象直接赋给父类引用变量时，例如 BaseClass obj &#x3D; new SubClass();，这个obj引用变量的编译时类型是BaseClass，而运行时类型是SubClass，当运行时调用该引用变量的方法时，其方法行为总是表现出子类方法的行为特征，而不是父类方法的行为特征，这就可能出现：相同类型的变量、调用同一个方法时呈现出多种不同的行为特征，这就是多态。</p>
+<blockquote>
+<p>多态可以提高程序的可扩展性，在设计程序时让代码更加简洁而优雅。</p>
+<p>重载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">&gt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">Driver</span> &#123;<br>   <span class="hljs-keyword">void</span> <span class="hljs-title function_">drive</span><span class="hljs-params">(Car car)</span> &#123; ... &#125;<br>   <span class="hljs-keyword">void</span> <span class="hljs-title function_">drive</span><span class="hljs-params">(Bus bus)</span> &#123; ... &#125;<br>   <span class="hljs-keyword">void</span> <span class="hljs-title function_">drive</span><span class="hljs-params">(Truck truck)</span> &#123; ... &#125;<br>&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>多态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">&gt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">Driver</span> &#123;<br>   <span class="hljs-keyword">void</span> <span class="hljs-title function_">drive</span><span class="hljs-params">(Vehicle vehicle)</span> &#123; ... &#125;<br>&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>采用多态的方式来设计上述程序，就会变得简洁很多。我们可以为所有的交通工具定义一个父类Vehicle，然后按照如下的方式设计drive方法。调用时，我们可以传入Vehicle类型的实例，也可以传入任意的Vehicle子类型的实例，对于调用者来说一样的方便，但对于开发者来说，代码却变得十分的简洁了。</p>
+</blockquote>
+<h3 id="Java中的多态是怎么实现的？"><a href="#Java中的多态是怎么实现的？" class="headerlink" title="Java中的多态是怎么实现的？"></a>Java中的多态是怎么实现的？</h3><p>多态的实现离不开继承，在设计程序时，我们可以将参数的类型定义为父类型。在调用程序时，则可以根据实际情况，传入该父类型的某个子类型的实例，这样就实现了多态。对于父类型，可以有三种形式，即普通的类、抽象类、接口。对于子类型，则要根据它自身的特征，重写父类的某些方法，或实现抽象类&#x2F;接口的某些抽象方法。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">#八股文</a>
+      
+        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java基础知识点</div>
+      <div>http://example.com/2022/07/21/java相关/Java基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>madao33</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 21, 2022</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>Licensed under</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/21/leetcode%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/leetcode%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/" title="leetcode初级算法刷题记录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">leetcode初级算法刷题记录</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/21/java%E7%9B%B8%E5%85%B3/Java%E8%BF%9B%E9%98%B6/" title="Java进阶知识点">
+                        <span class="hidden-mobile">Java进阶知识点</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
