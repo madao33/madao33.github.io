@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>科大讯飞2023届秋招研发类笔试试卷A(二)</title>
+    <link href="/2022/08/06/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E2023%E5%B1%8A%E7%A7%8B%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%E7%AC%94%E8%AF%95%E8%AF%95%E5%8D%B7A(%E4%BA%8C)/"/>
+    <url>/2022/08/06/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E2023%E5%B1%8A%E7%A7%8B%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%E7%AC%94%E8%AF%95%E8%AF%95%E5%8D%B7A(%E4%BA%8C)/</url>
+    
+    <content type="html"><![CDATA[<p>做科大讯飞的时候，我真是脑子瓦特了，点到第三题的时候，提交运行，结果把编程题子卷全部提交了，前面两道题还没看，敲，虽然很是无能狂怒，不过还是好好看看这些题吧，这些题是我线下思考了一下写的，没有线上测试过，不能保证AC，有发现问题的同学请提出宝贵的意见:blush:</p><span id="more"></span><h1 id="编程题1"><a href="#编程题1" class="headerlink" title="编程题1"></a>编程题1</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806193011145.png" alt="image-20220806193011145"></p><p>直接暴力循环判断吧</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">calcE</span><span class="hljs-params">(String str)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, temp=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">char</span>[] strs = str.toCharArray();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; strs.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (strs[i]==<span class="hljs-string">&#x27;e&#x27;</span> || strs[i] == <span class="hljs-string">&#x27;E&#x27;</span>)<br>                temp = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span> (strs[i] = <span class="hljs-string">&#x27; &#x27;</span> &amp;&amp; temp == <span class="hljs-number">1</span>) &#123;<br>                temp = <span class="hljs-number">0</span>;<br>                res++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>不保证AC</p><h1 id="编程题2"><a href="#编程题2" class="headerlink" title="编程题2"></a>编程题2</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806193117999.png" alt="image-20220806193117999"></p><p>将四边形分为两个三角形，然后计算两个三角形面积之和，三角形面积计算通过海伦公式</p><p>海伦公式，假设三角形边长分别是a，b，c，则有<br>$$<br>s &#x3D; \frac{a+b+c}{2} \<br>S_\Delta &#x3D; \sqrt{s(s-a)(s-b)(s-c)}<br>$$<br>最后将<code>double</code>转换为<code>int</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">calcArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] point1, <span class="hljs-type">int</span>[] point2, <span class="hljs-type">int</span>[] point3, <span class="hljs-type">int</span>[] point4)</span> &#123;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span>  calcTrangle(point1, point2, point3) + calcTrangle(point2, point3, point4);<br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>)Math.ceil(temp);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calcTrangle</span><span class="hljs-params">(<span class="hljs-type">int</span>[] point1, <span class="hljs-type">int</span>[] point2, <span class="hljs-type">int</span>[] point3)</span> &#123;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> calcDistance(point1, point2);<br>        <span class="hljs-type">double</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> calcDistance(point2, point3);<br>        <span class="hljs-type">double</span> c= calcDistance(point1, point3);<br>        <span class="hljs-type">double</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> (a+b+c)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">return</span> Math.sqrt(s*(s-a) * (s-b) * (s-c));<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calcDistance</span><span class="hljs-params">(<span class="hljs-type">int</span>[] point1, <span class="hljs-type">int</span>[] point2)</span> &#123;<br>        <span class="hljs-keyword">return</span> Math.sqrt((point1[<span class="hljs-number">0</span>] - point2[<span class="hljs-number">0</span>]) * (point1[<span class="hljs-number">0</span>] - point2[<span class="hljs-number">0</span>]) + (point1[<span class="hljs-number">1</span>] - point2[<span class="hljs-number">1</span>]) * (point1[<span class="hljs-number">1</span>] - point2[<span class="hljs-number">1</span>]));<br>    &#125;<br></code></pre></td></tr></table></figure><p>不保证AC</p><h1 id="编程题3-x3D-x3D-宕机-x3D-x3D"><a href="#编程题3-x3D-x3D-宕机-x3D-x3D" class="headerlink" title="编程题3&#x3D;&#x3D;宕机&#x3D;&#x3D;"></a>编程题3&#x3D;&#x3D;宕机&#x3D;&#x3D;</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806193423392.png" alt="image-20220806193423392"></p><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806193434327.png" alt="image-20220806193434327"></p><p>我也宕机了</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔试</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>笔试</tag>
+      
+      <tag>offer</tag>
+      
+      <tag>后端开发</tag>
+      
+      <tag>美团</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>leetcode每日一题-1408数组中的字符串匹配</title>
     <link href="/2022/08/06/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1408.%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
     <url>/2022/08/06/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1408.%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</url>
