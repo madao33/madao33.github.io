@@ -37,7 +37,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1408数组中的字符串匹配</title>
+    <title>1408数组中的字符串匹配</title>
     <link href="/2022/08/06/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1408.%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
     <url>/2022/08/06/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1408.%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</url>
     
@@ -103,7 +103,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-623在二叉树中增加一行</title>
+    <title>623在二叉树中增加一行</title>
     <link href="/2022/08/05/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/623.%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E8%A1%8C/"/>
     <url>/2022/08/05/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/623.%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E8%A1%8C/</url>
     
@@ -142,7 +142,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1403非递增顺序的最小至序列</title>
+    <title>1403非递增顺序的最小至序列</title>
     <link href="/2022/08/04/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1403.%E9%9D%9E%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E5%BA%8F%E5%88%97/"/>
     <url>/2022/08/04/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1403.%E9%9D%9E%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E5%BA%8F%E5%88%97/</url>
     
@@ -175,7 +175,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-899有序队列</title>
+    <title>899有序队列</title>
     <link href="/2022/08/04/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/899.%E6%9C%89%E5%BA%8F%E9%98%9F%E5%88%97/"/>
     <url>/2022/08/04/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/899.%E6%9C%89%E5%BA%8F%E9%98%9F%E5%88%97/</url>
     
@@ -276,7 +276,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-622设计循环队列</title>
+    <title>622设计循环队列</title>
     <link href="/2022/08/02/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/633.%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"/>
     <url>/2022/08/02/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/633.%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/</url>
     
@@ -313,7 +313,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1374生成每种字符串都是奇数个的字符串</title>
+    <title>1374生成每种字符串都是奇数个的字符串</title>
     <link href="/2022/08/01/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1374.%E7%94%9F%E6%88%90%E6%AF%8F%E7%A7%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%BD%E6%98%AF%E5%A5%87%E6%95%B0%E4%B8%AA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <url>/2022/08/01/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1374.%E7%94%9F%E6%88%90%E6%AF%8F%E7%A7%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%BD%E6%98%AF%E5%A5%87%E6%95%B0%E4%B8%AA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     
@@ -342,7 +342,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1161.最大层内元素和</title>
+    <title>1161.最大层内元素和</title>
     <link href="/2022/07/31/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1161.%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/"/>
     <url>/2022/07/31/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1161.%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/</url>
     
@@ -375,7 +375,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-952按公因数计算最大组件大小</title>
+    <title>952按公因数计算最大组件大小</title>
     <link href="/2022/07/30/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/952.%E6%8C%89%E5%85%AC%E5%9B%A0%E6%95%B0%E8%AE%A1%E7%AE%97%E6%9C%80%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/"/>
     <url>/2022/07/30/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/952.%E6%8C%89%E5%85%AC%E5%9B%A0%E6%95%B0%E8%AE%A1%E7%AE%97%E6%9C%80%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%A4%A7%E5%B0%8F/</url>
     
@@ -410,7 +410,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-593.有效的正方形</title>
+    <title>593.有效的正方形</title>
     <link href="/2022/07/29/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/593.%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/"/>
     <url>/2022/07/29/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/593.%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/</url>
     
@@ -474,7 +474,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1331数组序号转换</title>
+    <title>1331数组序号转换</title>
     <link href="/2022/07/28/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1331.%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/"/>
     <url>/2022/07/28/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1331.%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/</url>
     
@@ -544,7 +544,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-592.分数相减运算</title>
+    <title>592.分数相减运算</title>
     <link href="/2022/07/27/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/592.%E5%88%86%E6%95%B0%E7%9B%B8%E5%87%8F%E8%BF%90%E7%AE%97/"/>
     <url>/2022/07/27/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/592.%E5%88%86%E6%95%B0%E7%9B%B8%E5%87%8F%E8%BF%90%E7%AE%97/</url>
     
@@ -581,7 +581,38 @@
   
   
   <entry>
-    <title>leetcode每日一题-1206设计跳表</title>
+    <title>636.函数的独占时间</title>
+    <link href="/2022/07/27/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/636.%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/"/>
+    <url>/2022/07/27/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/636.%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="636-函数的独占时间"><a href="#636-函数的独占时间" class="headerlink" title="636.函数的独占时间"></a><a href="https://leetcode.cn/problems/exclusive-time-of-functions/">636.函数的独占时间</a></h1><p>难度中等203</p><p>有一个 <strong>单线程</strong> CPU 正在运行一个含有 <code>n</code> 道函数的程序。每道函数都有一个位于 <code>0</code> 和 <code>n-1</code> 之间的唯一标识符。</p><p>函数调用 <strong>存储在一个 <a href="https://baike.baidu.com/item/%E8%B0%83%E7%94%A8%E6%A0%88/22718047?fr=aladdin">调用栈</a> 上</strong> ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 <strong>当前正在执行的函数</strong> 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。</p><p>给你一个由日志组成的列表 <code>logs</code> ，其中 <code>logs[i]</code> 表示第 <code>i</code> 条日志消息，该消息是一个按 <code>&quot;&#123;function_id&#125;:&#123;&quot;start&quot; | &quot;end&quot;&#125;:&#123;timestamp&#125;&quot;</code> 进行格式化的字符串。例如，<code>&quot;0:start:3&quot;</code> 意味着标识符为 <code>0</code> 的函数调用在时间戳 <code>3</code> 的 <strong>起始开始执行</strong> ；而 <code>&quot;1:end:2&quot;</code> 意味着标识符为 <code>1</code> 的函数调用在时间戳 <code>2</code> 的 <strong>末尾结束执行</strong>。注意，函数可以 <strong>调用多次，可能存在递归调用</strong> 。</p><p>函数的 <strong>独占时间</strong> 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 <code>2</code> 单位时间，另一次调用执行 <code>1</code> 单位时间，那么该函数的 <strong>独占时间</strong> 为 <code>2 + 1 = 3</code> 。</p><p>以数组形式返回每个函数的 <strong>独占时间</strong> ，其中第 <code>i</code> 个下标对应的值表示标识符 <code>i</code> 的函数的独占时间。</p><p><strong>示例 1：</strong></p><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/diag1b.png" alt="img"></p><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：n = 2, logs = [&quot;0:start:0&quot;,&quot;1:start:2&quot;,&quot;1:end:5&quot;,&quot;0:end:6&quot;]<br>输出：[3,4]<br>解释：<br>函数<span class="hljs-number"> 0 </span>在时间戳<span class="hljs-number"> 0 </span>的起始开始执行，执行<span class="hljs-number"> 2 </span>个单位时间，于时间戳<span class="hljs-number"> 1 </span>的末尾结束执行。 <br>函数<span class="hljs-number"> 1 </span>在时间戳<span class="hljs-number"> 2 </span>的起始开始执行，执行<span class="hljs-number"> 4 </span>个单位时间，于时间戳<span class="hljs-number"> 5 </span>的末尾结束执行。 <br>函数<span class="hljs-number"> 0 </span>在时间戳<span class="hljs-number"> 6 </span>的开始恢复执行，执行<span class="hljs-number"> 1 </span>个单位时间。 <br>所以函数<span class="hljs-number"> 0 </span>总共执行<span class="hljs-number"> 2 </span>+<span class="hljs-number"> 1 </span>=<span class="hljs-number"> 3 </span>个单位时间，函数<span class="hljs-number"> 1 </span>总共执行<span class="hljs-number"> 4 </span>个单位时间。 <br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：n = 1, logs = [&quot;0:start:0&quot;,&quot;0:start:2&quot;,&quot;0:end:5&quot;,&quot;0:start:6&quot;,&quot;0:end:6&quot;,&quot;0:end:7&quot;]<br>输出：[8]<br>解释：<br>函数<span class="hljs-number"> 0 </span>在时间戳<span class="hljs-number"> 0 </span>的起始开始执行，执行<span class="hljs-number"> 2 </span>个单位时间，并递归调用它自身。<br>函数 0（递归调用）在时间戳<span class="hljs-number"> 2 </span>的起始开始执行，执行<span class="hljs-number"> 4 </span>个单位时间。<br>函数 0（初始调用）恢复执行，并立刻再次调用它自身。<br>函数 0（第二次递归调用）在时间戳<span class="hljs-number"> 6 </span>的起始开始执行，执行<span class="hljs-number"> 1 </span>个单位时间。<br>函数 0（初始调用）在时间戳<span class="hljs-number"> 7 </span>的起始恢复执行，执行<span class="hljs-number"> 1 </span>个单位时间。<br>所以函数<span class="hljs-number"> 0 </span>总共执行<span class="hljs-number"> 2 </span>+<span class="hljs-number"> 4 </span>+<span class="hljs-number"> 1 </span>+<span class="hljs-number"> 1 </span>=<span class="hljs-number"> 8 </span>个单位时间。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：n = 2, logs = [&quot;0:start:0&quot;,&quot;0:start:2&quot;,&quot;0:end:5&quot;,&quot;1:start:6&quot;,&quot;1:end:6&quot;,&quot;0:end:7&quot;]<br>输出：[7,1]<br>解释：<br>函数<span class="hljs-number"> 0 </span>在时间戳<span class="hljs-number"> 0 </span>的起始开始执行，执行<span class="hljs-number"> 2 </span>个单位时间，并递归调用它自身。<br>函数 0（递归调用）在时间戳<span class="hljs-number"> 2 </span>的起始开始执行，执行<span class="hljs-number"> 4 </span>个单位时间。<br>函数 0（初始调用）恢复执行，并立刻调用函数<span class="hljs-number"> 1 </span>。<br>函数 1在时间戳<span class="hljs-number"> 6 </span>的起始开始执行，执行<span class="hljs-number"> 1 </span>个单位时间，于时间戳<span class="hljs-number"> 6 </span>的末尾结束执行。<br>函数 0（初始调用）在时间戳<span class="hljs-number"> 7 </span>的起始恢复执行，执行<span class="hljs-number"> 1 </span>个单位时间，于时间戳<span class="hljs-number"> 7 </span>的末尾结束执行。<br>所以函数<span class="hljs-number"> 0 </span>总共执行<span class="hljs-number"> 2 </span>+<span class="hljs-number"> 4 </span>+<span class="hljs-number"> 1 </span>=<span class="hljs-number"> 7 </span>个单位时间，函数<span class="hljs-number"> 1 </span>总共执行<span class="hljs-number"> 1 </span>个单位时间。 <br></code></pre></td></tr></table></figure><p><strong>示例 4：</strong></p><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：n = <span class="hljs-number">2</span>, logs = [<span class="hljs-string">&quot;0:start:0&quot;</span>,<span class="hljs-string">&quot;0:start:2&quot;</span>,<span class="hljs-string">&quot;0:end:5&quot;</span>,<span class="hljs-string">&quot;1:start:7&quot;</span>,<span class="hljs-string">&quot;1:end:7&quot;</span>,<span class="hljs-string">&quot;0:end:8&quot;</span>]<br>输出：[<span class="hljs-number">8</span>,<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><p><strong>示例 5：</strong></p><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：n = <span class="hljs-number">1</span>, logs = [<span class="hljs-string">&quot;0:start:0&quot;</span>,<span class="hljs-string">&quot;0:end:0&quot;</span>]<br>输出：[<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= n &lt;= 100</code></li><li><code>1 &lt;= logs.length &lt;= 500</code></li><li><code>0 &lt;= function_id &lt; n</code></li><li><code>0 &lt;= timestamp &lt;= 109</code></li><li>两个开始事件不会在同一时间戳发生</li><li>两个结束事件不会在同一时间戳发生</li><li>每道函数都有一个对应 <code>&quot;start&quot;</code> 日志的 <code>&quot;end&quot;</code> 日志</li></ul><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>看起来有点像是JVM里面的虚拟栈，每次函数调用的时候都进行压栈，运行结束之后弹栈</p><p>可以设置一个栈，其中存放二维数组，数组第一个数字表示函数标识号，第二个字符表示函数运行开始的时间戳，方便计算函数运行时间</p><ul><li>当新来一个运行的函数时，查看当前栈是否为空，若为空，直接压栈，若不为空，计算之前还在运行函数的运行时间，再压栈</li><li>收到函数运行结束的日志，弹出该函数，并累加运行时间，如果栈中不为空，则开始运行栈顶的函数，即将其时间戳置为当前时间戳+1</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] exclusiveTime(<span class="hljs-type">int</span> n, List&lt;String&gt; logs) &#123;<br>        <span class="hljs-type">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        Stack&lt;<span class="hljs-type">int</span>[]&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;&gt;();<br><br>        <span class="hljs-keyword">for</span> (String log : logs) &#123;<br>            String[] info = log.split(<span class="hljs-string">&quot;:&quot;</span>);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">fid</span> <span class="hljs-operator">=</span> Integer.parseInt(info[<span class="hljs-number">0</span>]), time = Integer.parseInt(info[<span class="hljs-number">2</span>]);<br>            <span class="hljs-keyword">if</span> (info[<span class="hljs-number">1</span>].equals(<span class="hljs-string">&quot;start&quot;</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (!stack.isEmpty()) &#123;<br>                    <span class="hljs-type">int</span>[] top = stack.peek();<br>                    ans[top[<span class="hljs-number">0</span>]] += time - top[<span class="hljs-number">1</span>];<br>                &#125;<br>                <span class="hljs-type">int</span>[] temp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;fid, time&#125;;<br>                stack.push(temp);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">int</span>[] temp = stack.pop();<br>                ans[temp[<span class="hljs-number">0</span>]] += time - temp[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">if</span> (!stack.isEmpty()) &#123;<br>                    <span class="hljs-type">int</span>[] top = stack.pop();<br>                    top[<span class="hljs-number">1</span>] = time + <span class="hljs-number">1</span>;<br>                    stack.push(top);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：$O(n)$</li><li>空间复杂度：$O(n)$</li></ul><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220807144828270.png" alt="image-20220807144828270"></p><p>运行时间有点拉胯:laughing:</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>leetcode</tag>
+      
+      <tag>数组</tag>
+      
+      <tag>栈</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>1206设计跳表</title>
     <link href="/2022/07/26/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1206.%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/"/>
     <url>/2022/07/26/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1206.%E8%AE%BE%E8%AE%A1%E8%B7%B3%E8%A1%A8/</url>
     
@@ -614,7 +645,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-919完全二叉树插入器</title>
+    <title>919完全二叉树插入器</title>
     <link href="/2022/07/25/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/919.%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/"/>
     <url>/2022/07/25/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/919.%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/</url>
     
@@ -647,7 +678,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1184公交站间的距离</title>
+    <title>1184公交站间的距离</title>
     <link href="/2022/07/24/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1184.%E5%85%AC%E4%BA%A4%E7%AB%99%E9%97%B4%E7%9A%84%E8%B7%9D%E7%A6%BB/"/>
     <url>/2022/07/24/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1184.%E5%85%AC%E4%BA%A4%E7%AB%99%E9%97%B4%E7%9A%84%E8%B7%9D%E7%A6%BB/</url>
     
@@ -678,7 +709,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-剑指offerII115重建序列</title>
+    <title>剑指offerII115重建序列</title>
     <link href="/2022/07/23/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%89%91%E6%8C%87OfferII115.%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97/"/>
     <url>/2022/07/23/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%89%91%E6%8C%87OfferII115.%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97/</url>
     
@@ -713,7 +744,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-757设置交集大小至少为2</title>
+    <title>757设置交集大小至少为2</title>
     <link href="/2022/07/22/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/757.%E8%AE%BE%E7%BD%AE%E4%BA%A4%E9%9B%86%E5%A4%A7%E5%B0%8F%E8%87%B3%E5%B0%91%E4%B8%BA2/"/>
     <url>/2022/07/22/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/757.%E8%AE%BE%E7%BD%AE%E4%BA%A4%E9%9B%86%E5%A4%A7%E5%B0%8F%E8%87%B3%E5%B0%91%E4%B8%BA2/</url>
     
@@ -748,7 +779,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-814二叉树剪枝</title>
+    <title>814二叉树剪枝</title>
     <link href="/2022/07/21/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/814.%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%AA%E6%9E%9D/"/>
     <url>/2022/07/21/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/814.%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%AA%E6%9E%9D/</url>
     
@@ -870,7 +901,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-1260二维网格迁移</title>
+    <title>1260二维网格迁移</title>
     <link href="/2022/07/20/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1260.%E4%BA%8C%E7%BB%B4%E7%BD%91%E6%A0%BC%E8%BF%81%E7%A7%BB/"/>
     <url>/2022/07/20/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1260.%E4%BA%8C%E7%BB%B4%E7%BD%91%E6%A0%BC%E8%BF%81%E7%A7%BB/</url>
     
@@ -905,7 +936,7 @@
   
   
   <entry>
-    <title>leetcode每日一题-821字符的最短距离</title>
+    <title>821字符的最短距离</title>
     <link href="/2022/07/19/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/821.%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/"/>
     <url>/2022/07/19/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/821.%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/</url>
     
