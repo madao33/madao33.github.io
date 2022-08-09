@@ -25,7 +25,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
 <meta property="article:published_time" content="2022-08-06T05:11:36.000Z">
-<meta property="article:modified_time" content="2022-08-06T14:01:23.280Z">
+<meta property="article:modified_time" content="2022-08-09T09:25:22.601Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="笔试">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.1k 字
+          5.6k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          43 分钟
+          47 分钟
         
       </span>
     
@@ -295,7 +295,7 @@
                 
                 <p>记录一下美团笔试的编程题，两个小时五道编程题，时间有点赶，思路经常转不过弯来，还得好好努力努力</p>
 <span id="more"></span>
-<h1 id="编程题1-小美的礼盒包装-x3D-x3D-AC-x3D-x3D"><a href="#编程题1-小美的礼盒包装-x3D-x3D-AC-x3D-x3D" class="headerlink" title="编程题1-小美的礼盒包装&#x3D;&#x3D;AC?&#x3D;&#x3D;"></a>编程题1-小美的礼盒包装&#x3D;&#x3D;AC?&#x3D;&#x3D;</h1><p><strong>题目描述</strong></p>
+<h1 id="美团2023届秋招笔试记录"><a href="#美团2023届秋招笔试记录" class="headerlink" title="美团2023届秋招笔试记录"></a>美团2023届秋招笔试记录</h1><h1 id="编程题1-小美的礼盒包装-x3D-x3D-AC-x3D-x3D"><a href="#编程题1-小美的礼盒包装-x3D-x3D-AC-x3D-x3D" class="headerlink" title="编程题1-小美的礼盒包装&#x3D;&#x3D;AC?&#x3D;&#x3D;"></a>编程题1-小美的礼盒包装&#x3D;&#x3D;AC?&#x3D;&#x3D;</h1><p><strong>题目描述</strong></p>
 <p>小美开的西点屋子举办一周年活动，她准备制作一批礼盒作为对消费者的回馈，每个礼盒中都有三枚西点屋的招牌点心。为了让消费者能品尝到两种点心，因此每个礼盒中都要包含至少一批A点心和一枚B点心，现在小美的西点屋内共有x枚A点心和y枚B点心，请问小美最多可以制作多少礼盒</p>
 <p><strong>输入描述</strong></p>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs excel">输入第一行包含一个正整数 <span class="hljs-built_in">T</span>, 表示数据组数 (<span class="hljs-number">1</span> &lt;= <span class="hljs-built_in">T</span> &lt;= <span class="hljs-number">10000</span>)<br>然后有<span class="hljs-built_in">T</span>行，每行包括两个整数 x 和 y, 空格隔开，表示有 x 枚 A 点心和 y 枚 B 点心 （<span class="hljs-number">1</span> &lt;= x, y &lt;= <span class="hljs-number">10</span>^<span class="hljs-number">9</span>)<br></code></pre></td></tr></table></figure>
@@ -309,8 +309,15 @@
 <p><strong>样例输出</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">43<br>9<br></code></pre></td></tr></table></figure>
 
-<p>多的种类和少的种类比较，如果大于少的种类的两倍，直接返回少的，否则返回两者和的三分之一</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">A</span> <span class="hljs-operator">=</span> scanner.nextInt(), B = scanner.nextInt();<br>            System.out.println(calcgift(A, B));<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">calcgift</span><span class="hljs-params">(<span class="hljs-type">int</span> A, <span class="hljs-type">int</span> B)</span> &#123;<br>        <span class="hljs-keyword">if</span> (A &gt; B) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span>  <span class="hljs-operator">=</span> A;<br>            A = B;<br>            B = temp;<br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (B &gt; <span class="hljs-number">2</span> * A) <span class="hljs-keyword">return</span> A;<br><br>        <span class="hljs-keyword">return</span> (A + B) / <span class="hljs-number">3</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对于这一道题，对于任意一个盒子，只能有两种放点心的方式：</p>
+<ul>
+<li>A点心放一个，B点心放两个</li>
+<li>A点心放两个，B点心放一个</li>
+</ul>
+<p>对于以上两种情况分别定义为 $\alpha, \beta$，则可以得到以下公式<br>$$<br>2 \alpha + \beta \leq x \<br>\alpha + 2 \beta \leq y<br>$$<br>将上面两个式子相加，得到<br>$$<br>3(\alpha+\beta)\leq x+y<br>\rightarrow \alpha + \beta \leq \frac{x+y}{3}<br>$$</p>
+<p>这是一个限制条件，另外如果是A点心太少，只能尽可能的每个盒子只选一枚点心来装盒，即 $\alpha&#x3D;0$，那么根据不等式方程组就有<br>$$\beta\leq x$$<br>反之，也有B点心太少，$\beta&#x3D;0$，也有<br>$$\alpha \leq y$$</p>
+<p>所以综合得到判断公式是<br>$$<br>\min(x, y, \frac{x+y}{3})<br>$$</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">A</span> <span class="hljs-operator">=</span> scanner.nextInt(), B = scanner.nextInt();<br>            System.out.println(calcgift(A, B));<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">calcgift</span><span class="hljs-params">(<span class="hljs-type">int</span> A, <span class="hljs-type">int</span> B)</span> &#123;<br>        <span class="hljs-keyword">return</span> Math.min(A, B, (A+B)/<span class="hljs-number">3</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806102300911.png" srcset="/img/loading.gif" lazyload alt="image-20220806102300911"></p>
 <p>提交前代码没有完全AC，不保证修改后的代码完全AC</p>
@@ -351,6 +358,11 @@
 
 <p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220806105111868.png" srcset="/img/loading.gif" lazyload alt="image-20220806105111868"></p>
 <h1 id="专项编程题-x3D-x3D-AC-x3D-x3D"><a href="#专项编程题-x3D-x3D-AC-x3D-x3D" class="headerlink" title="专项编程题&#x3D;&#x3D;AC&#x3D;&#x3D;"></a>专项编程题&#x3D;&#x3D;AC&#x3D;&#x3D;</h1><p>初始字符串为MetTuan，每次对字符串做 str &#x3D; str + str.reverse() + “wow”的操作，无限循环。后面给你一个k，问你位置k的字符为什么。</p>
+<p>这一道题就是找规律：</p>
+<p>第一次循环后字符串为：s+s’+“wow”</p>
+<p>第二次循环后字符串为：s+s’+“wow”+“wow”+s+s’+“wow”</p>
+<p>第三次循环后字符串为：s+s’+“wow”+“wow”+s+s’+“wow”+“wow”+s+s’+“wow”+“wow”+s+s’+“wow”</p>
+<p>后续的无限循环字符串基本上都是s+s’+“wow”+“wow”重复出现，所以直接输入数字对这个字符串长度取余，然后取出对应字符输出即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Q5</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">T</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;MeiTuan&quot;</span>;<br>        str = str + (<span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(str).reverse().toString())+<span class="hljs-string">&quot;wowwow&quot;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; T; i++) &#123;<br>            <span class="hljs-type">long</span> <span class="hljs-variable">pos</span> <span class="hljs-operator">=</span> sc.nextLong()-<span class="hljs-number">1</span>;<br>            pos = pos % str.length();<br>            System.out.println(str.charAt((<span class="hljs-type">int</span>)pos));<br>       &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 
