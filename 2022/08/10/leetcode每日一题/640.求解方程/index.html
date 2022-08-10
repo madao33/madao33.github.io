@@ -16,22 +16,22 @@
   <meta name="author" content="madao33">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1413.逐步求和得到正数的最小值难度简单76收藏分享切换为英文接收动态反馈 给你一个整数数组 nums 。你可以选定任意的 正数 startValue 作为初始值。 你需要从左到右遍历 nums 数组，并将 startValue 依次累加上 nums 数组中的值。 请你在确保累加和始终大于等于 1 的前提下，选出一个最小的 正数 作为 startValue 。 示例 1： 12345678910">
+    <meta name="description" content="640.求解方程难度中等124收藏分享切换为英文接收动态反馈 求解一个给定的方程，将x以字符串 &quot;x&#x3D;#value&quot; 的形式返回。该方程仅包含 &#39;+&#39; ， &#39;-&#39; 操作，变量 x 和其对应系数。 如果方程没有解，请返回 &quot;No solution&quot; 。如果方程有无限解，则返回 “Infinite solutions” 。 题目保">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1413逐步求和得到正数的最小值">
-<meta property="og:url" content="http://example.com/2022/08/09/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1413.%E9%80%90%E6%AD%A5%E6%B1%82%E5%92%8C%E5%BE%97%E5%88%B0%E6%AD%A3%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/index.html">
+<meta property="og:title" content="640.求解方程">
+<meta property="og:url" content="http://example.com/2022/08/10/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/640.%E6%B1%82%E8%A7%A3%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1413.逐步求和得到正数的最小值难度简单76收藏分享切换为英文接收动态反馈 给你一个整数数组 nums 。你可以选定任意的 正数 startValue 作为初始值。 你需要从左到右遍历 nums 数组，并将 startValue 依次累加上 nums 数组中的值。 请你在确保累加和始终大于等于 1 的前提下，选出一个最小的 正数 作为 startValue 。 示例 1： 12345678910">
+<meta property="og:description" content="640.求解方程难度中等124收藏分享切换为英文接收动态反馈 求解一个给定的方程，将x以字符串 &quot;x&#x3D;#value&quot; 的形式返回。该方程仅包含 &#39;+&#39; ， &#39;-&#39; 操作，变量 x 和其对应系数。 如果方程没有解，请返回 &quot;No solution&quot; 。如果方程有无限解，则返回 “Infinite solutions” 。 题目保">
 <meta property="og:locale">
 <meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-08-09T13:15:19.000Z">
-<meta property="article:modified_time" content="2022-08-09T13:16:47.360Z">
+<meta property="article:published_time" content="2022-08-10T03:12:12.000Z">
+<meta property="article:modified_time" content="2022-08-10T03:12:33.686Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="数据结构与算法">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
@@ -39,7 +39,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>1413逐步求和得到正数的最小值 - Hexo</title>
+  <title>640.求解方程 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组前缀和计算"></span>
+            <span id="subtitle" data-typed-text="字符串等式处理"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-09 21:15" pubdate>
-          August 9, 2022 pm
+        <time datetime="2022-08-10 11:12" pubdate>
+          August 10, 2022 am
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          776 字
+          1.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          7 分钟
+          16 分钟
         
       </span>
     
@@ -288,41 +288,43 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数组前缀和计算</h1>
+            <h1 style="display: none">字符串等式处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1413-逐步求和得到正数的最小值"><a href="#1413-逐步求和得到正数的最小值" class="headerlink" title="1413.逐步求和得到正数的最小值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-value-to-get-positive-step-by-step-sum/">1413.逐步求和得到正数的最小值</a></h1><p>难度简单76收藏分享切换为英文接收动态反馈</p>
-<p>给你一个整数数组 <code>nums</code> 。你可以选定任意的 <strong>正数</strong> startValue 作为初始值。</p>
-<p>你需要从左到右遍历 <code>nums</code> 数组，并将 startValue 依次累加上 <code>nums</code> 数组中的值。</p>
-<p>请你在确保累加和始终大于等于 1 的前提下，选出一个最小的 <strong>正数</strong> 作为 startValue 。</p>
+                <h1 id="640-求解方程"><a href="#640-求解方程" class="headerlink" title="640.求解方程"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/solve-the-equation/">640.求解方程</a></h1><p>难度中等124收藏分享切换为英文接收动态反馈</p>
+<p>求解一个给定的方程，将<code>x</code>以字符串 <code>&quot;x=#value&quot;</code> 的形式返回。该方程仅包含 <code>&#39;+&#39;</code> ， <code>&#39;-&#39;</code> 操作，变量 <code>x</code> 和其对应系数。</p>
+<p>如果方程没有解，请返回 <code>&quot;No solution&quot;</code> 。如果方程有无限解，则返回 <code>“Infinite solutions”</code> 。</p>
+<p>题目保证，如果方程中只有一个解，则 ‘x’ 的值是一个整数。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs subunit">输入：nums = [<span class="hljs-string">-3</span>,2,<span class="hljs-string">-3</span>,4,2]<br>输出：5<br>解释：如果你选择 startValue = 4，在第三次累加时，和小于 1 。<br>                累加求和<br>                startValue = 4 | startValue = 5 | nums<br>                  (4 <span class="hljs-string">-3</span> ) = 1  | (5 <span class="hljs-string">-3</span> ) = 2    |  <span class="hljs-string">-3</span><br>                  (1 <span class="hljs-string">+2</span> ) = 3  | (2 <span class="hljs-string">+2</span> ) = 4    |   2<br>                  (3 <span class="hljs-string">-3</span> ) = 0  | (4 <span class="hljs-string">-3</span> ) = 1    |  <span class="hljs-string">-3</span><br>                  (0 <span class="hljs-string">+4</span> ) = 4  | (1 <span class="hljs-string">+4</span> ) = 5    |   4<br>                  (4 <span class="hljs-string">+2</span> ) = 6  | (5 <span class="hljs-string">+2</span> ) = 7    |   2<br></code></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;x+5-3+x=6+x-2&quot;</span><br>输出: <span class="hljs-string">&quot;x=2&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 2：</strong></p>
-<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [1,2]</span><br><span class="hljs-string">输出：1</span><br><span class="hljs-string">解释：最小的 startValue 需要是正数。</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;x=x&quot;</span><br>输出: <span class="hljs-string">&quot;Infinite solutions&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 3：</strong></p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs subunit">输入：nums = [1,<span class="hljs-string">-2</span>,<span class="hljs-string">-3</span>]<br>输出：5<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3:</strong></p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;2x=x&quot;</span><br>输出: <span class="hljs-string">&quot;x=0&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
+<p><strong>提示:</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 100</code></li>
-<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
+<li><code>3 &lt;= equation.length &lt;= 1000</code></li>
+<li><code>equation</code> 只有一个 <code>&#39;=&#39;</code>.</li>
+<li><code>equation</code> 方程由整数组成，其绝对值在 <code>[0, 100]</code> 范围内，不含前导零和变量 <code>&#39;x&#39;</code> 。</li>
 </ul>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>就直接按照题目模拟，找到累加过程中的最小值即可，对于这个最小值，需要分两种情况判断：</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>思路是将方程通过<code>=</code>划分为前项和后项，然后分别对前项和后项处理，为了统一的划分各个项，可以首先替换<code>-</code>为<code>+-</code>，然后根据<code>+</code>划分，之后遍历处理所有的项，分别得到系数值和其他值，然后按照等式的计算公式得到系数<code>coef</code>和值<code>val</code>，方程解的判断：</p>
 <ul>
-<li>如果最小值小于0，返回其相反数并加1</li>
-<li>如果最小值大于0，直接返回1</li>
+<li><code>coef=1 &amp;&amp; val==0</code> 也就是x可以任意取值，即可满足方程要求，所以是无限解</li>
+<li><code>coef==0&amp;&amp;val!=0</code> x取任意值也无法满足方程要求，没有解</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minStartValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> Integer.MAX_VALUE, sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>            sum += num;<br>            min = Math.min(min, sum);<br>        &#125;<br>        <span class="hljs-keyword">return</span> min &lt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span>-min : <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>其他情况直接输出<code>x=</code>+解的字符串即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">solveEquation</span><span class="hljs-params">(String equation)</span> &#123;<br>        String[] equations = equation.split(<span class="hljs-string">&quot;=&quot;</span>);<br>        <span class="hljs-type">int</span>[] res1 = getCoefVal(equations[<span class="hljs-number">0</span>]), res2= getCoefVal(equations[<span class="hljs-number">1</span>]);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">val</span> <span class="hljs-operator">=</span> res2[<span class="hljs-number">1</span>] - res1[<span class="hljs-number">1</span>], coef = res1[<span class="hljs-number">0</span>] - res2[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">if</span> (coef == <span class="hljs-number">0</span> &amp;&amp; val == <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Infinite solutions&quot;</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (coef == <span class="hljs-number">0</span> &amp;&amp; val != <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;No solution&quot;</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;x=&quot;</span> + String.valueOf(val/coef);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] getCoefVal(String equation) &#123;<br>        List&lt;Integer&gt; coef = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(), val = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> equation.replaceAll(<span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;+-&quot;</span>);<br>        String[] items = temp.split(<span class="hljs-string">&quot;\\+&quot;</span>);<br><br>        <span class="hljs-keyword">for</span> (String item:items) &#123;<br>            <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (item.contains(<span class="hljs-string">&quot;x&quot;</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">1</span>) &#123;<br>                    coef.add(<span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">2</span> &amp;&amp; item.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">&#x27;-&#x27;</span>) &#123;<br>                    coef.add(-<span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    coef.add(Integer.valueOf(item.substring(<span class="hljs-number">0</span>, item.length()-<span class="hljs-number">1</span>)));<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                val.add(Integer.parseInt(item));<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> co:coef)<br>            res[<span class="hljs-number">0</span>] += co;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v:val)<br>            res[<span class="hljs-number">1</span>] += v;<br><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(1)$</li>
+<li>空间复杂度：$O(n)$</li>
 </ul>
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220809173222176.png" srcset="/img/loading.gif" lazyload alt="image-20220809173222176"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810110642683.png" srcset="/img/loading.gif" lazyload alt="image-20220810110642683"></p>
 
                 
               </div>
@@ -360,11 +362,11 @@
       
         <a href="/tags/leetcode/">#leetcode</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">#数据结构与算法</a>
+        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
       
-        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
       
-        <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">#前缀和</a>
+        <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
       
     </div>
   
@@ -376,8 +378,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1413逐步求和得到正数的最小值</div>
-      <div>http://example.com/2022/08/09/leetcode每日一题/1413.逐步求和得到正数的最小值/</div>
+      <div>640.求解方程</div>
+      <div>http://example.com/2022/08/10/leetcode每日一题/640.求解方程/</div>
     </div>
     <div class="license-meta">
       
@@ -389,7 +391,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>August 9, 2022</div>
+          <div>August 10, 2022</div>
         </div>
       
       
@@ -419,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/10/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/640.%E6%B1%82%E8%A7%A3%E6%96%B9%E7%A8%8B/" title="640.求解方程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">640.求解方程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/08/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/761.%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BA%8F%E5%88%97/" title="761特殊的二进制序列">
-                        <span class="hidden-mobile">761特殊的二进制序列</span>
+                      <a href="/2022/08/09/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1413.%E9%80%90%E6%AD%A5%E6%B1%82%E5%92%8C%E5%BE%97%E5%88%B0%E6%AD%A3%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" title="1413逐步求和得到正数的最小值">
+                        <span class="hidden-mobile">1413逐步求和得到正数的最小值</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
