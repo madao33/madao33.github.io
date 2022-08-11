@@ -16,30 +16,30 @@
   <meta name="author" content="madao33">
   <meta name="keywords" content="">
   
-    <meta name="description" content="640.求解方程难度中等124收藏分享切换为英文接收动态反馈 求解一个给定的方程，将x以字符串 &quot;x&#x3D;#value&quot; 的形式返回。该方程仅包含 &#39;+&#39; ， &#39;-&#39; 操作，变量 x 和其对应系数。 如果方程没有解，请返回 &quot;No solution&quot; 。如果方程有无限解，则返回 “Infinite solutions” 。 题目保">
+    <meta name="description" content="Zoom 2023届校园招聘-Java方向0810  最开始想的建树，但是好像有点麻烦，直接用邻接矩阵存储结点关系，然后遍历，结果报堆溢出，想来可能是后面结点数太大了，创建邻接矩阵的时候就导致堆溢出，改为邻接表，用ArrayList来存储结点 遍历获取权重计算 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:type" content="article">
-<meta property="og:title" content="640.求解方程">
-<meta property="og:url" content="http://example.com/2022/08/10/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/640.%E6%B1%82%E8%A7%A3%E6%96%B9%E7%A8%8B/index.html">
+<meta property="og:title" content="Zoom 2023届校园招聘-Java方向0810">
+<meta property="og:url" content="http://example.com/2022/08/11/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/Zoom2023%E5%B1%8A%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98-Java%E6%96%B9%E5%90%910810/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="640.求解方程难度中等124收藏分享切换为英文接收动态反馈 求解一个给定的方程，将x以字符串 &quot;x&#x3D;#value&quot; 的形式返回。该方程仅包含 &#39;+&#39; ， &#39;-&#39; 操作，变量 x 和其对应系数。 如果方程没有解，请返回 &quot;No solution&quot; 。如果方程有无限解，则返回 “Infinite solutions” 。 题目保">
+<meta property="og:description" content="Zoom 2023届校园招聘-Java方向0810  最开始想的建树，但是好像有点麻烦，直接用邻接矩阵存储结点关系，然后遍历，结果报堆溢出，想来可能是后面结点数太大了，创建邻接矩阵的时候就导致堆溢出，改为邻接表，用ArrayList来存储结点 遍历获取权重计算 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale">
-<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-08-10T03:12:12.000Z">
-<meta property="article:modified_time" content="2022-08-10T03:12:33.686Z">
+<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
+<meta property="article:published_time" content="2022-08-11T04:57:23.000Z">
+<meta property="article:modified_time" content="2022-08-11T04:57:28.276Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="字符串">
-<meta property="article:tag" content="模拟">
-<meta property="article:tag" content="数学">
+<meta property="article:tag" content="笔试">
+<meta property="article:tag" content="offer">
+<meta property="article:tag" content="后端开发">
+<meta property="article:tag" content="Zoom">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
+<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>640.求解方程 - Hexo</title>
+  <title>Zoom 2023届校园招聘-Java方向0810 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,13 +210,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="字符串等式处理"></span>
+            <span id="subtitle" data-typed-text="Zoom笔试"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-10 11:12" pubdate>
-          August 10, 2022 am
+        <time datetime="2022-08-11 12:57" pubdate>
+          August 11, 2022 pm
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.4k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          16 分钟
+          12 分钟
         
       </span>
     
@@ -288,43 +288,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">字符串等式处理</h1>
+            <h1 style="display: none">Zoom笔试</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="640-求解方程"><a href="#640-求解方程" class="headerlink" title="640.求解方程"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/solve-the-equation/">640.求解方程</a></h1><p>难度中等124收藏分享切换为英文接收动态反馈</p>
-<p>求解一个给定的方程，将<code>x</code>以字符串 <code>&quot;x=#value&quot;</code> 的形式返回。该方程仅包含 <code>&#39;+&#39;</code> ， <code>&#39;-&#39;</code> 操作，变量 <code>x</code> 和其对应系数。</p>
-<p>如果方程没有解，请返回 <code>&quot;No solution&quot;</code> 。如果方程有无限解，则返回 <code>“Infinite solutions”</code> 。</p>
-<p>题目保证，如果方程中只有一个解，则 ‘x’ 的值是一个整数。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;x+5-3+x=6+x-2&quot;</span><br>输出: <span class="hljs-string">&quot;x=2&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="Zoom-2023届校园招聘-Java方向0810"><a href="#Zoom-2023届校园招聘-Java方向0810" class="headerlink" title="Zoom 2023届校园招聘-Java方向0810"></a>Zoom 2023届校园招聘-Java方向0810</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810192347753.png" srcset="/img/loading.gif" lazyload alt="image-20220810192347753"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810192402382.png" srcset="/img/loading.gif" lazyload alt="image-20220810192402382"></p>
+<p>最开始想的建树，但是好像有点麻烦，直接用邻接矩阵存储结点关系，然后遍历，结果报堆溢出，想来可能是后面结点数太大了，创建邻接矩阵的时候就导致堆溢出，改为邻接表，用ArrayList来存储结点</p>
+<p>遍历获取权重计算</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] weights;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] ans;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        scanner.nextLine();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">colors</span> <span class="hljs-operator">=</span> scanner.nextLine();<br>        weights = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)<br>            weights[i] = colors.charAt(i)==<span class="hljs-string">&#x27;R&#x27;</span> ? <span class="hljs-number">1</span> : -<span class="hljs-number">1</span>;<br><br>        List&lt;ArrayList&lt;Integer&gt;&gt; graph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)<br>            graph.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;());<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n-<span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> scanner.nextInt(), end = scanner.nextInt();<br>            graph.get(start-<span class="hljs-number">1</span>).add(end-<span class="hljs-number">1</span>);<br>            graph.get(end-<span class="hljs-number">1</span>).add(start-<span class="hljs-number">1</span>);<br>        &#125;<br><br>        ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        ans[<span class="hljs-number">0</span>] = weights[<span class="hljs-number">0</span>];<br>        <span class="hljs-type">boolean</span>[] visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n];<br>        Queue&lt;Integer&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        visited[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>        queue.add(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">while</span>(!queue.isEmpty()) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">pre</span> <span class="hljs-operator">=</span> queue.poll();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; graph.get(pre).size(); i++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> graph.get(pre).get(i);<br>                <span class="hljs-keyword">if</span> (temp != pre &amp;&amp; !visited[temp]) &#123;<br>                    ans[temp] = weights[temp] + ans[pre];<br>                    visited[temp] = <span class="hljs-literal">true</span>;<br>                    queue.add(temp);<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> a : ans)<br>            sum += Math.abs(a);<br><br>        System.out.println(sum);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 2:</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;x=x&quot;</span><br>输出: <span class="hljs-string">&quot;Infinite solutions&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 3:</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams">输入: <span class="hljs-keyword">equation</span> = <span class="hljs-string">&quot;2x=x&quot;</span><br>输出: <span class="hljs-string">&quot;x=0&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>3 &lt;= equation.length &lt;= 1000</code></li>
-<li><code>equation</code> 只有一个 <code>&#39;=&#39;</code>.</li>
-<li><code>equation</code> 方程由整数组成，其绝对值在 <code>[0, 100]</code> 范围内，不含前导零和变量 <code>&#39;x&#39;</code> 。</li>
-</ul>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>思路是将方程通过<code>=</code>划分为前项和后项，然后分别对前项和后项处理，为了统一的划分各个项，可以首先替换<code>-</code>为<code>+-</code>，然后根据<code>+</code>划分，之后遍历处理所有的项，分别得到系数值和其他值，然后按照等式的计算公式得到系数<code>coef</code>和值<code>val</code>，方程解的判断：</p>
-<ul>
-<li><code>coef=1 &amp;&amp; val==0</code> 也就是x可以任意取值，即可满足方程要求，所以是无限解</li>
-<li><code>coef==0&amp;&amp;val!=0</code> x取任意值也无法满足方程要求，没有解</li>
-</ul>
-<p>其他情况直接输出<code>x=</code>+解的字符串即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">solveEquation</span><span class="hljs-params">(String equation)</span> &#123;<br>        String[] equations = equation.split(<span class="hljs-string">&quot;=&quot;</span>);<br>        <span class="hljs-type">int</span>[] res1 = getCoefVal(equations[<span class="hljs-number">0</span>]), res2= getCoefVal(equations[<span class="hljs-number">1</span>]);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">val</span> <span class="hljs-operator">=</span> res2[<span class="hljs-number">1</span>] - res1[<span class="hljs-number">1</span>], coef = res1[<span class="hljs-number">0</span>] - res2[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">if</span> (coef == <span class="hljs-number">0</span> &amp;&amp; val == <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Infinite solutions&quot;</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (coef == <span class="hljs-number">0</span> &amp;&amp; val != <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;No solution&quot;</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;x=&quot;</span> + String.valueOf(val/coef);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] getCoefVal(String equation) &#123;<br>        List&lt;Integer&gt; coef = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(), val = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> equation.replaceAll(<span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;+-&quot;</span>);<br>        String[] items = temp.split(<span class="hljs-string">&quot;\\+&quot;</span>);<br><br>        <span class="hljs-keyword">for</span> (String item:items) &#123;<br>            <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (item.contains(<span class="hljs-string">&quot;x&quot;</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">1</span>) &#123;<br>                    coef.add(<span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.length()==<span class="hljs-number">2</span> &amp;&amp; item.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">&#x27;-&#x27;</span>) &#123;<br>                    coef.add(-<span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    coef.add(Integer.valueOf(item.substring(<span class="hljs-number">0</span>, item.length()-<span class="hljs-number">1</span>)));<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                val.add(Integer.parseInt(item));<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> co:coef)<br>            res[<span class="hljs-number">0</span>] += co;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v:val)<br>            res[<span class="hljs-number">1</span>] += v;<br><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>时间复杂度：$O(n)$</li>
-<li>空间复杂度：$O(n)$</li>
-</ul>
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810110642683.png" srcset="/img/loading.gif" lazyload alt="image-20220810110642683"></p>
+<p>不知道为什么总有几个测试案例没过，难顶</p>
+<p>不知道是不是最后的sum没有定义为long，导致最后求和的结果溢出所以导致错误的。。。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810202920693.png" srcset="/img/loading.gif" lazyload alt="image-20220810202920693"></p>
+<h1 id="编程题2"><a href="#编程题2" class="headerlink" title="编程题2"></a>编程题2</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810192427777.png" srcset="/img/loading.gif" lazyload alt="image-20220810192427777"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810192437919.png" srcset="/img/loading.gif" lazyload alt="image-20220810192437919"></p>
+<p>这道题应该是用并查集，完全没有研究过，开摆</p>
 
                 
               </div>
@@ -343,7 +323,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
+  <a href="/categories/%E7%AC%94%E8%AF%95/" class="category-chain-item">笔试</a>
   
   
 
@@ -360,13 +340,13 @@
       
         <a href="/tags/Java/">#Java</a>
       
-        <a href="/tags/leetcode/">#leetcode</a>
+        <a href="/tags/%E7%AC%94%E8%AF%95/">#笔试</a>
       
-        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+        <a href="/tags/offer/">#offer</a>
       
-        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+        <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">#后端开发</a>
       
-        <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
+        <a href="/tags/Zoom/">#Zoom</a>
       
     </div>
   
@@ -378,8 +358,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>640.求解方程</div>
-      <div>http://example.com/2022/08/10/leetcode每日一题/640.求解方程/</div>
+      <div>Zoom 2023届校园招聘-Java方向0810</div>
+      <div>http://example.com/2022/08/11/笔试记录/Zoom2023届校园招聘-Java方向0810/</div>
     </div>
     <div class="license-meta">
       
@@ -391,7 +371,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>August 10, 2022</div>
+          <div>August 11, 2022</div>
         </div>
       
       
@@ -421,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/11/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1417.%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="1417.重新格式化字符串">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1417.重新格式化字符串</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/09/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1413.%E9%80%90%E6%AD%A5%E6%B1%82%E5%92%8C%E5%BE%97%E5%88%B0%E6%AD%A3%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" title="1413逐步求和得到正数的最小值">
-                        <span class="hidden-mobile">1413逐步求和得到正数的最小值</span>
+                      <a href="/2022/08/11/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E8%81%94%E6%83%B32023%E6%A0%A1%E6%8B%9B-python%E5%90%8E%E7%AB%AF%E6%96%B9%E6%B3%95/" title="联想2023校招-python后端方向">
+                        <span class="hidden-mobile">联想2023校招-python后端方向</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
