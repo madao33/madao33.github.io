@@ -16,33 +16,29 @@
   <meta name="author" content="madao33">
   <meta name="keywords" content="">
   
-    <meta name="description" content="768.最多能完成排序的块II难度困难185 这个问题和“最多能完成排序的块”相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。 arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。 我们最多能将数组分成多少块？ 示例 1: 12345输入: arr &#x3D; [">
+    <meta name="description" content="0814-网易游戏雷火2022秋招Web后端开发工程师编程题1  这道题恶心的是输入的处理，需要将这个各种方括号的玩意儿读出来，解析为ArrayList，想了一下还是有办法可以解决的，直接根据],分割每个宝箱的钥匙，然后去除一些无关字符就得到了每个宝箱的钥匙，并且数据类型是二维ArrayList 然后就是直接一个程序遍历解决问题，遍历的时候记个数，计算一下开启的宝箱数量，如果开启的数量刚好等于n，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="768.最多能完成排序的块II">
-<meta property="og:url" content="http://example.com/2022/08/13/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/768.%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97II/index.html">
+<meta property="og:title" content="网易游戏雷火2022秋招Web后端开发工程师">
+<meta property="og:url" content="http://example.com/2022/08/14/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/0814-%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F%E9%9B%B7%E7%81%AB2022%E7%A7%8B%E6%8B%9BWeb%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="768.最多能完成排序的块II难度困难185 这个问题和“最多能完成排序的块”相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。 arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。 我们最多能将数组分成多少块？ 示例 1: 12345输入: arr &#x3D; [">
+<meta property="og:description" content="0814-网易游戏雷火2022秋招Web后端开发工程师编程题1  这道题恶心的是输入的处理，需要将这个各种方括号的玩意儿读出来，解析为ArrayList，想了一下还是有办法可以解决的，直接根据],分割每个宝箱的钥匙，然后去除一些无关字符就得到了每个宝箱的钥匙，并且数据类型是二维ArrayList 然后就是直接一个程序遍历解决问题，遍历的时候记个数，计算一下开启的宝箱数量，如果开启的数量刚好等于n，">
 <meta property="og:locale">
-<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-08-13T06:38:24.000Z">
-<meta property="article:modified_time" content="2022-08-13T06:39:16.177Z">
+<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
+<meta property="article:published_time" content="2022-08-14T07:49:09.000Z">
+<meta property="article:modified_time" content="2022-08-14T07:49:28.879Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="数据结构与算法">
-<meta property="article:tag" content="贪心">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="栈">
-<meta property="article:tag" content="单调栈">
+<meta property="article:tag" content="笔试">
+<meta property="article:tag" content="offer">
+<meta property="article:tag" content="网易游戏雷火">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
+<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>768.最多能完成排序的块II - Hexo</title>
+  <title>网易游戏雷火2022秋招Web后端开发工程师 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,13 +209,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组分块后排序结果不变"></span>
+            <span id="subtitle" data-typed-text="网易游戏雷火笔试"></span>
           
         </div>
 
@@ -230,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-13 14:38" pubdate>
-          August 13, 2022 pm
+        <time datetime="2022-08-14 15:49" pubdate>
+          August 14, 2022 pm
         </time>
       </span>
     
@@ -242,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          2.1k 字
         
       </span>
     
@@ -253,7 +249,7 @@
         
         
         
-          10 分钟
+          18 分钟
         
       </span>
     
@@ -291,40 +287,28 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数组分块后排序结果不变</h1>
+            <h1 style="display: none">网易游戏雷火笔试</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="768-最多能完成排序的块II"><a href="#768-最多能完成排序的块II" class="headerlink" title="768.最多能完成排序的块II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/max-chunks-to-make-sorted-ii/">768.最多能完成排序的块II</a></h1><p>难度困难185</p>
-<p><em>这个问题和“最多能完成排序的块”相似，但给定数组中的元素可以重复，输入数组最大长度为<code>2000</code>，其中的元素最大为<code>10**8</code>。</em></p>
-<p><code>arr</code>是一个可能包含<strong>重复元素</strong>的整数数组，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。</p>
-<p>我们最多能将数组分成多少块？</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: arr = <span class="hljs-comment">[5,4,3,2,1]</span><br>输出: 1<br>解释:<br>将数组分成2块或者更多块，都无法得到所需的结果。<br>例如，分成 <span class="hljs-comment">[5, 4]</span>, <span class="hljs-comment">[3, 2, 1]</span> 的结果是 <span class="hljs-comment">[4, 5, 1, 2, 3]</span>，这不是有序的数组。 <br></code></pre></td></tr></table></figure>
+                <h1 id="0814-网易游戏雷火2022秋招Web后端开发工程师"><a href="#0814-网易游戏雷火2022秋招Web后端开发工程师" class="headerlink" title="0814-网易游戏雷火2022秋招Web后端开发工程师"></a>0814-网易游戏雷火2022秋招Web后端开发工程师</h1><h1 id="编程题1"><a href="#编程题1" class="headerlink" title="编程题1"></a>编程题1</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814141816135.png" srcset="/img/loading.gif" lazyload alt="image-20220814141816135"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814141828444.png" srcset="/img/loading.gif" lazyload alt="image-20220814141828444"></p>
+<p>这道题恶心的是输入的处理，需要将这个各种方括号的玩意儿读出来，解析为<code>ArrayList</code>，想了一下还是有办法可以解决的，直接根据<code>],</code>分割每个宝箱的钥匙，然后去除一些无关字符就得到了每个宝箱的钥匙，并且数据类型是二维<code>ArrayList</code></p>
+<p>然后就是直接一个程序遍历解决问题，遍历的时候记个数，计算一下开启的宝箱数量，如果开启的数量刚好等于n，那么返回<code>true</code>，否则为<code>false</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> scanner.nextLine();<br>        List&lt;List&lt;Integer&gt;&gt; boxs = getkeys(res);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> boxs.size();<br>        <span class="hljs-type">boolean</span>[] visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        Queue&lt;Integer&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        queue.add(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">while</span>(!queue.isEmpty()) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> queue.poll();<br>            <span class="hljs-keyword">if</span> (!visited[temp]) &#123;<br>                visited[temp] = <span class="hljs-literal">true</span>;<br>                cnt++;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : boxs.get(temp)) &#123;<br>                    queue.add(i);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cnt == n)<br>            System.out.println(<span class="hljs-string">&quot;true&quot;</span>);<br>        <span class="hljs-keyword">else</span><br>            System.out.println(<span class="hljs-string">&quot;false&quot;</span>);<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">getkeys</span><span class="hljs-params">(String res)</span> &#123;<br>        List&lt;List&lt;Integer&gt;&gt; ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;List&lt;Integer&gt;&gt;();<br>        String[] boxs = res.substring(<span class="hljs-number">1</span>, res.length()-<span class="hljs-number">2</span>).split(<span class="hljs-string">&quot;],&quot;</span>);<br>        <span class="hljs-keyword">for</span> (String box: boxs) &#123;<br>            box = box.substring(<span class="hljs-number">1</span>, box.length());<br>            String[] ints = box.split(<span class="hljs-string">&quot;,&quot;</span>);<br>            List&lt;Integer&gt; temp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>            <span class="hljs-keyword">for</span> (String i : ints) &#123;<br>                <span class="hljs-keyword">if</span> (!i.equals(<span class="hljs-string">&quot;&quot;</span>))<br>                    temp.add(Integer.parseInt(i));<br>            &#125;<br>            ans.add(temp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 2:</strong></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: arr = <span class="hljs-comment">[2,1,3,4,4]</span><br>输出: 4<br>解释:<br>我们可以把它分成两块，例如 <span class="hljs-comment">[2, 1]</span>, <span class="hljs-comment">[3, 4, 4]</span>。<br>然而，分成 <span class="hljs-comment">[2, 1]</span>, <span class="hljs-comment">[3]</span>, <span class="hljs-comment">[4]</span>, <span class="hljs-comment">[4]</span> 可以得到最多的块数。 <br></code></pre></td></tr></table></figure>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814144331774.png" srcset="/img/loading.gif" lazyload alt="image-20220814144331774"></p>
+<h1 id="编程题2"><a href="#编程题2" class="headerlink" title="编程题2"></a>编程题2</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814144402261.png" srcset="/img/loading.gif" lazyload alt="image-20220814144402261"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814144417241.png" srcset="/img/loading.gif" lazyload alt="image-20220814144417241"></p>
+<p>这道题想来很久还是有点猪脑过载，算了，算了，放弃了</p>
+<h1 id="编程题3"><a href="#编程题3" class="headerlink" title="编程题3"></a>编程题3</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814144810502.png" srcset="/img/loading.gif" lazyload alt="image-20220814144810502"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814144823051.png" srcset="/img/loading.gif" lazyload alt="image-20220814144823051"></p>
+<p>本来以为递归会出现超时，但是好像没有。。</p>
+<p>通过递归计算点在希尔伯特曲线的序号，然后计算两个序号的绝对值之差</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> n int整型 方格矩阵Cn下标</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> x1 int整型 方格1在方格矩阵中的横坐标</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> y1 int整型 方格1在方格矩阵中的纵坐标</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> x2 int整型 方格2在方格矩阵中的横坐标</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> y2 int整型 方格2在方格矩阵中的纵坐标</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> long长整型</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">solution</span> <span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> x1, <span class="hljs-type">int</span> y1, <span class="hljs-type">int</span> x2, <span class="hljs-type">int</span> y2)</span> &#123;<br>        <span class="hljs-comment">// write code here</span><br>        <span class="hljs-keyword">return</span> Math.abs(f(n, x1, y1) - f(n, x2, y2));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> &lt;&lt; (n-<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (x &lt;= m &amp;&amp; y &lt;= m)<br>            <span class="hljs-keyword">return</span> f(n-<span class="hljs-number">1</span>, y, x);<br>        <span class="hljs-keyword">if</span> (x &gt; m &amp;&amp; y &lt;= m)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">3L</span> * m * m + f(n-<span class="hljs-number">1</span>, m-y+<span class="hljs-number">1</span>, m*<span class="hljs-number">2</span>-x + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (x &lt; m &amp;&amp; y &gt; m)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1L</span> * m * m + f(n-<span class="hljs-number">1</span>, x, y - m);<br><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2L</span> * m * m + f(n - <span class="hljs-number">1</span>, x - m, y - m);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>注意:</strong></p>
-<ul>
-<li><code>arr</code>的长度在<code>[1, 2000]</code>之间。</li>
-<li><code>arr[i]</code>的大小在<code>[0, 10**8]</code>之间。</li>
-</ul>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>可以理解为如果可以分块，那么对应分块的左边分块的最大值一定小于等于右边分块的最小值</p>
-<ul>
-<li>首先从左到右遍历，获取对应i之前的最大值prev[i]</li>
-<li>然后从右到左遍历，获取对应i之后的最小值next[i]</li>
-<li>比较prev[i-1] &lt;&#x3D; next[i]成立，可以进行分块，计数加1</li>
-</ul>
-<p>返回计数值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxChunksToSorted</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> arr.length, cnt = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span>[] prev = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n], next = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br><br>        <span class="hljs-comment">// 计算前缀最大</span><br>        prev[<span class="hljs-number">0</span>] = arr[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>            prev[i] = Math.max(arr[i], prev[i-<span class="hljs-number">1</span>]);<br>        &#125;<br>        Arrays.fill(next, Integer.MAX_VALUE);<br><br>        <span class="hljs-comment">// 计算后缀最小</span><br>        next[n-<span class="hljs-number">1</span>] = arr[n-<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n-<span class="hljs-number">2</span>; i&gt;=<span class="hljs-number">0</span>; i--) &#123;<br>            next[i] = Math.min(arr[i], next[i+<span class="hljs-number">1</span>]);<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (prev[i-<span class="hljs-number">1</span>] &lt;= next[i])<br>                cnt++;<br>        &#125;<br>        <br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>时间复杂度：$O(n)$ 数组长度，三次数组长度的遍历</li>
-<li>空间复杂度：$O(n)$ 数组长度的空间复杂度，设置了两个辅助数组</li>
-</ul>
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220813143608107.png" srcset="/img/loading.gif" lazyload alt="image-20220813143608107"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220814153343171.png" srcset="/img/loading.gif" lazyload alt="image-20220814153343171"></p>
 
                 
               </div>
@@ -343,7 +327,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
+  <a href="/categories/%E7%AC%94%E8%AF%95/" class="category-chain-item">笔试</a>
   
   
 
@@ -360,19 +344,11 @@
       
         <a href="/tags/Java/">#Java</a>
       
-        <a href="/tags/leetcode/">#leetcode</a>
+        <a href="/tags/%E7%AC%94%E8%AF%95/">#笔试</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">#数据结构与算法</a>
+        <a href="/tags/offer/">#offer</a>
       
-        <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
-      
-        <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
-      
-        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
-      
-        <a href="/tags/%E6%A0%88/">#栈</a>
-      
-        <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">#单调栈</a>
+        <a href="/tags/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F%E9%9B%B7%E7%81%AB/">#网易游戏雷火</a>
       
     </div>
   
@@ -384,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>768.最多能完成排序的块II</div>
-      <div>http://example.com/2022/08/13/leetcode每日一题/768.最多能完成排序的块II/</div>
+      <div>网易游戏雷火2022秋招Web后端开发工程师</div>
+      <div>http://example.com/2022/08/14/笔试记录/0814-网易游戏雷火2022秋招Web后端开发工程师/</div>
     </div>
     <div class="license-meta">
       
@@ -397,7 +373,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>August 13, 2022</div>
+          <div>August 14, 2022</div>
         </div>
       
       
@@ -427,18 +403,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/14/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/0814-%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F%E9%9B%B7%E7%81%AB2022%E7%A7%8B%E6%8B%9BWeb%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="网易游戏雷火2022秋招Web后端开发工程师">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">网易游戏雷火2022秋招Web后端开发工程师</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/12/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1282.%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84/" title="1282.用户分组">
-                        <span class="hidden-mobile">1282.用户分组</span>
+                      <a href="/2022/08/13/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/768.%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97II/" title="768.最多能完成排序的块II">
+                        <span class="hidden-mobile">768.最多能完成排序的块II</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
