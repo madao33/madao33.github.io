@@ -103,6 +103,41 @@
   
   
   <entry>
+    <title>1656.设计有序流</title>
+    <link href="/2022/08/14/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1656.%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81/"/>
+    <url>/2022/08/14/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1656.%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%BA%8F%E6%B5%81/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1656-设计有序流"><a href="#1656-设计有序流" class="headerlink" title="1656.设计有序流"></a><a href="https://leetcode.cn/problems/design-an-ordered-stream/">1656.设计有序流</a></h1><p>难度简单54</p><p>有 <code>n</code> 个 <code>(id, value)</code> 对，其中 <code>id</code> 是 <code>1</code> 到 <code>n</code> 之间的一个整数，<code>value</code> 是一个字符串。不存在 <code>id</code> 相同的两个 <code>(id, value)</code> 对。</p><p>设计一个流，以 <strong>任意</strong> 顺序获取 <code>n</code> 个 <code>(id, value)</code> 对，并在多次调用时 <strong>按 <code>id</code> 递增的顺序</strong> 返回一些值。</p><p>实现 <code>OrderedStream</code> 类：</p><ul><li><p><code>OrderedStream(int n)</code> 构造一个能接收 <code>n</code> 个值的流，并将当前指针 <code>ptr</code> 设为 <code>1</code> 。</p></li><li><p>&#96;&#96;&#96;<br>String[] insert(int id, String value)</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs"><br> <br><br>向流中存储新的<br><br> <br><br></code></pre></td></tr></table></figure><p>(id, value)</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br>   <br><br>  对。存储后：<br><br><span class="hljs-bullet">  -</span> 如果流存储有 <span class="hljs-code">`id = ptr`</span> 的 <span class="hljs-code">`(id, value)`</span> 对，则找出从 <span class="hljs-code">`id = ptr`</span> 开始的 <span class="hljs-strong">**最长 id 连续递增序列**</span> ，并 <span class="hljs-strong">**按顺序**</span> 返回与这些 id 关联的值的列表。然后，将 <span class="hljs-code">`ptr`</span> 更新为最后那个 <span class="hljs-code">`id + 1`</span> 。<br><span class="hljs-bullet">  -</span> 否则，返回一个空列表。<br><br> <br><br><span class="hljs-strong">**示例：**</span><br><br>![<span class="hljs-string">img</span>](<span class="hljs-link">https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/q1.gif</span>)<br><br></code></pre></td></tr></table></figure><p>输入<br>[“OrderedStream”, “insert”, “insert”, “insert”, “insert”, “insert”]<br>[[5], [3, “ccccc”], [1, “aaaaa”], [2, “bbbbb”], [5, “eeeee”], [4, “ddddd”]]<br>输出<br>[null, [], [“aaaaa”], [“bbbbb”, “ccccc”], [], [“ddddd”, “eeeee”]]</p></li></ul><p>解释<br>OrderedStream os&#x3D; new OrderedStream(5);<br>os.insert(3, “ccccc”); &#x2F;&#x2F; 插入 (3, “ccccc”)，返回 []<br>os.insert(1, “aaaaa”); &#x2F;&#x2F; 插入 (1, “aaaaa”)，返回 [“aaaaa”]<br>os.insert(2, “bbbbb”); &#x2F;&#x2F; 插入 (2, “bbbbb”)，返回 [“bbbbb”, “ccccc”]<br>os.insert(5, “eeeee”); &#x2F;&#x2F; 插入 (5, “eeeee”)，返回 []<br>os.insert(4, “ddddd”); &#x2F;&#x2F; 插入 (4, “ddddd”)，返回 [“ddddd”, “eeeee”]</p><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br> <br><br>**提示：**<br><br>- `1 &lt;= n &lt;= <span class="hljs-number">1000</span>`<br>- `1 &lt;= id &lt;= n`<br>- `value.length == <span class="hljs-number">5</span>`<br>- `value` 仅由小写字母组成<br>- 每次调用 `insert` 都会使用一个唯一的 `id`<br>- 恰好调用 `n` 次 `insert`<br><br># 题解<br><br>直接使用一个字符串数组存储流，然后设置ptr的变化即可<br><br>```java<br>class OrderedStream &#123;<br>    private String[] stream<span class="hljs-comment">;</span><br>    private int ptr<span class="hljs-comment">;</span><br>    public OrderedStream(int n) &#123;<br>        stream = <span class="hljs-keyword">new</span> String[n + <span class="hljs-number">1</span>]<span class="hljs-comment">;</span><br>        ptr=<span class="hljs-number">1</span><span class="hljs-comment">;</span><br>    &#125;<br><br>    public List&lt;String&gt; insert(int idKey, String value) &#123;<br>        stream[idKey] = value<span class="hljs-comment">;</span><br>        List&lt;String&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;()<span class="hljs-comment">;</span><br>        if (idKey == ptr) &#123;<br>            for (int i = ptr<span class="hljs-comment">; i &lt; stream.length; i++) &#123;</span><br>                if (stream[i] == null)<br>                    <span class="hljs-keyword">break</span><span class="hljs-comment">;</span><br>                res.add(stream[i])<span class="hljs-comment">;</span><br>            &#125;<br>        &#125;<br>        ptr += res.size()<span class="hljs-comment">;</span><br>        <span class="hljs-keyword">return</span> res<span class="hljs-comment">;</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220816153119432.png" alt="image-20220816153119432"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>leetcode</tag>
+      
+      <tag>设计</tag>
+      
+      <tag>数组</tag>
+      
+      <tag>哈希表</tag>
+      
+      <tag>数据流</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>768.最多能完成排序的块II</title>
     <link href="/2022/08/13/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/768.%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97II/"/>
     <url>/2022/08/13/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/768.%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97II/</url>
