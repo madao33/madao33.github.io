@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>1224.最大相等频率</title>
+    <link href="/2022/08/18/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1224.%E6%9C%80%E5%A4%A7%E7%9B%B8%E7%AD%89%E9%A2%91%E7%8E%87/"/>
+    <url>/2022/08/18/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1224.%E6%9C%80%E5%A4%A7%E7%9B%B8%E7%AD%89%E9%A2%91%E7%8E%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1224-最大相等频率"><a href="#1224-最大相等频率" class="headerlink" title="1224.最大相等频率"></a><a href="https://leetcode.cn/problems/maximum-equal-frequency/">1224.最大相等频率</a></h1><p>难度困难125收藏分享切换为英文接收动态反馈</p><p>给你一个正整数数组 <code>nums</code>，请你帮忙从该数组中找出能满足下面要求的 <strong>最长</strong> 前缀，并返回该前缀的长度：</p><ul><li>从前缀中 <strong>恰好删除一个</strong> 元素后，剩下每个数字的出现次数都相同。</li></ul><p>如果删除这个元素后没有剩余元素存在，仍可认为每个数字都具有相同的出现次数（也就是 0 次）。</p><p><strong>示例 1：</strong></p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">2,2,1,1</span>,<span class="hljs-number">5,3,3,5</span>]<br>输出：<span class="hljs-number">7</span><br>解释：对于长度为 <span class="hljs-number">7</span> 的子数组 [<span class="hljs-number">2,2,1,1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]，如果我们从中删去 nums[<span class="hljs-number">4</span>] = <span class="hljs-number">5</span>，就可以得到 [<span class="hljs-number">2,2,1,1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]，里面每个数字都出现了两次。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">1,1,1,2</span>,<span class="hljs-number">2,2,3,3</span>,<span class="hljs-number">3,4,4,4</span>,<span class="hljs-number">5</span>]<br>输出：<span class="hljs-number">13</span><br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>2 &lt;= nums.length &lt;= 105</code></li><li><code>1 &lt;= nums[i] &lt;= 105</code></li></ul><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000010</span>], sum = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">100010</span>];<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxEqualFreq</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        Arrays.fill(cnt, <span class="hljs-number">0</span>);<br>        Arrays.fill(sum, <span class="hljs-number">0</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length, max = <span class="hljs-number">0</span>, ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i], cur = ++cnt[t], len = i+<span class="hljs-number">1</span>;<br>            sum[cur]++;sum[cur-<span class="hljs-number">1</span>]--;<br>            max = Math.max(max, cur);<br>            <span class="hljs-keyword">if</span> (max == <span class="hljs-number">1</span>) ans = len;<br>            <span class="hljs-keyword">if</span> (max * sum[max] + <span class="hljs-number">1</span> == len) ans = len;<br>            <span class="hljs-keyword">if</span> ((max - <span class="hljs-number">1</span>) * (sum[max-<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>) + <span class="hljs-number">1</span> == len) ans = len;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：$O(n)$</li><li>空间复杂度：$O(n)$</li></ul><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220818145211780.png" alt="image-20220818145211780"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>leetcode</tag>
+      
+      <tag>数组</tag>
+      
+      <tag>哈希表</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1302.层数最深叶子节点的和</title>
     <link href="/2022/08/17/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1302.%E5%B1%82%E6%95%B0%E6%9C%80%E6%B7%B1%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%92%8C/"/>
     <url>/2022/08/17/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1302.%E5%B1%82%E6%95%B0%E6%9C%80%E6%B7%B1%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%92%8C/</url>
