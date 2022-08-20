@@ -16,29 +16,30 @@
   <meta name="author" content="madao33">
   <meta name="keywords" content="">
   
-    <meta name="description" content="654.最大二叉树难度中等516收藏分享切换为英文接收动态反馈 给定一个不重复的整数数组 nums 。 最大二叉树 可以用下面的算法从 nums 递归地构建:  创建一个根节点，其值为 nums 中的最大值。 递归地在最大值 左边 的 子数组前缀上 构建左子树。 递归地在最大值 右边 的 子数组后缀上 构建右子树。  返回 nums 构建的 *最大二叉树* 。 示例 1：  12345678910">
+    <meta name="description" content="网易2023届秋季校园招聘笔试0820-通用技术编程题1  编程题2 1234567891011121314151617181920212223242526import java.math.BigInteger;import java.util.Scanner;public class Main &amp;#123;    public static void main(String[] args) &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="654.最大二叉树">
-<meta property="og:url" content="http://example.com/2022/08/20/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/654.%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="网易2023届秋季校园招聘笔试0820-通用技术">
+<meta property="og:url" content="http://example.com/2022/08/20/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E7%BD%91%E6%98%932023%E5%B1%8A%E7%A7%8B%E5%AD%A3%E6%A0%A1%E5%9B%AD%E6%8B%9B%E8%81%98%E7%AC%94%E8%AF%950820-%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="654.最大二叉树难度中等516收藏分享切换为英文接收动态反馈 给定一个不重复的整数数组 nums 。 最大二叉树 可以用下面的算法从 nums 递归地构建:  创建一个根节点，其值为 nums 中的最大值。 递归地在最大值 左边 的 子数组前缀上 构建左子树。 递归地在最大值 右边 的 子数组后缀上 构建右子树。  返回 nums 构建的 *最大二叉树* 。 示例 1：  12345678910">
+<meta property="og:description" content="网易2023届秋季校园招聘笔试0820-通用技术编程题1  编程题2 1234567891011121314151617181920212223242526import java.math.BigInteger;import java.util.Scanner;public class Main &amp;#123;    public static void main(String[] args) &amp;#">
 <meta property="og:locale">
-<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-08-20T08:36:41.000Z">
-<meta property="article:modified_time" content="2022-08-20T08:37:03.388Z">
+<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
+<meta property="article:published_time" content="2022-08-20T14:01:13.000Z">
+<meta property="article:modified_time" content="2022-08-20T14:01:20.599Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="二叉树">
-<meta property="article:tag" content="分治">
+<meta property="article:tag" content="笔试">
+<meta property="article:tag" content="offer">
+<meta property="article:tag" content="后端开发">
+<meta property="article:tag" content="网易">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
+<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>654.最大二叉树 - Hexo</title>
+  <title>网易2023届秋季校园招聘笔试0820-通用技术 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,13 +210,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="递归构造二叉树"></span>
+            <span id="subtitle" data-typed-text="网易笔试记录"></span>
           
         </div>
 
@@ -226,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-20 16:36" pubdate>
+        <time datetime="2022-08-20 22:01" pubdate>
           August 20, 2022 pm
         </time>
       </span>
@@ -238,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.1k 字
         
       </span>
     
@@ -249,7 +250,7 @@
         
         
         
-          12 分钟
+          10 分钟
         
       </span>
     
@@ -287,37 +288,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">递归构造二叉树</h1>
+            <h1 style="display: none">网易笔试记录</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="654-最大二叉树"><a href="#654-最大二叉树" class="headerlink" title="654.最大二叉树"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-binary-tree/">654.最大二叉树</a></h1><p>难度中等516收藏分享切换为英文接收动态反馈</p>
-<p>给定一个不重复的整数数组 <code>nums</code> 。 <strong>最大二叉树</strong> 可以用下面的算法从 <code>nums</code> 递归地构建:</p>
-<ol>
-<li>创建一个根节点，其值为 <code>nums</code> 中的最大值。</li>
-<li>递归地在最大值 <strong>左边</strong> 的 <strong>子数组前缀上</strong> 构建左子树。</li>
-<li>递归地在最大值 <strong>右边</strong> 的 <strong>子数组后缀上</strong> 构建右子树。</li>
-</ol>
-<p>返回 <em><code>nums</code> 构建的</em> *<strong>最大二叉树*</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/tree1.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[3,2,1,6,0,5]</span><br>输出：<span class="hljs-comment">[6,3,5,null,2,0,null,null,1]</span><br>解释：递归调用如下所示：<br>- <span class="hljs-comment">[3,2,1,6,0,5]</span> 中的最大值是 6 ，左边部分是 <span class="hljs-comment">[3,2,1]</span> ，右边部分是 <span class="hljs-comment">[0,5]</span> 。<br>    - <span class="hljs-comment">[3,2,1]</span> 中的最大值是 3 ，左边部分是 <span class="hljs-comment">[]</span> ，右边部分是 <span class="hljs-comment">[2,1]</span> 。<br>        - 空数组，无子节点。<br>        - <span class="hljs-comment">[2,1]</span> 中的最大值是 2 ，左边部分是 <span class="hljs-comment">[]</span> ，右边部分是 <span class="hljs-comment">[1]</span> 。<br>            - 空数组，无子节点。<br>            - 只有一个元素，所以子节点是一个值为 1 的节点。<br>    - <span class="hljs-comment">[0,5]</span> 中的最大值是 5 ，左边部分是 <span class="hljs-comment">[0]</span> ，右边部分是 <span class="hljs-comment">[]</span> 。<br>        - 只有一个元素，所以子节点是一个值为 0 的节点。<br>        - 空数组，无子节点。<br></code></pre></td></tr></table></figure>
+                <h1 id="网易2023届秋季校园招聘笔试0820-通用技术"><a href="#网易2023届秋季校园招聘笔试0820-通用技术" class="headerlink" title="网易2023届秋季校园招聘笔试0820-通用技术"></a>网易2023届秋季校园招聘笔试0820-通用技术</h1><h2 id="编程题1"><a href="#编程题1" class="headerlink" title="编程题1"></a>编程题1</h2><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152143697.png" srcset="/img/loading.gif" lazyload alt="image-20220820152143697"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152157447.png" srcset="/img/loading.gif" lazyload alt="image-20220820152157447"></p>
+<h2 id="编程题2"><a href="#编程题2" class="headerlink" title="编程题2"></a>编程题2</h2><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152429298.png" srcset="/img/loading.gif" lazyload alt="image-20220820152429298"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.math.BigInteger;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        <span class="hljs-type">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">oddMax</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>, singMax = -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            nums[i] = scanner.nextInt();<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)<br>                oddMax = Math.max(oddMax, nums[i]);<br>            <span class="hljs-keyword">else</span><br>                singMax = Math.max(singMax, nums[i]);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (oddMax == singMax)<br>            singMax += <span class="hljs-number">1</span>;<br>        <span class="hljs-type">BigInteger</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BigInteger</span>(<span class="hljs-string">&quot;0&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span> ? oddMax - nums[i] : singMax - nums[i];<br>            ans = ans.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BigInteger</span>(String.valueOf(temp)));<br>        &#125;<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 2：</strong></p>
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/tree2.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">nums</span> = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br>输出：[<span class="hljs-number">3</span>,<span class="hljs-literal">null</span>,<span class="hljs-number">2</span>,<span class="hljs-literal">null</span>,<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820160603979.png" srcset="/img/loading.gif" lazyload alt="image-20220820160603979"></p>
+<h2 id="编程题3"><a href="#编程题3" class="headerlink" title="编程题3"></a>编程题3</h2><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152603406.png" srcset="/img/loading.gif" lazyload alt="image-20220820152603406"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152616346.png" srcset="/img/loading.gif" lazyload alt="image-20220820152616346"></p>
+<h2 id="编程题4"><a href="#编程题4" class="headerlink" title="编程题4"></a>编程题4</h2><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820152631279.png" srcset="/img/loading.gif" lazyload alt="image-20220820152631279"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        <span class="hljs-type">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++)<br>            nums[i] = scanner.nextInt();<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">2</span>; k &lt; n; k++) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">1</span>; j &lt; k; j++)<br>                    <span class="hljs-keyword">if</span> (nums[i] == nums[k] &amp;&amp; nums[i] &gt; nums[j])<br>                        ans++;<br>            &#125;<br>        &#125;<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
-<li><code>nums</code> 中的所有整数 <strong>互不相同</strong></li>
-</ul>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>递归创建即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">constructMaximumBinaryTree</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-keyword">return</span> construct(nums, <span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">construct</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> left, <span class="hljs-type">int</span> right)</span> &#123;<br>        <span class="hljs-keyword">if</span> (left &gt; right)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">best</span> <span class="hljs-operator">=</span> left;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> best + <span class="hljs-number">1</span>; i &lt;= right; i++)<br>            <span class="hljs-keyword">if</span> (nums[i] &gt; nums[best])<br>                best = i;<br>        <br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TreeNode</span> (nums[best]);<br>        root.left = construct(nums, left, best-<span class="hljs-number">1</span>);<br>        root.right = construct(nums, best+<span class="hljs-number">1</span>, right);<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820163256680.png" srcset="/img/loading.gif" lazyload alt="image-20220820163256680"></p>
+
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220820153621396.png" srcset="/img/loading.gif" lazyload alt="image-20220820153621396"></p>
 
                 
               </div>
@@ -336,7 +325,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
+  <a href="/categories/%E7%AC%94%E8%AF%95/" class="category-chain-item">笔试</a>
   
   
 
@@ -353,11 +342,13 @@
       
         <a href="/tags/Java/">#Java</a>
       
-        <a href="/tags/leetcode/">#leetcode</a>
+        <a href="/tags/%E7%AC%94%E8%AF%95/">#笔试</a>
       
-        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+        <a href="/tags/offer/">#offer</a>
       
-        <a href="/tags/%E5%88%86%E6%B2%BB/">#分治</a>
+        <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">#后端开发</a>
+      
+        <a href="/tags/%E7%BD%91%E6%98%93/">#网易</a>
       
     </div>
   
@@ -369,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>654.最大二叉树</div>
-      <div>http://example.com/2022/08/20/leetcode每日一题/654.最大二叉树/</div>
+      <div>网易2023届秋季校园招聘笔试0820-通用技术</div>
+      <div>http://example.com/2022/08/20/笔试记录/网易2023届秋季校园招聘笔试0820-通用技术/</div>
     </div>
     <div class="license-meta">
       
@@ -412,18 +403,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/20/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E7%BE%8E%E5%9B%A22023%E5%B1%8A%E7%A7%8B%E6%8B%9B-%E6%8A%80%E6%9C%AF%E7%BB%BC%E5%90%880820/" title="美团2023届笔试第三批">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">美团2023届笔试第三批</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/20/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1450.%E5%9C%A8%E6%97%A2%E5%AE%9A%E6%97%B6%E9%97%B4%E5%81%9A%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%AD%A6%E7%94%9F%E4%BA%BA%E6%95%B0/" title="1450.在既定时间做作业的学生人数">
-                        <span class="hidden-mobile">1450.在既定时间做作业的学生人数</span>
+                      <a href="/2022/08/20/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E7%BE%8E%E5%9B%A22023%E5%B1%8A%E7%A7%8B%E6%8B%9B-%E6%8A%80%E6%9C%AF%E7%BB%BC%E5%90%880820/" title="美团2023届笔试第三批">
+                        <span class="hidden-mobile">美团2023届笔试第三批</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
