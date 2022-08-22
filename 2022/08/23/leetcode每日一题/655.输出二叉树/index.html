@@ -16,20 +16,23 @@
   <meta name="author" content="madao33">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1455.检查单词是否为句中其他单词的前缀难度简单66 给你一个字符串 sentence 作为句子并指定检索词为 searchWord ，其中句子由若干用 单个空格 分隔的单词组成。请你检查检索词 searchWord 是否为句子 sentence 中任意单词的前缀。 如果 searchWord 是某一个单词的前缀，则返回句子 sentence 中该单词所对应的下标（下标从 1 开始）。如果 se">
+    <meta name="description" content="655.输出二叉树难度中等198收藏分享切换为英文接收动态反馈 给你一棵二叉树的根节点 root ，请你构造一个下标从 0 开始、大小为 m x n 的字符串矩阵 res ，用以表示树的 格式化布局 。构造此格式化布局矩阵需要遵循以下规则：  树的 高度 为 height ，矩阵的行数 m 应该等于 height + 1 。 矩阵的列数 n 应该等于 2height+1 - 1 。 根节点 需要放">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1455.检查单词是否为句中其他单词的前缀">
-<meta property="og:url" content="http://example.com/2022/08/21/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1455.%E6%A3%80%E6%9F%A5%E5%8D%95%E8%AF%8D%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%A5%E4%B8%AD%E5%85%B6%E4%BB%96%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E7%BC%80/index.html">
+<meta property="og:title" content="655.输出二叉树">
+<meta property="og:url" content="http://example.com/2022/08/23/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/655.%E8%BE%93%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1455.检查单词是否为句中其他单词的前缀难度简单66 给你一个字符串 sentence 作为句子并指定检索词为 searchWord ，其中句子由若干用 单个空格 分隔的单词组成。请你检查检索词 searchWord 是否为句子 sentence 中任意单词的前缀。 如果 searchWord 是某一个单词的前缀，则返回句子 sentence 中该单词所对应的下标（下标从 1 开始）。如果 se">
+<meta property="og:description" content="655.输出二叉树难度中等198收藏分享切换为英文接收动态反馈 给你一棵二叉树的根节点 root ，请你构造一个下标从 0 开始、大小为 m x n 的字符串矩阵 res ，用以表示树的 格式化布局 。构造此格式化布局矩阵需要遵循以下规则：  树的 高度 为 height ，矩阵的行数 m 应该等于 height + 1 。 矩阵的列数 n 应该等于 2height+1 - 1 。 根节点 需要放">
 <meta property="og:locale">
 <meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-08-21T11:59:01.000Z">
-<meta property="article:modified_time" content="2022-08-21T11:59:11.514Z">
+<meta property="article:published_time" content="2022-08-22T18:10:54.000Z">
+<meta property="article:modified_time" content="2022-08-22T18:11:31.389Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="字符串匹配">
+<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="DFS">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
@@ -37,7 +40,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>1455.检查单词是否为句中其他单词的前缀 - Hexo</title>
+  <title>655.输出二叉树 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="简单题"></span>
+            <span id="subtitle" data-typed-text="深度优先遍历二叉树"></span>
           
         </div>
 
@@ -225,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-21 19:59" pubdate>
-          August 21, 2022 pm
+        <time datetime="2022-08-23 02:10" pubdate>
+          August 23, 2022 am
         </time>
       </span>
     
@@ -237,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          2k 字
         
       </span>
     
@@ -248,7 +251,7 @@
         
         
         
-          12 分钟
+          17 分钟
         
       </span>
     
@@ -286,35 +289,44 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">简单题</h1>
+            <h1 style="display: none">深度优先遍历二叉树</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1455-检查单词是否为句中其他单词的前缀"><a href="#1455-检查单词是否为句中其他单词的前缀" class="headerlink" title="1455.检查单词是否为句中其他单词的前缀"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/">1455.检查单词是否为句中其他单词的前缀</a></h1><p>难度简单66</p>
-<p>给你一个字符串 <code>sentence</code> 作为句子并指定检索词为 <code>searchWord</code> ，其中句子由若干用 <strong>单个空格</strong> 分隔的单词组成。请你检查检索词 <code>searchWord</code> 是否为句子 <code>sentence</code> 中任意单词的前缀。</p>
-<p>如果 <code>searchWord</code> 是某一个单词的前缀，则返回句子 <code>sentence</code> 中该单词所对应的下标（<strong>下标从 1 开始</strong>）。如果 <code>searchWord</code> 是多个单词的前缀，则返回匹配的第一个单词的下标（<strong>最小下标</strong>）。如果 <code>searchWord</code> 不是任何单词的前缀，则返回 <code>-1</code> 。</p>
-<p>字符串 <code>s</code> 的 <strong>前缀</strong> 是 <code>s</code> 的任何前导连续子字符串。</p>
+                <h1 id="655-输出二叉树"><a href="#655-输出二叉树" class="headerlink" title="655.输出二叉树"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/print-binary-tree/">655.输出二叉树</a></h1><p>难度中等198收藏分享切换为英文接收动态反馈</p>
+<p>给你一棵二叉树的根节点 <code>root</code> ，请你构造一个下标从 <strong>0</strong> 开始、大小为 <code>m x n</code> 的字符串矩阵 <code>res</code> ，用以表示树的 <strong>格式化布局</strong> 。构造此格式化布局矩阵需要遵循以下规则：</p>
+<ul>
+<li>树的 <strong>高度</strong> 为 <code>height</code> ，矩阵的行数 <code>m</code> 应该等于 <code>height + 1</code> 。</li>
+<li>矩阵的列数 <code>n</code> 应该等于 <code>2height+1 - 1</code> 。</li>
+<li><strong>根节点</strong> 需要放置在 <strong>顶行</strong> 的 <strong>正中间</strong> ，对应位置为 <code>res[0][(n-1)/2]</code> 。</li>
+<li>对于放置在矩阵中的每个节点，设对应位置为 <code>res[r][c]</code> ，将其左子节点放置在 <code>res[r+1][c-2height-r-1]</code> ，右子节点放置在 <code>res[r+1][c+2height-r-1]</code> 。</li>
+<li>继续这一过程，直到树中的所有节点都妥善放置。</li>
+<li>任意空单元格都应该包含空字符串 <code>&quot;&quot;</code> 。</li>
+</ul>
+<p>返回构造得到的矩阵 <code>res</code> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">输入：<span class="hljs-keyword">sentence</span> = <span class="hljs-string">&quot;i love eating burger&quot;</span>, searchWord = <span class="hljs-string">&quot;burg&quot;</span><br>输出：<span class="hljs-number">4</span><br>解释：<span class="hljs-string">&quot;burg&quot;</span> 是 <span class="hljs-string">&quot;burger&quot;</span> 的前缀，而 <span class="hljs-string">&quot;burger&quot;</span> 是句子中第 <span class="hljs-number">4</span> 个单词。<br></code></pre></td></tr></table></figure>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/print1-tree.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：root = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br>输出：<br>[[<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;&quot;</span>],<br> [<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>]]<br></code></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">输入：<span class="hljs-keyword">sentence</span> = <span class="hljs-string">&quot;this problem is an easy problem&quot;</span>, searchWord = <span class="hljs-string">&quot;pro&quot;</span><br>输出：<span class="hljs-number">2</span><br>解释：<span class="hljs-string">&quot;pro&quot;</span> 是 <span class="hljs-string">&quot;problem&quot;</span> 的前缀，而 <span class="hljs-string">&quot;problem&quot;</span> 是句子中第 <span class="hljs-number">2</span> 个也是第 <span class="hljs-number">6</span> 个单词，但是应该返回最小下标 <span class="hljs-number">2</span> 。<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">输入：<span class="hljs-keyword">sentence</span> = <span class="hljs-string">&quot;i am tired&quot;</span>, searchWord = <span class="hljs-string">&quot;you&quot;</span><br>输出：<span class="hljs-number">-1</span><br>解释：<span class="hljs-string">&quot;you&quot;</span> 不是句子中任何单词的前缀。<br></code></pre></td></tr></table></figure>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/print2-tree.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：root = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,null,<span class="hljs-number">4</span>]<br>输出：<br>[[<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>],<br> [<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;&quot;</span>],<br> [<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;4&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>]]<br></code></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= sentence.length &lt;= 100</code></li>
-<li><code>1 &lt;= searchWord.length &lt;= 10</code></li>
-<li><code>sentence</code> 由小写英文字母和空格组成。</li>
-<li><code>searchWord</code> 由小写英文字母组成。</li>
+<li>树中节点数在范围 <code>[1, 210]</code> 内</li>
+<li><code>-99 &lt;= Node.val &lt;= 99</code></li>
+<li>树的深度在范围 <code>[1, 10]</code> 内</li>
 </ul>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>直接将字符串根据空格划分</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">isPrefixOfWord</span><span class="hljs-params">(String sentence, String searchWord)</span> &#123;<br>        String[] strs = sentence.split(<span class="hljs-string">&quot; &quot;</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; strs.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (isPrefix(strs[i], searchWord) &amp;&amp; ans == -<span class="hljs-number">1</span>) <br>                ans = i+<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isPrefix</span><span class="hljs-params">(String word, String searchWord)</span> &#123;<br>        <span class="hljs-keyword">if</span> (word.length() &lt; searchWord.length())<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> searchWord.length();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>            <span class="hljs-keyword">if</span> (word.charAt(i) != searchWord.charAt(i))<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>直接通过深度优先遍历获取树的高度，然后创建一个（m, n）的二维字符串list，之后递归的遍历树，并将对应结点的值放在该二维字符串list数组中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> h, m, n;<br>    List&lt;List&lt;String&gt;&gt; ans;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="hljs-title function_">printTree</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs1(root, <span class="hljs-number">0</span>);<br>        m = h + <span class="hljs-number">1</span>; n = (<span class="hljs-number">1</span> &lt;&lt; (h + <span class="hljs-number">1</span>)) - <span class="hljs-number">1</span>;<br>        ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            List&lt;String&gt; cur = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++) cur.add(<span class="hljs-string">&quot;&quot;</span>);<br>            ans.add(cur);<br>        &#125;<br>        dfs2(root, <span class="hljs-number">0</span>, (n - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs1</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> depth)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> ;<br>        h = Math.max(h, depth);<br>        dfs1(root.left, depth + <span class="hljs-number">1</span>);<br>        dfs1(root.right, depth + <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs2</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> ;<br>        ans.get(x).set(y, String.valueOf(root.val));<br>        dfs2(root.left, x + <span class="hljs-number">1</span>, y - (<span class="hljs-number">1</span> &lt;&lt; (h - x - <span class="hljs-number">1</span>)));<br>        dfs2(root.right, x + <span class="hljs-number">1</span>, y + (<span class="hljs-number">1</span> &lt;&lt; (h - x - <span class="hljs-number">1</span>)));<br>    &#125;<br>&#125; <br><br></code></pre></td></tr></table></figure>
 
-<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220821195709642.png" srcset="/img/loading.gif" lazyload alt="image-20220821195709642"></p>
+<ul>
+<li>时间复杂度：$O(n \times m)$</li>
+<li>空间复杂度：$O(n \times m)$</li>
+</ul>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220823020900603.png" srcset="/img/loading.gif" lazyload alt="image-20220823020900603"></p>
 
                 
               </div>
@@ -352,7 +364,13 @@
       
         <a href="/tags/leetcode/">#leetcode</a>
       
-        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">#字符串匹配</a>
+        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+      
+        <a href="/tags/BFS/">#BFS</a>
+      
+        <a href="/tags/%E6%A0%91/">#树</a>
+      
+        <a href="/tags/DFS/">#DFS</a>
       
     </div>
   
@@ -364,8 +382,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1455.检查单词是否为句中其他单词的前缀</div>
-      <div>http://example.com/2022/08/21/leetcode每日一题/1455.检查单词是否为句中其他单词的前缀/</div>
+      <div>655.输出二叉树</div>
+      <div>http://example.com/2022/08/23/leetcode每日一题/655.输出二叉树/</div>
     </div>
     <div class="license-meta">
       
@@ -377,7 +395,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>August 21, 2022</div>
+          <div>August 23, 2022</div>
         </div>
       
       
@@ -407,18 +425,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/23/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/655.%E8%BE%93%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/" title="655.输出二叉树">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">655.输出二叉树</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/20/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E4%B9%90%E7%8B%97%E6%B8%B8%E6%88%8F2023%E5%B1%8A%E7%A7%8B%E5%AD%A3%E6%8B%9B%E8%81%98%E7%AC%94%E8%AF%95-%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" title="乐狗游戏2023届秋季招聘笔试-游戏服务器开发">
-                        <span class="hidden-mobile">乐狗游戏2023届秋季招聘笔试-游戏服务器开发</span>
+                      <a href="/2022/08/21/leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/1455.%E6%A3%80%E6%9F%A5%E5%8D%95%E8%AF%8D%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%A5%E4%B8%AD%E5%85%B6%E4%BB%96%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E7%BC%80/" title="1455.检查单词是否为句中其他单词的前缀">
+                        <span class="hidden-mobile">1455.检查单词是否为句中其他单词的前缀</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
