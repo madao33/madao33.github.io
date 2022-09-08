@@ -25,7 +25,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
 <meta property="article:published_time" content="2022-09-08T10:36:04.000Z">
-<meta property="article:modified_time" content="2022-09-08T10:36:27.107Z">
+<meta property="article:modified_time" content="2022-09-08T10:42:53.978Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="笔试">
@@ -366,11 +366,13 @@
 <h2 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">ABCabc<br><span class="hljs-selector-tag">A</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>如果是字母，需要判断大小写，如果是数字，直接判断是否相等，最后返回计数值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> scanner.nextLine();<br>        <span class="hljs-type">char</span> <span class="hljs-variable">ch</span> <span class="hljs-operator">=</span> scanner.nextLine().charAt(<span class="hljs-number">0</span>);<br>        ch = Character.isLowerCase(ch) ? Character.toUpperCase(ch) : ch;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; str.length(); i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> str.charAt(i) - ch;<br>            <span class="hljs-keyword">if</span> (temp == <span class="hljs-number">0</span> || (Character.isLetter(ch) &amp;&amp; temp == <span class="hljs-number">32</span>))<br>                count++;<br>        &#125;<br>        System.out.println(count);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
@@ -398,11 +400,13 @@
 <h2 id="示例1-2"><a href="#示例1-2" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">3<br>2<br>2<br>1<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>说明：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs routeros">输入解释：<br>第一个数字是3，也即这个小样例的<span class="hljs-attribute">N</span>=3，说明用计算机生成了3个1到500之间的随机整数，接下来每行一个随机数字，共3行，也即这3个随机数字为：<br>2<br>2<br>1<br>所以样例的输出为：<br>1<br>2     <br></code></pre></td></tr></table></figure>
 
@@ -433,7 +437,8 @@
 <h2 id="示例1-3"><a href="#示例1-3" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">abc</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">abc00000<br></code></pre></td></tr></table></figure>
 
@@ -466,7 +471,8 @@
 <h2 id="示例1-4"><a href="#示例1-4" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-number">0xAA</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">170<br></code></pre></td></tr></table></figure>
 
@@ -514,19 +520,23 @@
 <h2 id="示例1-5"><a href="#示例1-5" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1000 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">800 </span><span class="hljs-number">2</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">400 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">300 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">400 </span><span class="hljs-number">3</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">500 </span><span class="hljs-number">2</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-number">2200</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>输入：</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">50 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">20 </span><span class="hljs-number">3</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">20 </span><span class="hljs-number">3</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">3</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">2</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">130<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>说明：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros">由第1行可知总钱数N为50以及希望购买的物品个数m为5；<br>第2和第3行的q为5，说明它们都是编号为5的物品的附件；<br>第4~6行的q都为0，说明它们都是主件，它们的编号依次为3~5；<br>所以物品的价格与重要度乘积的总和的最大值为10<span class="hljs-number">*1</span>+20<span class="hljs-number">*3</span>+20<span class="hljs-number">*3</span>=130       <br></code></pre></td></tr></table></figure>
 
@@ -563,11 +573,13 @@
 <h2 id="示例1-6"><a href="#示例1-6" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">186 </span><span class="hljs-number">186</span> <span class="hljs-number">150</span> <span class="hljs-number">200</span> <span class="hljs-number">160</span> <span class="hljs-number">130</span> <span class="hljs-number">197</span> <span class="hljs-number">200</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>说明：</p>
 <figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tap">由于不允许改变队列元素的先后顺序，所以最终剩下的队列应该为186<span class="hljs-number"> 200 </span>160 130或150<span class="hljs-number"> 200 </span>160<span class="hljs-number"> 130 </span> <br></code></pre></td></tr></table></figure>
 
@@ -586,7 +598,8 @@
 <h2 id="示例1-7"><a href="#示例1-7" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ABBA</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
 
@@ -667,11 +680,13 @@
 <h2 id="示例1-9"><a href="#示例1-9" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>zhangsan<br>lisi<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">192<br>101<br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>说明：</p>
 <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">对于样例lisi，让i的漂亮度为26，l的漂亮度为25，s的漂亮度为24，lisi的漂亮度为25<span class="hljs-string">+26</span><span class="hljs-string">+24</span><span class="hljs-string">+26</span>=101.  <br></code></pre></td></tr></table></figure>
 
@@ -742,7 +757,8 @@
 <h2 id="示例1-12"><a href="#示例1-12" class="headerlink" title="示例1"></a>示例1</h2><p>输入：</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">7 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
 
-<p>复制</p>
+
+
 <p>输出：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">8<br></code></pre></td></tr></table></figure>
 
