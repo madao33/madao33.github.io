@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/avatar/avatar.jpg">
+  <link rel="icon" href="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/avatar/avatar.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="madao33">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="听说华为面试可能会复盘笔试，这三道题属实有点难，一道题都没有AC，还是好好复盘一下，如果能进面试的话，可以留个好印象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为笔试-通用软件开发工程师-0914复盘">
+<meta property="og:url" content="http://example.com/2022/09/20/%E7%AC%94%E8%AF%95%E8%AE%B0%E5%BD%95/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95-%E9%80%9A%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%880914%E5%A4%8D%E7%9B%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="听说华为面试可能会复盘笔试，这三道题属实有点难，一道题都没有AC，还是好好复盘一下，如果能进面试的话，可以留个好印象">
+<meta property="og:locale">
+<meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
+<meta property="article:published_time" content="2022-09-20T05:31:12.000Z">
+<meta property="article:modified_time" content="2022-09-20T05:31:24.459Z">
+<meta property="article:author" content="madao33">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="笔试">
+<meta property="article:tag" content="offer">
+<meta property="article:tag" content="后端开发">
+<meta property="article:tag" content="华为">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>华为笔试-通用软件开发工程师-0914复盘 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>madao33</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="华为笔试"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-20 13:31" pubdate>
+          September 20, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">华为笔试</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>听说华为面试可能会复盘笔试，这三道题属实有点难，一道题都没有AC，还是好好复盘一下，如果能进面试的话，可以留个好印象</p>
+<span id="more"></span>
+
+
+<h1 id="编程题1-超级玛丽过吊桥"><a href="#编程题1-超级玛丽过吊桥" class="headerlink" title="编程题1-超级玛丽过吊桥"></a>编程题1-超级玛丽过吊桥</h1><p>相当于青蛙跳台阶的改进版，走一个吊桥，吊桥的尽头是下水管道，其中随机的木板存在缺失，一旦踩到就会死亡，死亡后如果还有剩余的生命将在原地复活且不受模板缺失影响，但会消耗一次生命；如果跨过了管道，将坠入悬崖，通关失败。超级玛丽从起点S开始，可以走到下一个木板（计1），也可以跳着跨过一个块（计2）或两个木板（计3），最终必须刚好走到终点E，现在给定超级玛丽当前的生命数M，吊桥的长度N，缺失的木板数K，以及随机缺失的木板编号数组L，请帮忙计算一下，超级玛丽有多少种方法可以通过此关</p>
+<p><strong>解答要求</strong></p>
+<p>时间限制：C&#x2F;C++ 1000ms，其他语言：2000ms</p>
+<p>内存现在：C&#x2F;C++ 256MB，其他语言：512MB</p>
+<p><strong>输入</strong></p>
+<p>超级玛丽当前生命数：$M(1\leq M \leq5)$ 整数</p>
+<p>吊桥的长度：$N(1 \leq N \leq 32)$ 整数</p>
+<p>缺失木板数：$K(1 \leq K \leq 32)$ 整数</p>
+<p>缺失木板编号数组：$L$ （长度及编号的内容不大于 $N$ 的编号数组，$1 \leq L_i \leq N$，由空格分割的整数数组）</p>
+<p>输入结构：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-variable">M</span> <span class="hljs-built_in">N</span> <span class="hljs-built_in">K</span><br><span class="hljs-variable">L</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示：</p>
+<ol>
+<li>输入总是合法，忽略参数校验</li>
+<li>必须从起点开始走</li>
+<li>必须离开吊桥走到终点</li>
+</ol>
+</blockquote>
+<p><strong>输出</strong></p>
+<p>输出通过此关的吊桥走法个数，如果不能通过此关，请输出0</p>
+<p><strong>样例1</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">2</span> <span class="hljs-number">1</span><br><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
+
+<p>解释：2个生命，2个木板，缺失1个木板，第二个木板有缺失，一共有四种走法：</p>
+<ol>
+<li>3</li>
+<li>1， 2</li>
+<li>2， 1</li>
+<li>1， 1（复活），1</li>
+</ol>
+<p><strong>样例2</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">1<br></code></pre></td></tr></table></figure>
+
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>类似于这种跳台阶的，一般都可以考虑通过动态规划的方式来解决，和青蛙跳台阶的变化是需要考虑到生命的变化</p>
+<p>定义一个二维矩阵<code>dp[m][i]</code>，表示走到当前<code>i</code>木板生命值为<code>m</code>的走法有多少，那么转移方程可以定义为：<br>$$<br>dp[m][i] &#x3D; \sum_{k&#x3D;1}^3 dp[m][i-k] \quad 如果i木板不缺失 \</p>
+<p>dp[m-1][i] &#x3D; \sum_{k&#x3D;1}^3 dp[m][i-k] \quad 如果i木板缺失<br>$$<br>初始的起点也就是<code>dp[M][0]=1</code>，最后走到终点的方法为 $\sum_{m&#x3D;1}^M dp[m][N + 1]$</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> scanner.nextInt(), n = scanner.nextInt(), k = scanner.nextInt();<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; k; i++)<br>            set.add(scanner.nextInt());<br><br>        <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m + <span class="hljs-number">1</span>][n + <span class="hljs-number">2</span>];<br>        dp[m][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n + <span class="hljs-number">2</span>; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">lose</span> <span class="hljs-operator">=</span> set.contains(i) ? -<span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> i - <span class="hljs-number">1</span>; x &gt;= Math.max(i - <span class="hljs-number">3</span>, <span class="hljs-number">0</span>); x--) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; m + <span class="hljs-number">1</span>; j++) &#123;<br>                    dp[j + lose][i] += dp[j][x];<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m + <span class="hljs-number">1</span>; i++)<br>            ans += dp[i][n + <span class="hljs-number">1</span>];<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="编程题2-最快传输"><a href="#编程题2-最快传输" class="headerlink" title="编程题2-最快传输"></a>编程题2-最快传输</h1><p>有一批数据包需要传输，每个数据包大小不一样，传输需要不同的时长，现在有N个传输通道，每个通道的大小也不一样，通道只能传输小于等于自己大小的数据包，不同通道可以同时传输数据包，同道中可以缓存多个数据包，当新任务来时，可以先进入缓存队列等待发送，问最短需要多长时间能够传输完成，通道会确保所有数据包都可以传输</p>
+<p><strong>解答要求</strong></p>
+<p>时间限制：C&#x2F;C++ 1500ms，其他语言：3000ms</p>
+<p>内存限制：C&#x2F;C++ 256MS，其他语言：512MB</p>
+<p><strong>输入</strong></p>
+<p>第一行M N，M表示队列长度，N表示传输通道数</p>
+<p>第二行有N个数，表示每个通道的大小P</p>
+<p>第三行有M个数，表示每个数据包的大小Q</p>
+<p>第四行有M个数，表示每个数据包的传输时长S</p>
+<p>$1 \leq M, S, P, Q \leq 10000$</p>
+<p>$1 \leq N \leq 1000$</p>
+<p><strong>输出</strong></p>
+<p>输出传输完所有数据包需要的最短时长</p>
+<p><strong>样例1</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">6</span> <span class="hljs-number">10</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<p>输入</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">16<br></code></pre></td></tr></table></figure>
+
+<p><strong>样例2</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">13</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">11</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">25</span> <span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">25<br></code></pre></td></tr></table></figure>
+
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>这种贪心的题确实有点在我的知识点范围之外，按照牛客网上的大佬的说法是，需要考虑三个贪心条件：</p>
+<ol>
+<li>数据按照传输时间逆序排序，先处理传输时间最长的</li>
+<li>在满足传输条件的所有通道里，优先选取最早空闲的，也就是最早完成自己通道内传输任务的，这样可以最小限度地增加通道的处理时间</li>
+<li>如果最早空闲时间也相同，就选取传输能力最小的，将能力大的留给后面的任务</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main2</span> &#123;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>     <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>     <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>     <span class="hljs-comment">// 通道数</span><br>     <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>     <span class="hljs-comment">// [通道传输能力][空闲时间]</span><br>     <span class="hljs-type">int</span>[][] channels = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n][<span class="hljs-number">2</span>];<br>     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>         channels[i][<span class="hljs-number">0</span>] = scanner.nextInt();<br>     &#125;<br>     <span class="hljs-type">int</span>[][] data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m][<span class="hljs-number">2</span>];<br>     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>         <span class="hljs-comment">// 大小</span><br>         data[i][<span class="hljs-number">0</span>] = scanner.nextInt();<br>     &#125;<br>     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>         <span class="hljs-comment">// 传输时长</span><br>         data[i][<span class="hljs-number">1</span>] = scanner.nextInt();<br>     &#125;<br>     <span class="hljs-comment">// 按传输时长逆序</span><br>     Arrays.sort(data, (a, b) -&gt; &#123;<br>         <span class="hljs-keyword">if</span> (a[<span class="hljs-number">1</span>] == b[<span class="hljs-number">1</span>]) &#123;<br>             <span class="hljs-keyword">return</span> a[<span class="hljs-number">0</span>] - b[<span class="hljs-number">0</span>];<br>         &#125;<br>         <span class="hljs-keyword">return</span> b[<span class="hljs-number">1</span>] - a[<span class="hljs-number">1</span>];<br>     &#125;);<br>     <span class="hljs-comment">// 贪心1</span><br>     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] d : data) &#123;<br>         <span class="hljs-type">int</span> <span class="hljs-variable">minIdleTime</span> <span class="hljs-operator">=</span> Integer.MAX_VALUE;<br>         <span class="hljs-type">int</span> <span class="hljs-variable">ch</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>         <span class="hljs-comment">// 遍历每个通道</span><br>         <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>             <span class="hljs-comment">// 需要满足传输条件</span><br>             <span class="hljs-keyword">if</span> (channels[i][<span class="hljs-number">0</span>] &gt;= d[<span class="hljs-number">0</span>]) &#123;<br>                 <span class="hljs-comment">// 贪心2</span><br>                 <span class="hljs-keyword">if</span> (channels[i][<span class="hljs-number">1</span>] &lt; minIdleTime) &#123;<br>                     ch = i;<br>                     minIdleTime = channels[i][<span class="hljs-number">1</span>];<br>                 &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (channels[i][<span class="hljs-number">1</span>] == minIdleTime &amp;&amp; channels[i][<span class="hljs-number">0</span>] &lt; channels[ch][<span class="hljs-number">0</span>]) &#123;<br>                     <span class="hljs-comment">// 贪心3</span><br>                     ch = i;<br>                 &#125;<br>             &#125;<br>         &#125;<br>         channels[ch][<span class="hljs-number">1</span>] += d[<span class="hljs-number">1</span>];<br>     &#125;<br>     <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>         max = Math.max(max, channels[i][<span class="hljs-number">1</span>]);<br>     &#125;<br>     System.out.println(max);<br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="编程题3-路由规划"><a href="#编程题3-路由规划" class="headerlink" title="编程题3-路由规划"></a>编程题3-路由规划</h1><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220914190636898.png" srcset="/img/loading.gif" lazyload alt="image-20220914190636898"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220914190646570.png" srcset="/img/loading.gif" lazyload alt="image-20220914190646570"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220914190701036.png" srcset="/img/loading.gif" lazyload alt="image-20220914190701036"></p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220914190711145.png" srcset="/img/loading.gif" lazyload alt="image-20220914190711145"></p>
+<p>H公司新结了一个订单，需要帮助客户给一个IP传输网络（该网络由M个路由器组成，每个路由器与其他多个路由器之间物理连接固定）规划路由，使IP报文从起点到终点，传输距离最小。IP报文在传输时，有如下限制：</p>
+<ol>
+<li>IP报文头部有TTL字段表示生存周期。报文从起点经过中间多个路由器转发到终点，每经过一个路由器（包含起点）TTL减1。当TTL减到0时，该报文将不能转发，直接丢弃（若到达终点时TTL为0，则认为正常到达，不丢弃）</li>
+<li>起点的IP报文的TTL为固定值，由输入给定</li>
+</ol>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.svg" srcset="/img/loading.gif" lazyload></p>
+<p>a. 当IP报文的TTL&#x3D;255时，最短路径为6（经过路由器1-5-6-7，TTL减3），当走该路径到达终点时的TTL为252</p>
+<p>b. 当IP报文的TTL为2时，最短路径为11（经过路由器1-8-7，TTL减2），走该路径到达终点时的TTL为0</p>
+<p>C、当IP报文的TTL&#x3D;1时间，在生存周期内无法到达终点</p>
+<p><strong>解答要求</strong></p>
+<p>时间限制：C&#x2F;C++ 400ms，其他语言：800ms</p>
+<p>内存限制：C&#x2F;C++ 256MB，其他语言：512MB</p>
+<p><strong>输入</strong></p>
+<p>第一行：4个整数，分别表示路由器连接边个数N，起点路由器ID，终点路由器ID，起点IP报文的TTL</p>
+<p>第二行~第N+1行：路由器连接边信息，为3个正整数，分别为两个路由器ID和他们之间的距离L，比如1 5 2表示路由器1和路由器5物理连接在一起，它们之间的距离为2km；</p>
+<p>用例保证输入：</p>
+<ol>
+<li>路由器连接边个数 $N \leq 500$；路由器ID为离散的正整数，其 $\leq 500$；路由器距离 $L \leq 1000$</li>
+<li>两个路由器之间连接边信息唯一，比如不会同时存在1 5 2和1 5 3这种输入</li>
+<li>起点IP报文的TTL $\leq 255$</li>
+<li>起点和终点的路由器ID一定不一样</li>
+</ol>
+<p><strong>输出</strong></p>
+<p>IP报文在生存周期内从起点到终点的最短距离和达到终点时的TTL。如果有多组数据，则输出达到终点时TTL最大的那组数据。如果无法到达终点，则输出-1</p>
+<p><strong>样例1</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">7</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">6</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">7</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">252</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>样例2</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">7</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">6</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">7</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">11 </span><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>样例3</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">255</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">7</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">7</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-1</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>样例4</strong></p>
+<p>输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">255</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">7</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">7</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">12 </span><span class="hljs-number">252</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h2><p>实在没想到好的办法，直接使用的dfs遍历，但是过了42%，后面提示超时，对于Java语言要求800ms，确实要求很严格，可能要换其他的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">Long</span> <span class="hljs-variable">finalPath</span> <span class="hljs-operator">=</span> Long.MAX_VALUE;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">finalTtl</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt(),<br>                start = scanner.nextInt(),<br>                end = scanner.nextInt(),<br>                ttl = scanner.nextInt();<br><br>        <span class="hljs-type">int</span>[][] edges = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>][n + <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">id1</span> <span class="hljs-operator">=</span> scanner.nextInt(), id2 = scanner.nextInt(), distance = scanner.nextInt();<br>            edges[id1][id2] = distance;<br>            edges[id2][id1] = distance;<br>        &#125;<br><br>        <span class="hljs-type">boolean</span>[] visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n + <span class="hljs-number">1</span>];<br>        visited[start] = <span class="hljs-literal">true</span>;<br>        dfs(edges, start, end, <span class="hljs-number">0L</span>, ttl, visited);<br>        <span class="hljs-keyword">if</span> (finalPath == Long.MAX_VALUE) &#123;<br>            System.out.println(-<span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">return</span> ;<br>        &#125;<br>        System.out.println(finalPath + <span class="hljs-string">&quot; &quot;</span> + finalTtl);<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] edges, <span class="hljs-type">int</span> cur, <span class="hljs-type">int</span> end, <span class="hljs-type">long</span> path, <span class="hljs-type">int</span> ttl, <span class="hljs-type">boolean</span>[] visited)</span> &#123;<br>        <span class="hljs-keyword">if</span> (ttl &lt; <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> ;<br><br>        <span class="hljs-keyword">if</span> (cur == end) &#123;<br>            <span class="hljs-keyword">if</span> ((finalPath &gt; path) || (finalPath == path &amp;&amp; finalTtl &lt; ttl)) &#123;<br>                finalPath = path;<br>                finalTtl = ttl;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; edges.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (edges[cur][i] != <span class="hljs-number">0</span> &amp;&amp; !visited[i]) &#123;<br>                visited[i] = <span class="hljs-literal">true</span>;<br>                dfs(edges, i, end, path + edges[cur][i], ttl - <span class="hljs-number">1</span>, visited);<br>                visited[i] = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AF%95/" class="category-chain-item">笔试</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AF%95/">#笔试</a>
+      
+        <a href="/tags/offer/">#offer</a>
+      
+        <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">#后端开发</a>
+      
+        <a href="/tags/%E5%8D%8E%E4%B8%BA/">#华为</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>华为笔试-通用软件开发工程师-0914复盘</div>
+      <div>http://example.com/2022/09/20/笔试记录/华为笔试-通用软件开发工程师0914复盘/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>madao33</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>September 20, 2022</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/08/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" title="面试笔记">
+                        <span class="hidden-mobile">面试笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
