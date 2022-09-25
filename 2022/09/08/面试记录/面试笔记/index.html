@@ -25,7 +25,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/post_img/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.jpg">
 <meta property="article:published_time" content="2022-09-08T14:00:57.000Z">
-<meta property="article:modified_time" content="2022-09-08T14:01:28.067Z">
+<meta property="article:modified_time" content="2022-09-25T12:28:54.461Z">
 <meta property="article:author" content="madao33">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="offer">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          44k 字
+          72k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          367 分钟
+          599 分钟
         
       </span>
     
@@ -480,6 +480,50 @@
 <li>影响关系：一个进程崩溃后，在保护模式下不会对其他进程产生影响，但是一个线程崩溃有可能导致整个进程都死掉。所以多进程要比多线程健壮。 </li>
 <li>执行过程：每个独立的进程有程序运行的入口、顺序执行序列和程序出口。但是线程不能独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制，两者均可并发执行</li>
 </ul>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p><strong>什么是线程安全？</strong></p>
+<p>当多个线程访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，也不需要进行额外的同步，或者在调用方进行任何其他的协调操作，调用这个对象的行为都可以获得正确的结果，那这个对象就是线程安全的。</p>
+<p><strong>如何实现线程安全？</strong></p>
+<ul>
+<li><p>第一种：<strong>互斥同步</strong></p>
+<p><code>synchronized</code>锁</p>
+<ul>
+<li>普通同步方法，锁是当前的实例对象</li>
+<li>静态同步方法，锁时当前类的Class对象</li>
+<li>同步方法块，锁是<code>Synchronized</code>括号里匹配的对象</li>
+</ul>
+<p>如何实现：</p>
+<p><code>synchronized</code>锁</p>
+<ul>
+<li><code>synchronized</code>经过编译之后，会在同步块的前后生成<code>monitorenter</code>和<code>monitorexit</code>这两个字节码指令，这两个字节码指令之后有一个<code>reference</code>类型的参数来指明要锁定和解锁的对象。在执行<code>monitorenter</code>指令时，首先会尝试获取对象的锁，如果该对象没有被锁定，或者当前线程已经拥有了那个对象的锁，把锁的计数器加一。若获取对象失败，那当前线程就要阻塞等待，直到对象锁被另一个线程释放。</li>
+<li><code>synchronized</code>用的锁是存放在对象头里面的，在jdk1.6之后，锁一共有四种状态：<ul>
+<li><strong>无锁</strong>状态</li>
+<li><strong>偏向锁</strong>状态（在对象头和栈帧中的锁记录存储偏向锁的线程id）</li>
+<li><strong>轻量级锁</strong>状态（将对象头的markword复制到当前线程的栈帧的锁记录中，使用CAS操作将对象头中的markword指向栈帧的锁记录，如果成功，则线程就拥有了对象的锁。如果两个以上的线程争用一把锁的话，则膨胀为重量级说）</li>
+<li><strong>重量级锁</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>第二种：<strong>JUC包的重入锁</strong></p>
+<blockquote>
+<p>在使用<code>synchronized</code>的时候，只能有一个线程可以获取对象的锁，其他线程就会进入阻塞状态，阻塞状态就会引起线程的挂起和唤醒，会带来很大的性能问题，所以就出现了非阻塞同步的实现方法</p>
+</blockquote>
+<p>先进行操作，如果没有其他线程争用共享数据，那么操作就成功了，如果共享数据有争用，就采取补偿措施（不断地重试）。</p>
+<p>CAS是实现非阻塞同步的计算机指令，它有三个操作数：内存位置，旧的预期值，新值，在执行CAS操作时，<strong>当且仅当内存地址的值符合旧的预期值的时候</strong>，才会用新值来更新内存地址的值，否则就不执行更新。</p>
+<p>使用方法：使用JUC包下的整数原子类<code>decompareAndSet()</code>和<code>getAndIncrement()</code>方法</p>
+<p>缺点 ：ABA 问题  版本号来解决</p>
+<p>只能保证一个变量的原子操作，解决办法：使用AtomicReference类来保证对象之间的原子性。可以把多个变量放在一个对象里。</p>
+</li>
+<li><p>第三种：<strong>无同步方法</strong></p>
+<p>线程本地存储：将共享数据的可见性范围限制在一个线程中。这样无需同步也能保证线程之间不出现数据争用问题</p>
+<p>使用<code>ThreadLocal</code>类</p>
+<p>常见的使用场景：</p>
+<ul>
+<li>解决数据库连接</li>
+<li><code>Session</code>管理等</li>
+</ul>
+</li>
+</ul>
 <h3 id="什么是上下文切换"><a href="#什么是上下文切换" class="headerlink" title="什么是上下文切换"></a>什么是上下文切换</h3><ul>
 <li>多线程编程中一般线程的个数都大于 CPU 核心的个数，而一个 CPU 核心在任意时刻只能被一个线程使用，为了让这些线程都能得到有效执行，CPU 采取的策略是为每个线程分配时间片并轮转的 形式。当一个线程的时间片用完的时候就会重新处于就绪状态让给其他线程使用，这个过程就属于 一次上下文切换。 </li>
 <li>概括来说就是：当前任务在执行完 CPU 时间片切换到另一个任务之前会先保存自己的状态，以便下次再切换回这个任务时，可以再加载这个任务的状态。任务从保存到再加载的过程就是一次上下文切换。 </li>
@@ -577,8 +621,47 @@
 <li><p>数据跨层传输</p>
 </li>
 </ul>
-<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="Synchronized"></a>Synchronized</h3><p>Java中的synchronized，通过使⽤内置锁，来实现对共享变量的同步操作，进⽽解决了对共享变量操作的原⼦性、<br>保证了其他线程对共享变量的可⻅性、有序性，从⽽确保了并发情况下的线程安全。<br>同时synchronized是可重⼊的锁，避免了同⼀个线程重复请求⾃身已经获取的锁时出现死锁问题（请求于保持、不<br>可剥夺感觉都有体现）</p>
-<p><strong>用法</strong>：普通同步⽅法、静态同步⽅法、同步代码块</p>
+<h3 id="Synchronized"><a href="#Synchronized" class="headerlink" title="Synchronized"></a>Synchronized</h3><p>Java中的synchronized，通过使⽤内置锁，来实现对共享变量的同步操作，进⽽解决了对共享变量操作的原⼦性、<br>保证了其他线程对共享变量的可⻅性、有序性，从⽽确保了并发情况下的线程安全。 同时synchronized是可重⼊的锁，避免了同⼀个线程重复请求⾃身已经获取的锁时出现死锁问题（请求于保持、不可剥夺感觉都有体现）</p>
+<h4 id="Synchronized的三种用法"><a href="#Synchronized的三种用法" class="headerlink" title="Synchronized的三种用法"></a>Synchronized的三种用法</h4><p><strong>1 普通方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SynchronizedTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(String name)</span>&#123;<br>        System.out.println(name+<span class="hljs-string">&quot;开始执行&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">2000</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>        &#125;<br>        System.out.println(name+<span class="hljs-string">&quot;执行完毕&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span>  Exception &#123;<br>        SynchronizedTest t=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SynchronizedTest</span>();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t.test(<span class="hljs-string">&quot;线程1&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>        SynchronizedTest t1=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SynchronizedTest</span>();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t1.test(<span class="hljs-string">&quot;线程2&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>上面这个代码我们new了两个不同的对象。打印结果如下。线程2并没有等线程1执行完成后才执行，说明对于普通方法，如果是不同的对象实例锁是不起作用的</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">线程1开始执行<br>线程2开始执行<br>线程2执行完毕<br>线程1执行完毕<br></code></pre></td></tr></table></figure>
+
+<p>将代码改为一个实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SynchronizedTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(String name)</span>&#123;<br>        System.out.println(name+<span class="hljs-string">&quot;开始执行&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">2000</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>        &#125;<br>        System.out.println(name+<span class="hljs-string">&quot;执行完毕&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span>  Exception &#123;<br>        SynchronizedTest t=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SynchronizedTest</span>();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t.test(<span class="hljs-string">&quot;线程1&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t.test(<span class="hljs-string">&quot;线程2&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">线程1开始执行<br>线程1执行完毕<br>线程2开始执行<br>线程2执行完毕<br></code></pre></td></tr></table></figure>
+
+<p>可以看到同一个对象实例的时候，第二个线程只等第一个线程执行完成后才开始执行</p>
+<p><strong>2 静态同步方法</strong></p>
+<p>对于静态同步方法来说，锁的是<strong>当前类的<code>Class</code>对象</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SynchronizedTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(String name)</span>&#123;<br>        System.out.println(name+<span class="hljs-string">&quot;开始执行&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">2000</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>        &#125;<br>        System.out.println(name+<span class="hljs-string">&quot;执行完毕&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span>  Exception &#123;<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                SynchronizedTest.test(<span class="hljs-string">&quot;线程1&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                SynchronizedTest.test(<span class="hljs-string">&quot;线程2&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">线程1开始执行<br>线程1执行完毕<br>线程2开始执行<br>线程2执行完毕<br></code></pre></td></tr></table></figure>
+
+<p>只用第一个线程执行完成后才开始执行第二个线程</p>
+<p><strong>3 同步方法块</strong></p>
+<p>对于同步方法块来说，锁的是<code>synchronized</code>括号里配置的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SynchronizedTest</span> &#123;<br>    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(String name)</span>&#123;<br>       Object o=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();<br>        <span class="hljs-keyword">synchronized</span>(o.getClass())&#123;<br>            System.out.println(name+<span class="hljs-string">&quot;开始执行&quot;</span>);<br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">2000</span>);<br>            &#125;<span class="hljs-keyword">catch</span> (InterruptedException e)&#123;<br>                e.printStackTrace();<br>            &#125;<br><br>            System.out.println(name+<span class="hljs-string">&quot;执行完毕&quot;</span>);<br>        &#125;<br><br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span>  Exception &#123;<br>        SynchronizedTest t=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SynchronizedTest</span>();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t.test(<span class="hljs-string">&quot;线程1&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>        SynchronizedTest t1=<span class="hljs-keyword">new</span> <span class="hljs-title class_">SynchronizedTest</span>();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                t1.test(<span class="hljs-string">&quot;线程2&quot;</span>);<br>            &#125;<br>        &#125;).start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">线程1开始执行<br>线程1执行完毕<br>线程2开始执行<br>线程2执行完毕<br></code></pre></td></tr></table></figure>
+
+<p>第一个线程执行完成后才开始执行第二个线程</p>
+<h4 id="Synchronized是一个重量级锁"><a href="#Synchronized是一个重量级锁" class="headerlink" title="Synchronized是一个重量级锁"></a>Synchronized是一个重量级锁</h4><p>Synchronized 是通过对象内部的一个叫做监视器锁（monitor）来实现的，监视器锁本质又是依赖于底层的操作系统的 Mutex Lock（互斥锁）来实现的。而操作系统实现<strong>线程之间的切换需要从用户态转换到核心态</strong>，这个成本非常高，状态之间的转换需要相对比较长的时间，这就是为什么 Synchronized 效率低的原因。因此，这种依赖于操作系统 Mutex Lock 所实现的锁我们称之为 “重量级锁”。</p>
+<h4 id="Synchronized底层实现原理"><a href="#Synchronized底层实现原理" class="headerlink" title="Synchronized底层实现原理"></a>Synchronized底层实现原理</h4><p>同步方法通过<code>ACC_SYNCHRONIZED </code>关键字隐式的对方法进行加锁。当线程要执行的方法被标注上<code>ACC_SYNCHRONIZED</code>时，需要先获得锁才能执行该方法。</p>
+<p>同步代码块通过<code>monitorenter</code>和<code>monitorexit</code>执行来进行加锁。当线程执行到<code>monitorenter</code>的时候要先获得锁，才能执行后面的方法。当线程执行到<code>monitorexit</code>的时候则要释放锁。每个对象自身维护着一个被加锁次数的计数器，当计数器不为0时，只有获得锁的线程才能再次获得锁</p>
+<h4 id="Synchronized锁存储位置"><a href="#Synchronized锁存储位置" class="headerlink" title="Synchronized锁存储位置"></a>Synchronized锁存储位置</h4><p>Synchronized用的锁是存在java的对象头里面的。一个对象在new出来之后再内存中主要分为4个部分：</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925143830445.png" srcset="/img/loading.gif" lazyload alt="image-20220925143830445"></p>
+<p>Mark Word：存储了对象的hashCode、GC信息、锁信息三部分。这部分占8字节。</p>
+<p>Class Pointer：存储了指向类对象信息的指针。在64位JVM上有一个压缩指针选项-ClassPointer指针：-XX:+UseCompressedClassPointers 为4字节 不开启为8字节。默认是开启的。</p>
+<p>实例数据(instance data)：记录了对象里面的变量数据。引用类型：-XX:+UseCompressedOops 为4字节 不开启为8字节 Oops Ordinary Object Pointers</p>
+<p>Padding：作为对齐使用，对象在64位服务版本中，规定对象内存必须要能被8字节整除，如果不能整除，那么久靠对齐来不。举个例子：new出了一个对象，内存只占用18字节，但是规定要能被8整除，所以padding&#x3D;6</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925145308146.png" srcset="/img/loading.gif" lazyload alt="image-20220925145308146"></p>
+<h4 id="Synchronized锁的升级过程"><a href="#Synchronized锁的升级过程" class="headerlink" title="Synchronized锁的升级过程"></a>Synchronized锁的升级过程</h4><p>Java SE 1.6 为了减少获得锁和释放锁带来的性能消耗，引入了 “偏向锁” 和 “轻量级锁”：锁一共有 4 种状态，级别从低到高依次是：无锁状态、偏向锁状态、轻量级锁状态和重量级锁状态。锁可以升级但不能降级。</p>
+<p><strong>偏向锁</strong>：大多数情况下，锁不仅不存在多线程竞争，而且总是由同一线程多次获得，为了让线程获得锁的代价更低而引入了偏向锁。当一个线程访问同步块并获取锁时，会在对象头和栈帧中记录存储锁偏向的线程ID，以后该线程在进入同步块时先判断对象头的Mark Word里是否存储着指向当前线程的偏向锁，如果存在就直接获取锁。</p>
+<p><strong>轻量级锁</strong>：当其他线程尝试竞争偏向锁时，锁升级为轻量级锁。线程在执行同步块之前，JVM会先在当前线程的栈帧中创建用于存储锁记录的空间，并将对象头中的MarkWord替换为指向锁记录的指针。如果成功，当前线程获得锁，如果失败，标识其他线程竞争锁，当前线程便尝试使用自旋来获取锁。</p>
+<p><strong>重量级锁</strong>：锁在原地循环等待的时候，是会消耗CPU资源的。所以自旋必须要有一定的条件控制，否则如果一个线程执行同步代码块的时间很长，那么等待锁的线程会不断的循环反而会消耗CPU资源。默认情况下锁自旋的次数是10 次，可以使用-XX:PreBlockSpin参数来设置自旋锁等待的次数。10次后如果还没获取锁，则升级为重量级锁。</p>
 <p><strong>内置锁</strong></p>
 <p>在Java中，每个对象都有⼀把锁，放置于对象头中，⽤于记录当前对象被哪个线程所持有。<br>相对于实例数据，对象头属于额外开销，所以被设计的极⼩来提⾼效率（⼀个对象在堆中的分布：对象头、实例数<br>据、对⻬填充）。<br>对象头中的markword更加体现了这⼀点。markword⾮结构化的，这样在不同的锁状态下，能够复⽤相同的bit<br>位。markword中就有存储锁的信息的部分。</p>
 <p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220810155913925.png" srcset="/img/loading.gif" lazyload alt="image-20220810155913925"></p>
@@ -593,13 +676,24 @@
 <blockquote>
 <p>一句话理解ThreadLocal，threadlocl是作为当前线程中属性ThreadLocalMap集合中的某一个Entry的key值Entry（threadlocl,value），虽然不同的线程之间threadlocal这个key值是一样，但是不同的线程所拥有的ThreadLocalMap是独一无二的，也就是不同的线程间同一个ThreadLocal（key）对应存储的值(value)不一样，从而到达了线程间变量隔离的目的，但是在同一个线程中这个value变量地址是一样的。</p>
 </blockquote>
-<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>Java中的线程池是运用场景最多的并发框架，几乎所有需要异步或并发执行任务的程序都可以使用线程池。在开发过程中，合理地使用线程池能够带来许多好处。 </p>
+<h3 id="可重入锁-ReentrantLock"><a href="#可重入锁-ReentrantLock" class="headerlink" title="可重入锁(ReentrantLock)"></a>可重入锁(ReentrantLock)</h3><p>ReentrantLock支持两种获取锁的方式，一种是公平模型，一种是非公平模型</p>
+<p><strong>公平锁</strong></p>
+<p>可重入锁：就是一个线程在获取了锁之后，再次去获取同一个锁，这时候仅仅是把状态值进行累加</p>
+<p>如果线程释放了一次锁，状态值减1。只有线程完全释放锁，状态值减到0，其他线程才有机会获取锁。</p>
+<ul>
+<li>状态：<code>volatile int state</code></li>
+<li>获取锁线程：<code>Thread</code></li>
+<li>排队队列：<code>Node</code>双向队列</li>
+</ul>
+<p><strong>非公平锁</strong></p>
+<p>非公平锁时要唤醒阻塞的线程时，其他的线程抢占锁，阻塞的线程只能继续休眠</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><h3 id="线程池优点"><a href="#线程池优点" class="headerlink" title="线程池优点"></a>线程池优点</h3><p>Java中的线程池是运用场景最多的并发框架，几乎所有需要异步或并发执行任务的程序都可以使用线程池。在开发过程中，合理地使用线程池能够带来许多好处。 </p>
 <ul>
 <li>降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。 </li>
 <li>提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行。 </li>
-<li>提高线程的可管理性。线程是稀缺资源，如果无限制地创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一分配、调优和监控。但是，要做到合理利用</li>
+<li>提高线程的可管理性。线程是稀缺资源，如果无限制地创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一分配、调优和监控。但是，要做到合理利用‘</li>
 </ul>
-<p>ThreadPoolExecutor其实也是JAVA的一个类，我们一般通过Executors工厂类的方法，通过传入 不同的参数，就可以构造出适用于不同应用场景下的ThreadPoolExecutor（线程池）</p>
+<h3 id="线程池的创建"><a href="#线程池的创建" class="headerlink" title="线程池的创建"></a>线程池的创建</h3><p>ThreadPoolExecutor其实也是JAVA的一个类，我们一般通过Executors工厂类的方法，通过传入 不同的参数，就可以构造出适用于不同应用场景下的ThreadPoolExecutor（线程池）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">* Creates a new &#123;<span class="hljs-doctag">@code</span> ThreadPoolExecutor&#125; with the given initial</span><br><span class="hljs-comment">* parameters and default thread factory and rejected execution handler.</span><br><span class="hljs-comment">* It may be more convenient to use one of the &#123;<span class="hljs-doctag">@link</span> Executors&#125; factory</span><br><span class="hljs-comment">* methods instead of this general purpose constructor.</span><br><span class="hljs-comment">*</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> corePoolSize the number of threads to keep in the pool, even</span><br><span class="hljs-comment">*        if they are idle, unless &#123;<span class="hljs-doctag">@code</span> allowCoreThreadTimeOut&#125; is set</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> maximumPoolSize the maximum number of threads to allow in the</span><br><span class="hljs-comment">*        pool</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> keepAliveTime when the number of threads is greater than</span><br><span class="hljs-comment">*        the core, this is the maximum time that excess idle threads</span><br><span class="hljs-comment">*        will wait for new tasks before terminating.</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> unit the time unit for the &#123;<span class="hljs-doctag">@code</span> keepAliveTime&#125; argument</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> workQueue the queue to use for holding tasks before they are</span><br><span class="hljs-comment">*        executed.  This queue will hold only the &#123;<span class="hljs-doctag">@code</span> Runnable&#125;</span><br><span class="hljs-comment">*        tasks submitted by the &#123;<span class="hljs-doctag">@code</span> execute&#125; method.</span><br><span class="hljs-comment">* <span class="hljs-doctag">@throws</span> IllegalArgumentException if one of the following holds:&lt;br&gt;</span><br><span class="hljs-comment">*         &#123;<span class="hljs-doctag">@code</span> corePoolSize &lt; 0&#125;&lt;br&gt;</span><br><span class="hljs-comment">*         &#123;<span class="hljs-doctag">@code</span> keepAliveTime &lt; 0&#125;&lt;br&gt;</span><br><span class="hljs-comment">*         &#123;<span class="hljs-doctag">@code</span> maximumPoolSize &lt;= 0&#125;&lt;br&gt;</span><br><span class="hljs-comment">*         &#123;<span class="hljs-doctag">@code</span> maximumPoolSize &lt; corePoolSize&#125;</span><br><span class="hljs-comment">* <span class="hljs-doctag">@throws</span> NullPointerException if &#123;<span class="hljs-doctag">@code</span> workQueue&#125; is null</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-title function_">ThreadPoolExecutor</span><span class="hljs-params">(<span class="hljs-type">int</span> corePoolSize,</span><br><span class="hljs-params">                          <span class="hljs-type">int</span> maximumPoolSize,</span><br><span class="hljs-params">                          <span class="hljs-type">long</span> keepAliveTime,</span><br><span class="hljs-params">                          TimeUnit unit,</span><br><span class="hljs-params">                          BlockingQueue&lt;Runnable&gt; workQueue)</span> &#123;<br>    <span class="hljs-built_in">this</span>(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,<br>         Executors.defaultThreadFactory(), defaultHandler);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>相关参数的说明</p>
@@ -611,6 +705,99 @@
 <li>threadFactory 线程工厂 </li>
 <li>handler 线程池拒绝策略</li>
 </ul>
+<h3 id="线程池的实现原理"><a href="#线程池的实现原理" class="headerlink" title="线程池的实现原理"></a>线程池的实现原理</h3><p>提交一个任务到线程池中，线程池的处理流程如下：</p>
+<ul>
+<li>判断<strong>线程池里的核心线程</strong>是否都在执行任务，如果不是（核心线程空闲或者还有核心线程没有被创建）则创建一个新的工作线程来执行任务。如果核心线程都在执行任务，则进入下个流程。</li>
+<li>线程池判断<strong>工作队列</strong>是否已满，如果工作队列没有满，则将新提交的任务存储在这个工作队列里。如果工作队列满了，则进入下个流程。</li>
+<li>判断线程池里的线程是否都处于工作状态，如果没有，则创建一个新的工作线程来执行任务。如果已经满了，则交给饱和策略来处理这个任务。</li>
+</ul>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925145950776.png" srcset="/img/loading.gif" lazyload alt="image-20220925145950776"></p>
+<h3 id="线程池源码"><a href="#线程池源码" class="headerlink" title="线程池源码"></a>线程池源码</h3><p><strong>execute方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">execute</span><span class="hljs-params">(Runnable command)</span> &#123;<br>    <span class="hljs-keyword">if</span> (command == <span class="hljs-literal">null</span>)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NullPointerException</span>();<br>    <span class="hljs-comment">//由它可以获取到当前有效的线程数和线程池的状态</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> ctl.get();<br>    <span class="hljs-comment">// 1.获取当前正在运行线程数是否小于核心线程池，是则新创建一个线程执行任务，否则将任务放到任务队列中</span><br>    <span class="hljs-keyword">if</span> (workerCountOf(c) &lt; corePoolSize) &#123; <span class="hljs-comment">// 标识行 &lt;------</span><br>        <span class="hljs-keyword">if</span> (addWorker(command, <span class="hljs-literal">true</span>)) <span class="hljs-comment">//在addWorker中创建工作线程执行任务</span><br>            <span class="hljs-keyword">return</span>;<br>        c = ctl.get();<br>    &#125;<br>    <span class="hljs-comment">// 2.当前核心线程池中全部线程都在运行workerCountOf(c) &gt;= corePoolSize，所以此时将线程放到任务队列中</span><br>    <span class="hljs-keyword">if</span> (isRunning(c) &amp;&amp; workQueue.offer(command)) &#123;<br>    		<span class="hljs-comment">//线程池是否处于运行状态，且是否任务插入任务队列成功</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">recheck</span> <span class="hljs-operator">=</span> ctl.get();<br>        <span class="hljs-keyword">if</span> (! isRunning(recheck) &amp;&amp; remove(command))<br>            <span class="hljs-comment">//线程池是否处于运行状态，如果不是则使刚刚的任务出队</span><br>            reject(command); <span class="hljs-comment">//抛出RejectedExceptionException异常</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (workerCountOf(recheck) == <span class="hljs-number">0</span>)<br>            addWorker(<span class="hljs-literal">null</span>, <span class="hljs-literal">false</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!addWorker(command, <span class="hljs-literal">false</span>))<br>    <span class="hljs-comment">// 3.插入队列不成功，且当前线程数数量小于最大线程池数量，此时则创建新线程执行任务，创建失败抛出异常</span><br>        reject(command);<span class="hljs-comment">//抛出RejectedExceptionException异常</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>addWorker方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">addWorker</span><span class="hljs-params">(Runnable firstTask, <span class="hljs-type">boolean</span> core)</span> &#123;<br><span class="hljs-comment">/*首先会再次检查线程池是否处于运行状态，核心线程池中是否还有空闲线程，都满足条件过后则会调用compareAndIncrementWorkerCount先将正在运行的线程数+1，数量自增成功则跳出循环，自增失败则继续从头继续循环*/</span><br>　　...<br>　　<span class="hljs-keyword">if</span> (compareAndIncrementWorkerCount(c))<br>　　　　<span class="hljs-keyword">break</span> retry;<br>　　...<br><span class="hljs-comment">/*正在运行的线程数自增成功后则将线程封装成工作线程Worker*/</span><br>　　<span class="hljs-type">boolean</span> <span class="hljs-variable">workerStarted</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>　　<span class="hljs-type">boolean</span> <span class="hljs-variable">workerAdded</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>　　<span class="hljs-type">Worker</span> <span class="hljs-variable">w</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>　　<span class="hljs-keyword">try</span> &#123;<br>　　　　<span class="hljs-keyword">final</span> <span class="hljs-type">ReentrantLock</span> <span class="hljs-variable">mainLock</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">this</span>.mainLock;        <span class="hljs-comment">//全局锁</span><br>　　　　w = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Woker</span>(firstTask);        <span class="hljs-comment">//将线程封装为Worker工作线程</span><br>　　　　<span class="hljs-keyword">final</span> <span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> w.thread;<br>　　　　<span class="hljs-keyword">if</span> (t != <span class="hljs-literal">null</span>) &#123;<br>　　　　　　mainLock.lock();    <span class="hljs-comment">//获取全局锁</span><br><span class="hljs-comment">/*当持有了全局锁的时候，还需要再次检查线程池的运行状态等*/</span><br>　　　　　　<span class="hljs-keyword">try</span> &#123;<br>　　　　　　　　<span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> clt.get();<br>　　　　　　　　<span class="hljs-type">int</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> runStateOf(c);        <span class="hljs-comment">//线程池运行状态</span><br>　　　　　　　　<span class="hljs-keyword">if</span> (rs &lt; SHUTDOWN || (rs == SHUTDOWN &amp;&amp; firstTask == <span class="hljs-literal">null</span>))&#123;        <span class="hljs-comment">//线程池处于运行状态，或者线程池关闭且任务线程为空</span><br>　　　　　　　　　　<span class="hljs-keyword">if</span> (t.isAlive())    <span class="hljs-comment">//线程处于活跃状态，即线程已经开始执行或者还未死亡，正确的应线程在这里应该是还未开始执行的</span><br>　　　　　　　　　　　　<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalThreadStateException</span>();<br>　　　　　　　　　　workers.add(w);    <span class="hljs-comment">//private final HashSet&lt;Worker&gt; wokers = new HashSet&lt;Worker&gt;();包含线程池中所有的工作线程，只有在获取了全局的时候才能访问它。将新构造的工作线程加入到工作线程集合中</span><br>　　　　　　　　　　<span class="hljs-type">int</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> worker.size();    <span class="hljs-comment">//工作线程数量</span><br>　　　　　　　　　　<span class="hljs-keyword">if</span> (s &gt; largestPoolSize)<br>　　　　　　　　　　　　largestPoolSize = s;<br>　　　　　　　　　　workerAdded = <span class="hljs-literal">true</span>;    <span class="hljs-comment">//新构造的工作线程加入成功</span><br>　　　　　　　　&#125;<br>　　　　　　&#125; <span class="hljs-keyword">finally</span> &#123;<br>　　　　　　　　mainLock.unlock();<br>　　　　　　&#125;<br>　　 　　　　<span class="hljs-keyword">if</span> (workerAdded) &#123;<br>　　　　　　　　t.start();    <span class="hljs-comment">//在被构造为Worker工作线程，且被加入到工作线程集合中后，执行线程任务，注意这里的start实际上执行Worker中run方法，所以接下来分析Worker的run方法</span><br>　　　　　　　　workerStarted = <span class="hljs-literal">true</span>;<br>　　　　　　&#125;<br>　　　　&#125;<br>　　&#125; <span class="hljs-keyword">finally</span> &#123;<br>　　　　<span class="hljs-keyword">if</span> (!workerStarted)    <span class="hljs-comment">//未能成功创建执行工作线程</span><br>　　　　　　addWorkerFailed(w);    <span class="hljs-comment">//在启动工作线程失败后，将工作线程从集合中移除</span><br>　　&#125;<br>　　<span class="hljs-keyword">return</span> workerStarted;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Worker</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//ThreadPoolExecutor$Worker，它继承了AQS，同时实现了Runnable，所以它具备了这两者的所有特性</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Worker</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbstractQueuedSynchronizer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span> &#123;<br>　　<span class="hljs-keyword">final</span> Thread thread;<br>　　Runnable firstTask;<br>　　<span class="hljs-keyword">public</span> <span class="hljs-title function_">Worker</span><span class="hljs-params">(Runnable firstTask)</span> &#123;<br>　　　　setState(-<span class="hljs-number">1</span>);    <br>　　　　<span class="hljs-comment">//设置AQS的同步状态为-1，禁止中断，直到调用runWorker</span><br>　　　　<span class="hljs-built_in">this</span>.firstTask = firstTask;<br>　　　　<span class="hljs-built_in">this</span>.thread = getThreadFactory().newThread(<span class="hljs-built_in">this</span>);   <br>　　　　 <span class="hljs-comment">//通过线程工厂来创建一个线程，将自身作为Runnable传递传递</span><br>　　&#125;<br>　　<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>　　　　runWorker(<span class="hljs-built_in">this</span>);    <span class="hljs-comment">//运行工作线程</span><br>　　&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>worker</code>在执行完任务后，还会通过<code>getTask</code>方法循环获取工作队里的任务来执行</p>
+</blockquote>
+<h2 id="线程池案例"><a href="#线程池案例" class="headerlink" title="线程池案例"></a>线程池案例</h2><p><strong>创建线程</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.concurrent.LinkedBlockingDeque;<br><span class="hljs-keyword">import</span> java.util.concurrent.ThreadPoolExecutor;<br><span class="hljs-keyword">import</span> java.util.concurrent.TimeUnit;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadPoolExample</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">200</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        LinkedBlockingDeque&lt;Runnable&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedBlockingDeque</span>&lt;&gt;(<span class="hljs-number">5</span>);<br>        <span class="hljs-type">ThreadPoolExecutor</span> <span class="hljs-variable">threadPool</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExecutor</span>(<br>                <span class="hljs-number">5</span>,<br>                <span class="hljs-number">10</span>,<br>                <span class="hljs-number">60</span>,<br>                TimeUnit.SECONDS,<br>                queue<br>        );<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">16</span>; i++) &#123;<br>            threadPool.execute(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExample</span>(), <span class="hljs-string">&quot;Thread&quot;</span> + i));<br>            System.out.println(<span class="hljs-string">&quot;线程中活跃的线程数：&quot;</span> + threadPool.getPoolSize());<br>            <span class="hljs-keyword">if</span> (queue.size() &gt; <span class="hljs-number">0</span>) &#123;<br>                System.out.println(<span class="hljs-string">&quot;-----&gt;队伍中阻塞的线程数：&quot;</span> + queue.size());<br>            &#125;<br>        &#125;<br>        threadPool.shutdown();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>运行的结果是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs shell">线程中活跃的线程数：1<br>线程中活跃的线程数：2<br>线程中活跃的线程数：3<br>线程中活跃的线程数：4<br>线程中活跃的线程数：5<br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：1</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：2</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：3</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：4</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：6<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：7<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：8<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：9<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：10<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>Exception in thread &quot;main&quot; java.util.concurrent.RejectedExecutionException: Task Thread[Thread15,5,main] rejected from java.util.concurrent.ThreadPoolExecutor@5cad8086[Running, pool size = 10, active threads = 10, queued tasks = 5, completed tasks = 0]<br>	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)<br>	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)<br>	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)<br>	at com.madao33.ThreadPoolExample.main(ThreadPoolExample.java:27)<br><br></code></pre></td></tr></table></figure>
+
+<p>从结果可以观察出：</p>
+<ul>
+<li>创建的线程池具体配置为：核心线程数量为5个；全部线程数量为10个；工作队列的长度为5。</li>
+<li>我们通过queue.size()的方法来获取工作队列中的任务数。</li>
+<li>刚开始都是在创建新的线程，达到核心线程数量5个后，新的任务进来后不再创建新的线程，而是将任务加入工作队列，任务队列到达上线5个后，新的任务又会创建新的普通线程，直到达到线程池最大的线程数量10个，后面的任务则根据配置的饱和策略来处理。我们这里没有具体配置，使用的是默认的配置AbortPolicy:直接抛出异常。</li>
+</ul>
+<p>当然，为了达到需要的效果，上述线程处理的任务都是利用休眠导致线程没有释放</p>
+<p><strong>饱和策略</strong></p>
+<p>当队列和线程池都满了，说明线程池处于饱和状态，那么必须对新提交的任务采用一种特殊的策略来进行处理。这个策略默认配置是<code>AbortPolicy</code>，表示无法处理新的任务而抛出异常。JAVA提供了4中策略：</p>
+<ul>
+<li><code>AbortPolicy</code>：直接抛出异常</li>
+<li><code>CallerRunsPolicy</code>：只用调用所在的线程运行任务</li>
+<li><code>DiscardOldestPolicy</code>：丢弃队列里最近的一个任务，并执行当前任务。</li>
+<li><code>DiscardPolicy</code>：不处理，丢弃掉。</li>
+</ul>
+<p>我们现在用第四种策略来处理上面的程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.concurrent.LinkedBlockingDeque;<br><span class="hljs-keyword">import</span> java.util.concurrent.RejectedExecutionHandler;<br><span class="hljs-keyword">import</span> java.util.concurrent.ThreadPoolExecutor;<br><span class="hljs-keyword">import</span> java.util.concurrent.TimeUnit;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadPoolExample</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">200</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        LinkedBlockingDeque&lt;Runnable&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedBlockingDeque</span>&lt;&gt;(<span class="hljs-number">5</span>);<br>        <span class="hljs-type">RejectedExecutionHandler</span> <span class="hljs-variable">handler</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExecutor</span>.DiscardOldestPolicy();<br>        <span class="hljs-type">ThreadPoolExecutor</span> <span class="hljs-variable">threadPool</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExecutor</span>(<br>                <span class="hljs-number">5</span>,<br>                <span class="hljs-number">10</span>,<br>                <span class="hljs-number">60</span>,<br>                TimeUnit.SECONDS,<br>                queue,<br>                handler<br>        );<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">16</span>; i++) &#123;<br>            threadPool.execute(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExample</span>(), <span class="hljs-string">&quot;Thread&quot;</span> + i));<br>            System.out.println(<span class="hljs-string">&quot;线程中活跃的线程数：&quot;</span> + threadPool.getPoolSize());<br>            <span class="hljs-keyword">if</span> (queue.size() &gt; <span class="hljs-number">0</span>) &#123;<br>                System.out.println(<span class="hljs-string">&quot;-----&gt;队伍中阻塞的线程数：&quot;</span> + queue.size());<br>            &#125;<br>        &#125;<br>        threadPool.shutdown();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这里采用了丢弃策略后，就没有再抛出异常，而是直接丢弃。在某些重要的场景下，可以采用记录日志或者存储到数据库中，而不应该直接丢弃。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">线程中活跃的线程数：1<br>线程中活跃的线程数：2<br>线程中活跃的线程数：3<br>线程中活跃的线程数：4<br>线程中活跃的线程数：5<br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：1</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：2</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：3</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：4</span><br>线程中活跃的线程数：5<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：6<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：7<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：8<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：9<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：10<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br>线程中活跃的线程数：10<br><span class="hljs-meta prompt_">-----&gt;</span><span class="language-bash">队伍中阻塞的线程数：5</span><br><br>Process finished with exit code 0<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>Callable、Future、FutureTash</strong></p>
+<p><code>Callable</code>与<code>Future</code>是在JAVA的后续版本中引入进来的，<code>Callable</code>类似于<code>Runnable</code>接口，实现<code>Callable</code>接口的类与实现<code>Runnable</code>的类都是可以被线程执行的任务</p>
+<ul>
+<li><code>Callable</code>是<code>Runnable</code>封装的异步运算任务。</li>
+<li><code>Future</code>用来保存<code>Callable</code>异步运算的结果</li>
+<li><code>FutureTask</code>封装<code>Future</code>的实体类</li>
+</ul>
+<p><code>Callable</code>与<code>Runnbale</code>的区别：</p>
+<ul>
+<li><code>Callable</code>定义的方法是call，而<code>Runnable</code>定义的方法是run<code>。</code></li>
+<li><code>call</code>方法有返回值，而<code>run</code>方法是没有返回值的。</li>
+<li><code>call</code>方法可以抛出异常，而<code>run</code>方法不能抛出异常。</li>
+</ul>
+<p><strong>Future</strong></p>
+<p>future表示异步计算的结果，提供了以下方法，主要是判断任务是否完成，中断任务，获取任务执行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Future</span>&lt;V&gt; &#123;<br><br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">cancel</span><span class="hljs-params">(<span class="hljs-type">boolean</span> mayInterruptIfRunning)</span>;<br><br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">isCancelled</span><span class="hljs-params">()</span>;<br><br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">isDone</span><span class="hljs-params">()</span>;<br><br>    V <span class="hljs-title function_">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException, ExecutionException;<br><br>    V <span class="hljs-title function_">get</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout, TimeUnit unit)</span><br>        <span class="hljs-keyword">throws</span> InterruptedException, ExecutionException, TimeoutException;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>FutureTask</strong></p>
+<p>可取消的异步计算，此类提供了对Future的基本实现，仅在计算完成时才能获取结果，如果计算尚未完成，则阻塞get方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FutureTask</span>&lt;V&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title class_">RunnableFuture</span>&lt;V&gt;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">RunnableFuture</span>&lt;V&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Runnable</span>, Future&lt;V&gt;<br></code></pre></td></tr></table></figure>
+
+<p>FutureTask不仅实现了Future接口，还实现了Runnable接口，所以不仅可以将FutureTask当成一个任务交给Executor来执行，还可以通过Thread来创建一个线程。</p>
+<p><strong>Callable与FutureTask案例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;<br><span class="hljs-keyword">import</span> java.util.concurrent.Callable;<br><span class="hljs-keyword">import</span> java.util.concurrent.FutureTask;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyCallableTask</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Callable</span>&lt;Integer&gt; &#123;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Integer <span class="hljs-title function_">call</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        System.out.println(<span class="hljs-string">&quot;callable do something&quot;</span>);<br>        Thread.sleep(<span class="hljs-number">5000</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>().nextInt(<span class="hljs-number">100</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        Callable&lt;Integer&gt; callable = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyCallableTask</span>();<br>        FutureTask&lt;Integer&gt; future = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FutureTask</span>&lt;Integer&gt;(callable);<br>        <span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(future);<br>        thread.start();<br>        Thread.sleep(<span class="hljs-number">100</span>);<br>        <span class="hljs-comment">//尝试取消对此任务的执行</span><br>        future.cancel(<span class="hljs-literal">true</span>);<br>        <span class="hljs-comment">//判断是否在任务正常完成前取消</span><br>        System.out.println(<span class="hljs-string">&quot;future is cancel:&quot;</span> + future.isCancelled());<br>        <span class="hljs-keyword">if</span>(!future.isCancelled())<br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;future is cancelled&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">//判断任务是否已完成</span><br>        System.out.println(<span class="hljs-string">&quot;future is done:&quot;</span> + future.isDone());<br>        <span class="hljs-keyword">if</span>(!future.isDone())<br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;future get=&quot;</span> + future.get());<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-comment">//任务已完成</span><br>            System.out.println(<span class="hljs-string">&quot;task is done&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>运行结果</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">callable do something<br>future is cancel:true<br>future is done:true<br>task is done<br></code></pre></td></tr></table></figure>
+
+<p><strong>Callable与Future</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.concurrent.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CallableThread</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Callable</span>&lt;String&gt; &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">call</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        System.out.println(<span class="hljs-string">&quot;进入call方法，开始休眠，休眠时间为： &quot;</span> + System.currentTimeMillis());<br>        Thread.sleep(<span class="hljs-number">10000</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;今天停电&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception&#123;<br>        <span class="hljs-type">ExecutorService</span> <span class="hljs-variable">es</span> <span class="hljs-operator">=</span> Executors.newSingleThreadExecutor();<br>        Callable&lt;String&gt; call = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CallableThread</span>();<br>        Future&lt;String&gt; fu = es.submit(call);<br>        es.shutdown();<br>        Thread.sleep(<span class="hljs-number">5000</span>);<br>        System.out.println(<span class="hljs-string">&quot;主线程休眠5秒，当前时间&quot;</span> + System.currentTimeMillis());<br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> fu.get();<br>        System.out.println(<span class="hljs-string">&quot;Future已拿到数据，str=&quot;</span> + str + <span class="hljs-string">&quot;;当前时间为：&quot;</span> + System.currentTimeMillis());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>运行的结果是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">进入call方法，开始休眠，休眠时间为： 1664097924448<br>主线程休眠5秒，当前时间1664097929462<br>Future已拿到数据，str=今天停电;当前时间为：1664097934459<br></code></pre></td></tr></table></figure>
+
+<p>这里的future是直接扔到线程池里面去执行的。由于要打印任务的执行结果，所以从执行结果来看，主线程虽然休眠了5s，但是从Call方法执行到拿到任务的结果，这中间的时间差正好是10s，说明get方法会阻塞当前线程直到任务完成。</p>
+<p>通过FutureTask也可以达到同样的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>      <span class="hljs-type">ExecutorService</span> <span class="hljs-variable">es</span> <span class="hljs-operator">=</span> Executors.newSingleThreadExecutor();<br>      Callable&lt;String&gt; call = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CallableThread</span>();<br>      FutureTask&lt;String&gt; task = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FutureTask</span>&lt;String&gt;(call);<br>      es.submit(task);<br>      es.shutdown();<br>      Thread.sleep(<span class="hljs-number">5000</span>);<br>      System.out.println(<span class="hljs-string">&quot;主线程等待5秒，当前时间为：&quot;</span> + System.currentTimeMillis());<br>      <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> task.get();<br>      System.out.println(<span class="hljs-string">&quot;Future已拿到数据，str=&quot;</span> + str + <span class="hljs-string">&quot;;当前时间为：&quot;</span> + System.currentTimeMillis());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以通过以上代码的组合，得到这样一个应用场景</p>
+<p>如有一种场景中，方法A返回一个数据需要10s,A方法后面的代码运行需要20s，但是这20s的执行过程中，只有后面10s依赖于方法A执行的结果。如果与以往一样采用同步的方式，势必会有10s的时间被浪费，如果采用前面两种组合，则效率会提高：</p>
+<ul>
+<li>先把A方法的内容放到Callable实现类的call()方法中</li>
+<li>在主线程中通过线程池执行A任务</li>
+<li>执行后面方法中10秒不依赖方法A运行结果的代码</li>
+<li>获取方法A的运行结果，执行后面方法中10秒依赖方法A运行结果的代码</li>
+</ul>
+<p>这样代码执行效率一下子就提高了，程序不必卡在A方法处。</p>
 <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h2 id="说一下你对Java虚拟机的理解"><a href="#说一下你对Java虚拟机的理解" class="headerlink" title="说一下你对Java虚拟机的理解"></a>说一下你对Java虚拟机的理解</h2><h3 id="Java内存结构"><a href="#Java内存结构" class="headerlink" title="Java内存结构"></a>Java内存结构</h3><p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/interview/image-20220802212445262.png" srcset="/img/loading.gif" lazyload></p>
 <p>方法区和堆是所有线程共享的内存区域；而java栈、本地方法栈和程序员计数器是运行是线程私有的内存区域。</p>
 <ul>
@@ -653,7 +840,74 @@
 <p><strong>新生代收集器</strong>：Serial、ParNew、Parallel Scavenge</p>
 <p><strong>老年代收集器</strong>：CMS、Serial Old、Parallel Old</p>
 <p><strong>整堆收集器</strong>：G1，ZGC(因为不涉年代不在图中)。</p>
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="排序算法了解过吗，可以详细介绍一下吗"><a href="#排序算法了解过吗，可以详细介绍一下吗" class="headerlink" title="排序算法了解过吗，可以详细介绍一下吗"></a>排序算法了解过吗，可以详细介绍一下吗</h2><p>了解过一点，例如冒泡排序和选择排序</p>
+<h2 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h2><h3 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h3><p>是最基础的收集器，在JDK1.3.1之前是HotSpot虚拟机新生代收集器的唯一选择。他是一个单线程工作的收集器，其单线程的意义不是说它只会使用一个处理器或者一条收集线程去完成垃圾手机工作，更重要的腔调它在进行垃圾收集的时候，必须暂停其他所有工作线程，直到它收集结束。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220919171855626.png" srcset="/img/loading.gif" lazyload alt="image-20220919171855626"></p>
+<ul>
+<li>在客户端模式下的<strong>默认新生代收集器</strong>，简单高效</li>
+<li>在内存有限的情况下，是所有收集器里<strong>额外内存消耗最小</strong>的</li>
+<li>单核处理器中或者处理器核心数较少的环境中，<strong>没有线程交互的开销</strong></li>
+</ul>
+<blockquote>
+<p>Stop The World：垃圾回收算法在进行垃圾回收的时候暂停用户线程，导致的卡顿，感觉就像世界停止了一样</p>
+</blockquote>
+<h3 id="ParNew收集器"><a href="#ParNew收集器" class="headerlink" title="ParNew收集器"></a>ParNew收集器</h3><p>ParNew收集器实质上是Serial收集器的<strong>多线程并行版本</strong>，除了同时使用多条线程进行垃圾收集之外，其余的行为包括Serial收集器可用的所有控制参数（例如：<code>-XX：SurvivorRatio</code>、<code>-XX：PretenureSizeThreshold</code>、<code>-XX：HandlePromotionFailure</code>等）、收集算法、Stop The World、对象分配规则、回收策略等都与Serial收集器完全一致，在实现上这两种收集器也共用了相当多的代码。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220919173206845.png" srcset="/img/loading.gif" lazyload alt="image-20220919173206845"></p>
+<p>除了支持新生代多线程并行收集外，和Serial收集器没有太多创新之处，但是是不少运行在服务端的HotSpot虚拟机，尤其是JDK7之前首选的新生代收集器</p>
+<p>同时，ParNew也可以和CMS收集器配合工作，CMS是一个老年代收集器，<strong>CMS激活后默认的新生代收集器就是ParNew收集器</strong></p>
+<h3 id="Parallel-Scavenge收集器"><a href="#Parallel-Scavenge收集器" class="headerlink" title="Parallel Scavenge收集器"></a>Parallel Scavenge收集器</h3><p>Parallel Scavenge收集器也是一款<strong>新生代收集器</strong>，它同样是基于<strong>标记-复制</strong>算法实现的收集器，也是能够并行收集的多线程收集器，它的目标是达到一个可控制的吞吐量（Throughtput)，所谓的吞吐量就是处理器用于运行用户代码的时间与处理器总消耗时间的比值<br>$$<br>吞吐量&#x3D;\frac{运行用户代码时间}{运行用户代码时间+运行垃圾收集时间}<br>$$<br>Parallel Scavenge收集器提供了两个参数用于精确控制吞吐量，分别是</p>
+<ul>
+<li>控制最大垃圾收集停顿时间的<code>-XX：MaxGCPauseMillis</code>参数</li>
+<li>设置吞吐量大小的<code>-XX：GCTimeRatio</code>参数</li>
+</ul>
+<h3 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h3><p>Serial Old是Serial收集器的老年代版本，它同样是一个单线程收集器，使用<strong>标记-整理</strong>算法</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220920155351376.png" srcset="/img/loading.gif" lazyload alt="image-20220920155351376"></p>
+<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><p>Parallel Old是Parallel Scavenge收集器的<strong>老年代</strong>版本，支持多线程并发收集，基于<strong>标记-整理</strong>算法实现</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220920155540697.png" srcset="/img/loading.gif" lazyload alt="image-20220920155540697"></p>
+<p>配合新生代Parallel Scavenge收集器使用，在注重吞吐量或者处理器资源较为稀缺的组合，可以优先考虑Parallel Scavenge</p>
+<h3 id="CMS垃圾回收器"><a href="#CMS垃圾回收器" class="headerlink" title="CMS垃圾回收器"></a>CMS垃圾回收器</h3><p>CMS（Concurrent Mark Sweep）收集器是一种以获取最短回收停顿时间为目标的收集器，它是基于<strong>标记-清除</strong>算法实现的，只会回收老年代和永久代，整个过程包含四个步骤：</p>
+<ul>
+<li>初始标记</li>
+<li>并发标记</li>
+<li>重新标记</li>
+<li>并发清除</li>
+</ul>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220920203116064.png" srcset="/img/loading.gif" lazyload alt="image-20220920203116064">其中<strong>初始标记、重新标记</strong>这两个步骤仍然需要“Stop The World”。</p>
+<ul>
+<li><strong>初始标记</strong>仅仅只是标记一下<strong>GCRoots能直接关联</strong>到的对象，速度很快；</li>
+<li><strong>并发标记</strong>阶段就是<strong>从GC Roots的直接关联对象开始遍历整个对象图</strong>的过程，这个过程<strong>耗时较长</strong>但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行；</li>
+<li>而<strong>重新标记</strong>阶段则是为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短；</li>
+<li>最后是<strong>并发清除</strong>阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的。</li>
+</ul>
+<blockquote>
+<p>由于在整个过程中耗时最长的并发标记和并发清除阶段中，垃圾收集器线程都可以与用户线程一起工作，所以从总体上来说，CMS收集器的内存回收过程是与用户线程一起并发执行的</p>
+</blockquote>
+<p>虽说CMS有：<strong>并发收集、低停顿</strong>的优点，但是还是有一些缺点：</p>
+<ul>
+<li>首先，CMS收集器<strong>对处理器资源非常敏感</strong>。事实上，面向并发设计的程序都对处理器资源比较敏感。在并发阶段，它虽然不会导致用户线程停顿，但却会因为占用了一部分线程（或者说处理器的计算能力）而导致应用程序变慢，降低总吞吐量。CMS默认启动的回收线程数是（处理器核心数量+3）&#x2F;4，也就是说，如果处理器核心数在四个或以上，并发回收时垃圾收集线程只占用不超过25%的处理器运算资源，并且会随着处理器核心数量的增加而下降。但是当处理器核心数量不足四个时，CMS对用户程序的影响就可能变得很大。</li>
+<li>然后，由于<strong>CMS收集器无法处理“浮动垃圾”（Floating Garbage）</strong>，有可能出现“Con-current ModeFailure”失败进而导致另一次完全“Stop The World”的Full GC的产生。在CMS的并发标记和并发清理阶段，用户线程是还在继续运行的，程序在运行自然就还会伴随有新的垃圾对象不断产生，但这一部分垃圾对象是出现在标记过程结束以后，CMS无法在当次收集中处理掉它们，只好留待下一次垃圾收集时再清理掉。这一部分垃圾就称为“浮动垃圾”。</li>
+<li>因为是基于<strong>标记-清除</strong>算法实现的收集器，所以收集结束会有大量空间碎片产生。空间碎片过多时，将会给大对象分配带来很大麻烦，往往会出现老年代还有很多剩余空间，但就是无法找到足够大的连续空间来分配当前对象，而不得不提前触发一次Full GC。</li>
+</ul>
+<h3 id="G1垃圾回收器"><a href="#G1垃圾回收器" class="headerlink" title="G1垃圾回收器"></a>G1垃圾回收器</h3><p>Garbage First（简称G1）收集器是垃圾收集器技术发展历史上的里程碑式的成果，它开创了收集器面向局部收集的设计思路和基于Region的内存布局形式</p>
+<p>G1是一款主要面向服务端应用的垃圾收集器。</p>
+<p>G1开创的基于Region的堆内存布局，G1不再坚持固定大小以及固定数量的分代区域划分，而是把连续的Java堆划分为多个<strong>大小相等的独立区域（Region）</strong>，每一个Region都可以根据需要，扮演新生代的Eden空间、Survivor空间，或者老年代空间。收集器能够<strong>对扮演不同角色的Region采用不同的策略去处理</strong>，这样无论是新创建的对象还是已经存活了一段时间、熬过多次收集的旧对象都能获取很好的收集效果。</p>
+<p>Region中还有一类<strong>特殊的Humongous区域，专门用来存储大对象</strong>。G1认为只要大小<strong>超过了一个Region容量一半</strong>的对象即可判定为大对象。</p>
+<p>Region的大小可以通过参数<code>-XX：G1HeapRegionSize</code>设定，取值范围为1MB～32MB，且应为2的N次幂</p>
+<p>超过了整个Region容量的超级大对象，将会被<strong>存放在N个连续的Humongous Region之中</strong>，G1的大多数行为都把Humongous Region<strong>作为老年代</strong>的一部分来进行看待</p>
+<p>具体的处理思路是让G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小，价值即回收所获得的空间大小以及回收所需时间的经验值，然后在后台<strong>维护一个优先级列表</strong>，每次根据用户设定<strong>允许的收集停顿时间</strong>（使用参数<code>-XX：MaxGCPauseMillis</code>指定，默认值是200毫秒），<strong>优先处理回收价值收益最大的那些Region</strong>，这也就是“Garbage First”名字的由来。这种使用Region划分内存空间，以及具有优先级的区域回收方式，保证了G1收集器在有限的时间内获取尽可能高的收集效率。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220922112100355.png" srcset="/img/loading.gif" lazyload alt="image-20220922112100355"></p>
+<ul>
+<li><strong>初始标记（Initial Marking）</strong>：仅仅只是标记一下GC Roots能直接关联到的对象，并且修改TAMS指针的值，让下一阶段用户线程并发运行时，能正确地在可用的Region中分配新对象。这个阶段需要停顿线程，但耗时很短，而且是借用进行Minor GC的时候同步完成的，所以G1收集器在这个阶段实际并没有额外的停顿。</li>
+<li><strong>并发标记（Concurrent Marking）</strong>：从GC Root开始对堆中对象进行可达性分析，递归扫描整个堆里的对象图，找出要回收的对象，这阶段耗时较长，但可与用户程序并发执行。当对象图扫描完成以后，还要重新处理SATB记录下的在并发时有引用变动的对象。</li>
+<li><strong>最终标记（Final Marking）</strong>：对用户线程做另一个短暂的暂停，用于处理并发阶段结束后仍遗留下来的最后那少量的SATB记录。</li>
+<li><strong>筛选回收（Live Data Counting and Evacuation）</strong>：负责更新Region的统计数据，对各个Region的回收价值和成本进行排序，根据用户所期望的停顿时间来制定回收计划，可以自由选择任意多个Region构成回收集，然后把决定回收的那一部分Region的存活对象复制到空的Region中，再清理掉整个旧Region的全部空间。这里的操作涉及存活对象的移动，是必须暂停用户线程，由多条收集器线程并行完成的。</li>
+</ul>
+<blockquote>
+<ul>
+<li>G1收集器除了并发标记外，其余阶段也是要完全暂停用户线程的，它的目标是在延迟可控的情况下获得尽可能高的吞吐量</li>
+<li>在<strong>小内存应用上CMS的表现大概率仍然要会优于G1</strong>，而在<strong>大内存应用上G1则大多能发挥其优势</strong>，这个优劣势的Java堆容量平衡点通常在6GB至8GB之间</li>
+</ul>
+</blockquote>
+<h3 id="ZGC垃圾回收器"><a href="#ZGC垃圾回收器" class="headerlink" title="ZGC垃圾回收器"></a>ZGC垃圾回收器</h3><h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="排序算法了解过吗，可以详细介绍一下吗"><a href="#排序算法了解过吗，可以详细介绍一下吗" class="headerlink" title="排序算法了解过吗，可以详细介绍一下吗"></a>排序算法了解过吗，可以详细介绍一下吗</h2><p>了解过一点，例如冒泡排序和选择排序</p>
 <ul>
 <li><p>冒泡排序：每一轮循环都是和相邻的元素比较，然后一步步的将最小的元素或者最大的元素排在前面，时间复杂度是 $O(n^2)$</p>
 </li>
@@ -778,7 +1032,19 @@
 </ul>
 </blockquote>
 <h2 id="有在项目中用到过这种设计模式吗"><a href="#有在项目中用到过这种设计模式吗" class="headerlink" title="有在项目中用到过这种设计模式吗"></a>有在项目中用到过这种设计模式吗</h2><p>在个人网站的开发过程中，每一个页面设置了一个head-img，使用的是枚举的单例模式实现的，在每一篇文章和每一个页面加载的时候创建图片的实例，并获取实例，为了加速访问数据，还将对应图片的路径&#x2F;链接保存在redis数据库中</p>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h2><p>HTTP<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="[HTTP 和 HTTPS 的区别（面试常考题）](https://blog.csdn.net/qq_36667170/article/details/121656279)">[3]</span></a></sup>：超文本传输协议（HTTP，HyperText Transfer Protocol）是互联网上应用最为广泛的一种网络协议。设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。它可以使浏览器更加高效。HTTP 协议是以明文方式发送信息的，如果黑客截取了 Web 浏览器和服务器之间的传输报文，就可以直接获得其中的信息。</p>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>知网掩码又叫网络掩码、地址掩码、子网络遮罩，是一个应用于TCP&#x2F;IP网络的32位二进制值。它可以屏蔽IP地址中的一部分，从而分离出IP地址中的网络部分与主机部分，基于子网掩码，管理员可以将网络进一步划分为若干子网。它必须结合IP地址一起使用。</p>
+<p><strong>如何通过子网掩码得到网络和主机地址</strong></p>
+<ul>
+<li>网络地址：二进制形式的IP地址与子网掩码的二进制做<strong>与</strong>运算，将结果转换为十进制就是网络地址</li>
+<li>主机地址：将<strong>取反</strong>的子网掩码与IP地址做<strong>与</strong>，将结果转换为十进制得到主机地址</li>
+</ul>
+<p>例如：</p>
+<p>ip地址：192.168.0.1  子网掩码：255.255.255.0</p>
+<p>ip二进制：    11000000.10101000.00000000.00000001</p>
+<p>子网二进制：11111111.11111111.11111111.00000000</p>
+<p>网络地址：    11000000.10101000.00000000.00000000   192.168.0.0</p>
+<p>主机地址：    00000000.00000000.00000000.00000001    0.0.0.1</p>
+<h2 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h2><p>HTTP<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="[HTTP 和 HTTPS 的区别（面试常考题）](https://blog.csdn.net/qq_36667170/article/details/121656279)">[3]</span></a></sup>：超文本传输协议（HTTP，HyperText Transfer Protocol）是互联网上应用最为广泛的一种网络协议。设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。它可以使浏览器更加高效。HTTP 协议是以明文方式发送信息的，如果黑客截取了 Web 浏览器和服务器之间的传输报文，就可以直接获得其中的信息。</p>
 <p>HTTPS：是以安全为目标的 HTTP 通道，是 HTTP 的安全版。HTTPS 的安全基础是 SSL。SSL 协议位于 TCP&#x2F;IP 协议与各种应用层协议之间，为数据通讯提供安全支持。SSL 协议可分为两层：SSL 记录协议（SSL Record Protocol），它建立在可靠的传输协议（如TCP）之上，为高层协议提供数据封装、压缩、加密等基本功能的支持。SSL 握手协议（SSL Handshake Protocol），它建立在 SSL 记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。</p>
 <p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/interview/image-20220803144740620.png" srcset="/img/loading.gif" lazyload alt="image-20220803144740620"></p>
 <p>简要概括一下两者的区别就是：</p>
@@ -1083,6 +1349,249 @@
 <li>第一种情况是：事务需要更新大部分或全部数据，表又比较大，如果使用默认的行锁，不仅这个事务执行效率低，而且可能造成其他事务长时间锁等待和锁冲突，这种情况下可以考虑使用表锁来提高该事务的执行速度。</li>
 <li>第二种情况是：事务涉及多个表，比较复杂，很可能引起死锁，造成大量事务回滚。这种情况也可以考虑一次性锁定事务涉及的表，从而避免死锁、减少数据库因事务回滚带来的开销。</li>
 </ul>
+<p><strong>InnoDB加锁方法</strong></p>
+<ul>
+<li><p>意向锁是 InnoDB 自动加的， 不需用户干预。</p>
+</li>
+<li><p>对于 <code>UPDATE</code>、 <code>DELETE </code>和 <code>INSERT </code>语句， InnoDB会自动给涉及数据集加排他锁（X)；</p>
+</li>
+<li><p>对于普通 <code>SELECT </code>语句，InnoDB 不会加任何锁；<br>事务可以通过以下语句显式给记录集加共享锁或排他锁：</p>
+</li>
+<li><ul>
+<li>共享锁（S）：<code>SELECT * FROM table_name WHERE ... LOCK IN SHARE MODE</code>。 其他 session 仍然可以查询记录，并也可以对该记录加 share mode 的共享锁。但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。</li>
+<li>排他锁（X)：<code>SELECT * FROM table_name WHERE ... FOR UPDATE</code>。其他 session 可以查询该记录，但是不能对该记录加共享锁或排他锁，而是等待获得锁</li>
+</ul>
+</li>
+</ul>
+<p><strong>for update 和 lock in share mode 的区别：</strong></p>
+<p>前一个上的是排他锁（X 锁），一旦一个事务获取了这个锁，其他的事务是没法在这些数据上执行 <code>for update</code> ；后一个是共享锁，多个事务可以同时的对相同数据执行 <code>lock in share mode</code></p>
+<h3 id="MySQL乐观锁的实现"><a href="#MySQL乐观锁的实现" class="headerlink" title="MySQL乐观锁的实现"></a>MySQL乐观锁的实现</h3><p><strong>悲观锁</strong>：从字面理解就是很悲观，每次去拿数据的时候都认为别人会修改，所以在每次拿的时候对数据上锁，这样就保证了数据的准确性。比如mysql中的表锁，行锁。</p>
+<p><strong>乐观锁</strong>：<strong>在每次去拿数据的时候认为别人不会修改，不对数据上锁，但是在提交更新的时候会判断在此期间数据是否被更改，如果被更改则提交失败。</strong></p>
+<p>乐观锁的实现：使用版本控制字段，再使用行锁的特性实现乐观锁</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925191406535.png" srcset="/img/loading.gif" lazyload alt="image-20220925191406535"></p>
+<p>如果执行一次，那么版本号就增加一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">update order set price = 1, version = version + 1 where id = 1 and version = 0;<br></code></pre></td></tr></table></figure>
+
+<p><strong>死锁的处理</strong></p>
+<p>数据库使用乐观锁导致产生死锁</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925191736595.png" srcset="/img/loading.gif" lazyload alt="image-20220925191736595"></p>
+<p>假设在两个事务中有以上两个操作，同时修改order表中两条数据</p>
+<p>事务A在执行完第一条update的时候，刚好事务B也执行完第一条update</p>
+<p>此时， 事务A中order表中的id &#x3D; 1的行被锁住， 事务B中order表中id &#x3D; 2的行被锁住，两个事务继续往下执行</p>
+<p>事务A中第二条update执行需要order表中id &#x3D; 2的行数据，而事务B中第二条update执行需要id &#x3D; 1的行数据， 两条update往下执行的条件都需要对方事务中已经被锁住的行，于是陷入无限等待，形成死锁。</p>
+<p><strong>解决死锁的方法</strong></p>
+<p><strong>指定锁的执行顺序</strong>，比如把以上两事务稍作修改</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925192445700.png" srcset="/img/loading.gif" lazyload alt="image-20220925192445700"></p>
+<p>事务A执行第一条update时，id &#x3D; 2 的行被锁住，此时，事务B想修改id &#x3D; 2的行，只能等待事务A执行完成，当事务A执行完成时，事务B再执行， 这样就不会产生死锁了。</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="为什么Redis这么快"><a href="#为什么Redis这么快" class="headerlink" title="为什么Redis这么快"></a>为什么Redis这么快</h2><ol>
+<li>Redis是<strong>纯内存数据库</strong>。</li>
+<li>Redis是<strong>单线程数据库</strong>。利用<strong>队列</strong>技术将并发访问变为串行访问。</li>
+<li>Redis采用了<strong>多路复用IO技术</strong>：“多路”指多个网络连接；”复用”指复用一个线程；多路复用IO技术<strong>可以让单线程高效的处理多个连接请求</strong>。</li>
+</ol>
+<h2 id="Redis常用的数据结构"><a href="#Redis常用的数据结构" class="headerlink" title="Redis常用的数据结构"></a>Redis常用的数据结构</h2><ul>
+<li>字符串 <code>String</code></li>
+<li>列表 <code>list</code></li>
+<li>有序集合 <code>zset</code></li>
+<li>哈希表 <code>hash</code></li>
+<li>集合 <code>set</code></li>
+</ul>
+<p>其他的一些高级数据结构</p>
+<ul>
+<li><code>HyperLogLog</code>：通常用于基数统计，使用少量固定大小的内存，来统计集合中唯一元素的数据</li>
+<li><code>Geo</code>：可以将用户给定的地理位置信息存储起来，并进行操作</li>
+<li><code>BitMap</code>：位图</li>
+<li><code>Stream</code>：主要用于消息队列，类似于<code>Kafka</code>。提供了消息的持久化和主从复制功能，可以让任何客户端访问任何时刻的数据，并且能记住每一个客户端的访问位置，还能保证信息不丢失</li>
+</ul>
+<h2 id="Redis应用场景"><a href="#Redis应用场景" class="headerlink" title="Redis应用场景"></a>Redis应用场景</h2><ul>
+<li>缓存</li>
+<li>分布式锁</li>
+<li>排行榜 <code>zset</code></li>
+<li>计数 <code>incrby</code></li>
+<li>消息队列 <code>stream</code></li>
+<li>地理位置 <code>geo</code></li>
+<li>访客统计 <code>hyperloglog</code></li>
+</ul>
+<h2 id="Redis做异步队列"><a href="#Redis做异步队列" class="headerlink" title="Redis做异步队列"></a>Redis做异步队列</h2><p>一般使用<code>list</code>结构作为队列，<code>rpush</code>生产信息，<code>lpop</code>消费消息</p>
+<p>缺点：在消费者下线的情况下，生产的消息会丢失，得使用专业的消息队列如<code>rabbitmq</code>等</p>
+<blockquote>
+<p>使用<code>pub/sub</code>主题订阅者模式，可以实现<code>1:N</code>的消息队列</p>
+</blockquote>
+<h2 id="Redis和数据库一致性问题"><a href="#Redis和数据库一致性问题" class="headerlink" title="Redis和数据库一致性问题"></a>Redis和数据库一致性问题</h2><p>更新策略：</p>
+<ul>
+<li>采用正确的更新策略，先更新数据库，再删除缓存</li>
+<li>因为可能存在删除缓存失败的问题，提供一个消息队列作为补偿措施</li>
+</ul>
+<p>采用延时双删策略：</p>
+<ul>
+<li>先淘汰缓存</li>
+<li>再写数据库</li>
+<li>休眠一会，再次淘汰缓存</li>
+</ul>
+<blockquote>
+<p>如果对数据有强一致性要求，不能放缓存</p>
+</blockquote>
+<h2 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h2><p>由于Redis是一种内存型数据库，即服务器在运行时，系统为其分配了一部分内存存储数据，一旦服务器挂了或宕机了，那么数据库里面的数据将会丢失，为了使服务器即使突然关机也能保存数据，必须通过持久化的方式将数据从内存保存到磁盘中。</p>
+<p>持久化就是把内存的数据写到磁盘中，防止服务器宕机了，导致内存数据待久。</p>
+<p>Redis提供两种持久化机制，分别是RDB和AOF。<strong>Redis服务器默认开启RDB，关闭AOF</strong>；</p>
+<h3 id="RDB持久化"><a href="#RDB持久化" class="headerlink" title="RDB持久化"></a>RDB持久化</h3><p>RDB(Redis DataBase)：快照。按照一定的时间将内存的数据以快照的形式保存到硬盘中，对应产生的数据文件为dump.rdb。通过配置文件中的save参数来定义快照的周期。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220923221404554.png" srcset="/img/loading.gif" lazyload alt="image-20220923221404554"></p>
+<p>优点：<strong>RDB文件紧凑，体积小，网络传输快，适合全量复制</strong>；<strong>恢复速度比AOF快</strong>。与AOF相比，RDB最重要的优点之一是<strong>对性能的影响相对较小</strong>。</p>
+<p>缺点：RDB文件的致命缺点在于其数据快照的持久化方式决定了必然<strong>做不到实时持久化</strong>，而在数据越来越重要的今天，数据的大量丢失很多时候是无法接受的，因此AOF持久化成为主流。此外，RDB文件需要满足特定格式，兼容性差（如老版本的Redis不兼容新版本的RDB文件）。</p>
+<h3 id="AOF持久化"><a href="#AOF持久化" class="headerlink" title="AOF持久化"></a>AOF持久化</h3><p>AOF(Append Only File)：将Redis执行的每次写命令记录到单独的日志文件中，当重启Redis会重新将持久化的日志志中文件恢复数据。</p>
+<p>与RDB持久化相对应，AOF的优点在于支持<strong>秒级持久化</strong>、兼容性好，缺点是文件大、恢复速度慢、对性能影响大。</p>
+<p><strong>持久化策略选择</strong></p>
+<ul>
+<li>如果Redis中的数据完全丢弃也没有关系，那么无论是单机，还是主从架构，都可以不进行任何持久化。</li>
+<li>在单机环境下，如果可以接受十几分钟或更多的数据丢失，选择RDB对Redis的性能更加有利；如果只能接受秒级别的数据丢失，应该选择AOF。</li>
+<li>但在多数情况下，我们都会配置主从环境，slave的存在既可以实现数据的热备，也可以进行读写分离分担Redis读请求，以及在master宕掉后继续提供服务。</li>
+</ul>
+<h2 id="Redis的淘汰策略"><a href="#Redis的淘汰策略" class="headerlink" title="Redis的淘汰策略"></a>Redis的淘汰策略</h2><p>当Redis的内存（maxmemory参数配置）已满时，它会根据淘汰策略（maxmemory-policy参数配置）进行相应的操作。</p>
+<ul>
+<li><p>不删除策略（no-eviction）<br>no-eviction：不删除策略。Redis默认策略。达到最大内存限制时，若需要更多内存，直接返回错误信息。</p>
+</li>
+<li><p>最近最少使用策略（lru）</p>
+<ul>
+<li>allkeys-lru：所有key通用；优先删除最近最少使用的key</li>
+<li>volatile-lru：只限于设置了 expire 过期时间的部分；优先删除最近最少使用的key</li>
+</ul>
+</li>
+<li><p>随机策略（random）：</p>
+<ul>
+<li>allkeys-random：所有key通用；随机删除一部分key。</li>
+<li>volatile-random：只限于设置 expire 的部分；随机删除一部分key。</li>
+</ul>
+</li>
+<li><p>剩余时间短策略（ttl）：</p>
+<p>volatile-ttl：只限于设置 expire 的部分；优先删除剩余时间短的key。</p>
+</li>
+<li><p>最不经常使用策略（lfu）:</p>
+<p>volatile-lfu：只限于设置 expire 的部分；优先删除最不经常使用的key。</p>
+</li>
+<li><p>allkeys-lfu：所有key通用；优先删除最不经常使用的key。</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>volatile-：从已过期时间的数据集中淘汰key。</li>
+<li>allkeys-：所有key。</li>
+</ul>
+</blockquote>
+<h2 id="Redis线程模型"><a href="#Redis线程模型" class="headerlink" title="Redis线程模型"></a>Redis线程模型</h2><p>Redis基于 <strong>Reactor 模式</strong>开发了自己网络事件处理器，它由四部分组成，分别是</p>
+<ul>
+<li>套接字</li>
+<li>IO多路复用程序</li>
+<li>文件事件分派器</li>
+<li>事件处理器</li>
+</ul>
+<p>因为<strong>文件事件分派器队列</strong>的消费是单线程的，所以Redis才叫单线程模型。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220923222211570.png" srcset="/img/loading.gif" lazyload alt="image-20220923222211570"></p>
+<h2 id="IO多路复用技术"><a href="#IO多路复用技术" class="headerlink" title="IO多路复用技术"></a>IO多路复用技术</h2><p>IO多路复用：”多路”是指多个TCP连接；”复用”是指复用一个或多个线程；可以让单线程高效的处理多个连接请求。</p>
+<p>IO多路复用使用两个系统调用(select&#x2F;poll&#x2F;epoll和recvfrom)，阻塞IO只调用了recvfrom；</p>
+<p>select&#x2F;poll&#x2F;epoll 核心是可以同时处理多个连接，而不是更快，所以连接数不高的话，性能不一定比多线程+阻塞IO好，多路复用模型中，每一个socket，设置为non-blocking，阻塞是被select这个函数阻塞的，而不是被socket阻塞的。</p>
+<h3 id="select机制"><a href="#select机制" class="headerlink" title="select机制"></a>select机制</h3><p>原理：客户端操作服务器时会三种文件描述符(简称fd)：writefds(写)、readfds(读)、exceptfds(异常)。select会阻塞监视3类文件描述符，等有数据、可读、可写、出异常或超时，就会返回；返回后通过遍历fdset整个数组来找到就绪的描述符fd，然后进行对应的IO操作。</p>
+<p>优点：所有平台都支持，跨平台性好。<br>缺点：</p>
+<ul>
+<li>由于是采用轮询方式全盘扫描，会随着文件描述符fd数量增多而性能下降。</li>
+<li>每次调用 select()，需要把 fd 集合从用户态拷贝到内核态，并进行遍历(消息传递都是从内核到用户空间)</li>
+<li>默认单个进程打开的fd有限制是1024个，可修改宏定义，但是效率仍然慢。</li>
+</ul>
+<h3 id="poll机制"><a href="#poll机制" class="headerlink" title="poll机制"></a>poll机制</h3><p>原理：基本原理与select一致，也是轮询+遍历；唯一的区别就是poll没有最大文件描述符限制（使用链表的方式存储fd）。</p>
+<h3 id="epoll机制"><a href="#epoll机制" class="headerlink" title="epoll机制"></a>epoll机制</h3><p>原理：epoll也没有fd个数限制，用户态拷贝到内核态只需要一次，使用时间通知机制来触发。通过epoll_ctl注册fd，一旦fd就绪就会通过callback回调机制来激活对应fd，进行相关的io操作。</p>
+<p>优点：</p>
+<ul>
+<li>没有fd限制，所支持的fd上限是操作系统的最大文件句柄数，1G内存大概支持10万个句柄</li>
+<li>效率提高，使用回调通知而不是轮询的方式，不会随着FD数目的增加效率下降</li>
+<li>内核和用户空间mmap同一块内存实现(mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的地址空间)</li>
+</ul>
+<h2 id="Redis异常问题"><a href="#Redis异常问题" class="headerlink" title="Redis异常问题"></a>Redis异常问题</h2><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p><strong>同一时间内大量键过期（失效）</strong>，导致所有请求瞬间都落在了数据库中导致连接异常而崩掉。</p>
+<p>如何解决缓存雪崩</p>
+<ul>
+<li>给缓存数据的过期时间设置随机机，防止同一时间大量数据过期。</li>
+<li>给每一个缓存数据增加相应的缓存标记，记录缓存是否失效，若标记失效，则更新缓存数据。</li>
+<li>并发量不大时，可以使用加锁排队。</li>
+</ul>
+<p>对于”Redis挂掉了，请求全部走数据库”这种情况，我们可以有以下的思路：</p>
+<ul>
+<li><strong>事发前</strong>：实现Redis的高可用（主从架构+Sentinel或者Redis集群），尽量避免Redis挂掉</li>
+<li><strong>事发中</strong>：设置本地缓存(ehcache)+限流(hystrix)，尽量避免数据挂掉，保证服务能正常工作</li>
+<li><strong>事发后</strong>：redis持久化，重启后自动从磁盘上加载数据，快速恢复缓存数据</li>
+</ul>
+<h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><p><strong>恶意请求缓存中不存在的数据</strong>，导致所有请求都落在数据库，造成短时间承受大量请求而崩掉</p>
+<p><code>采用布隆过滤器</code>，将所有可能存在的数据哈希到一个bitmap中，一个一定不存在的数据会被这个bitmap拦截掉，从而避免对底层存储系统的查询压力。</p>
+<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>缓存击穿是指缓存中没有但数据库中有的数据。<strong>同时读缓存数据没有读到</strong>，导致所有请求都落在数据库，造成过大压力。</p>
+<p><strong>缓存雪崩与缓存击穿的区别</strong></p>
+<p>与缓存雪崩不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同数据都过期，很多数据都查不到从而查数据库。</p>
+<p><strong>如何解决缓存击穿</strong></p>
+<ol>
+<li><code>设置热点数据永不过期</code>。</li>
+<li><code>利用互斥锁</code>：在缓存失效的时，先获取锁，得到锁后再去请求数据库。没有得到锁，则休眠一段时间在重试。</li>
+</ol>
+<h3 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h3><p>缓存预热指系统上线后，将相关的缓存数据直接加载到Redis中，这样就可以避免在用户请求时，先查询数据库，然后再将数据缓存的问题。</p>
+<ol>
+<li>直接写个缓存刷新页面，系统上线时手动将缓存数据加载；</li>
+<li>定时刷新缓存；</li>
+</ol>
+<h3 id="缓存降级"><a href="#缓存降级" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>当访问量剧增、服务出现问题（如响应时间慢或不响应）或非核心服务影响到核心流程的性能时，仍然需要保证服务还是可用的，即使是有损服务。系统可以根据一些关键数据进行自动降级，也可以配置开关实现人工降级。</p>
+<p>缓存降级的最终目的是保证核心服务可用，即使是有损的。而且有些服务是无法降级的（如加入购物车、结算）。</p>
+<p>在进行降级之前要对系统进行梳理，看看系统是不是可以丢卒保帅；从而梳理出哪些必须誓死保护，哪些可降级；比如可以参考日志级别设置预案：</p>
+<ul>
+<li>一般：比如有些服务偶尔因为网络抖动或者服务正在上线而超时，可以自动降级；</li>
+<li>警告：有些服务在一段时间内成功率有波动（如在95~100%之间），可以自动降级或人工降级，并发送告警；</li>
+<li>错误：比如可用率低于90%，或者数据库连接池被打爆了，或者访问量突然猛增到系统能承受的最大阀值，此时可以根据情况自动降级或者人工降级；</li>
+<li>严重错误：比如因为特殊原因数据错误了，此时需要紧急人工降级。</li>
+</ul>
+<p><strong>服务降级的目的，是为了防止Redis服务故障，导致数据库跟着一起发生雪崩问题。因此，对于不重要的缓存数据，可以采取服务降级策略，例如一个比较常见的做法就是，Redis出现问题，不去数据库查询，而是直接返回默认值给用户。</strong></p>
+<h2 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h2><p>事务间相互独立：事务中的所有命令都会序列化，按顺序执行。事务在执行过程中，不会被其他客户端请求的命令中断。</p>
+<blockquote>
+<p>事务中的命令要么都执行，要么都不执行</p>
+</blockquote>
+<h3 id="Redis事务相关命令"><a href="#Redis事务相关命令" class="headerlink" title="Redis事务相关命令"></a>Redis事务相关命令</h3><p>Redis事务功能是通过MULTI、EXEC、DISCARD、WATCH命令实现的。通过MULTI开启事务，然后将请求的命令入队，最后通过EXEC命令依次执行队列中所有的命令。</p>
+<p>Redis会将一个事务所有的命令序列化，然后按顺序执行。</p>
+<ul>
+<li><strong>Redis不支持回滚</strong>。Redis在事务失败时不进行回滚，而是继续执行剩下的命令。</li>
+<li><strong>若在一个事务中的命令出现错误，那么所有命令都不会执行</strong>。</li>
+<li><strong>若在一个事务中出现运行错误，那么正确的命令会被执行</strong>。</li>
+</ul>
+<p><strong>WATCH命令</strong>：是一个乐观锁，可以为Redis提供CAS操作。可以监控一个或多个键，一旦其中有一个键被修改或删除，之后的事务就不执行，监控一直持续到EXEC命令。</p>
+<p><strong>MULTI命令</strong>：用于开启事务。MULTI执行后，Client可以继续向服务器发送任意多条命令，这些命令会存放到一个队列中，当EXEC命令调用后，所有队列中的命令才会被执行。</p>
+<p><strong>EXEC命令</strong>：执行所有事务块的命令，可以理解为提交事务。按命令的执行顺序，返回事务中所有命令的返回值。当操作被打断时，返回空值（nil）。</p>
+<p><strong>DISCARD命令</strong>：用于清空事务队列，并放弃执行事务。Client从事务状态中退出。</p>
+<p><strong>UNWATCH命令</strong>：用于取消WATCH命令对所有key的监控。</p>
+<blockquote>
+<p><strong>事务执行过程中，若服务器收到有EXEC、DISCARD、WATCH、MULTI之外的请求，将会把请求放入队列中</strong></p>
+</blockquote>
+<h3 id="Redis事务的特性"><a href="#Redis事务的特性" class="headerlink" title="Redis事务的特性"></a>Redis事务的特性</h3><p>就是数据库的ACID特性</p>
+<ul>
+<li><strong>原子性（Atomicity）</strong></li>
+<li><strong>一致性（Consistency）</strong></li>
+<li><strong>隔离性（Isolation）</strong></li>
+<li><strong>持久性（Durability）</strong></li>
+</ul>
+<h2 id="Redis分布式问题"><a href="#Redis分布式问题" class="headerlink" title="Redis分布式问题"></a>Redis分布式问题</h2><h3 id="Redis的分布式锁"><a href="#Redis的分布式锁" class="headerlink" title="Redis的分布式锁"></a>Redis的分布式锁</h3><p>Redis是单进程模式，队列技术将并发访问变为串行访问，且多个客户端对Redis的连接并不存在竞争关系，Redis可以使用<code>setnx</code>命令实现分布式锁。</p>
+<p><strong>获取锁时调用setnx（setnx若设置值成功，返回1；设置失败，返回0）。锁的value值会随机生成一个UUID，在释放锁时，会通过UUID进行判断是否为对应的锁，若是该锁，则释放该锁；可以使用 <code>expire </code>命令为锁添加一个超时时间，超过该时间则自动释放锁。</strong></p>
+<p><code>setnx key value</code>：只有在 key 不存在时，才将key设置为value值。</p>
+<h3 id="Redis的并发竞争key问题"><a href="#Redis的并发竞争key问题" class="headerlink" title="Redis的并发竞争key问题"></a>Redis的并发竞争key问题</h3><p>多个系统同时对一个key进行操作，最后执行的顺序和我们期望的顺序不同，导致结果不同。</p>
+<p>如何解决并发竞争问题</p>
+<ul>
+<li><strong>Redis实现分布式锁</strong>：通过Redis中setnx命令可以实现分布式锁。当获取锁时，调用setnx加锁。锁的value值会随机生成一个UUID。在释放锁时，通过UUID进行判断是否为对应的锁，若是则释放锁。使用expire命令为锁添加一个超时时间，若超过该时间则自动释放锁。</li>
+<li>Zookeeper实现分布式锁：通过Zookeeper临时有序节点可以实现分布式锁。每个Client对某个方法加锁时，在Zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。通过判断有序节点中，序号是否为最小来获取锁；当释放锁时，只需要删除瞬时有序节点。</li>
+</ul>
+<h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2><h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><p>哨兵（Sentinel） 是 Redis 的高可用性解决方案：由一个或多个 Sentinel 实例组成的 Sentinel 系统可以监视任意多个主服务器，以及这些主服务器属下的所有从服务器。</p>
+<p><img src="https://madao33-static.oss-cn-hangzhou.aliyuncs.com/madao33blog/post/leetcode/image-20220925140736236.png" srcset="/img/loading.gif" lazyload alt="image-20220925140736236"></p>
+<p><strong>哨兵的作用</strong></p>
+<ul>
+<li>监控redis主、从数据库是否正常运行</li>
+<li>主数据库出现故障自动将从数据库转换为主数据库</li>
+</ul>
+<p><strong>哨兵的核心知识</strong></p>
+<ul>
+<li>哨兵至少需要3个实例，来保证自己的健壮性</li>
+<li>哨兵+redis主从的部署架构，是不保证数据零丢失的，<strong>只能保证redis集群的高可用性</strong></li>
+<li>对于哨兵 + redis 主从这种复杂的部署架构，尽量在测试环境和生产环境，都进行充足的测试和演练。</li>
+<li>配置哨兵监控一个系统时，只需要配置其监控主数据库即可，哨兵会自动发现所有复制该主数据库的从数据库。</li>
+</ul>
+<h2 id="Redis的主从复制"><a href="#Redis的主从复制" class="headerlink" title="Redis的主从复制"></a>Redis的主从复制</h2><p>当从数据库启动时，会向主数据库发送<code>sync</code>命令，主数据库接收到sync后开始在后台保存快照rdb，在保存快照期间收到的命令缓存起来，当快照完成时，主数据库会将快照和缓存的命令一块发送给从数据库。复制初始化结束。之后，主数据库每收到1个命令就同步发送给从数据库。 当出现断开重连后，2.8之后的版本会将断线期间的命令传给从数据库。增量复制。<code>213  c</code></p>
+<p>主从复制是乐观复制，当客户端发送写执行给主数据库，主数据库执行完立即将结果返回客户端，并异步的把命令发送给从数据库，从而不影响性能。</p>
 <h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h2 id="Spring的IOC和AOP吗"><a href="#Spring的IOC和AOP吗" class="headerlink" title="Spring的IOC和AOP吗"></a>Spring的IOC和AOP吗</h2><h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><p>AOP（面向切面）是一种编程范式，提供从另一个角度来考虑程序结构以完善面向对象编程（OOP）。<br>AOP为开发者提供了一种描述横切关注点的机制，并能够自动将横切关注点织入到面向对象的软件系统中，从而实现了横切关注点的模块化。<br>AOP能够将那些与业务无关，却为业务模块所共同调用的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%80%BB%E8%BE%91%E6%88%96&spm=1001.2101.3001.7020">逻辑或</a>责任，例如事务处理、日志管理、权限控制等，封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可操作性和可维护性。</p>
 <p><strong>使用AOP的好处</strong></p>
 <ul>
